@@ -1,0 +1,41 @@
+{
+  "id": "cf-static-knowledge-golden-local-baseline",
+  "datasetId": "cf-static-knowledge-golden",
+  "datasetVersion": "2026-10-05",
+  "environmentClass": "local-dev-cpu-baseline",
+  "description": "Reviewed static-knowledge baseline for the committed cf-static-knowledge-golden pack. Thresholds are local-dev gates from the 2026-10-05 live run on the CPU embedding baseline (BAAI/bge-small-en-v1.5, 384d) plus local CPU reranker; they are release gates for this environment class, not production SLOs.",
+  "topK": 5,
+  "profiles": {
+    "default": {
+      "rerank": { "enabled": false },
+      "minQuestionCount": 38,
+      "minHitAtK": 0.85,
+      "minHitAt3": 0.75,
+      "minMrr": 0.7,
+      "maxEmptyResultRate": 0.0,
+      "maxDuplicateRate": 0.15,
+      "maxLatencyMsP95": 8000
+    },
+    "golden-hybrid": {
+      "rerank": { "enabled": false },
+      "minQuestionCount": 38,
+      "minHitAtK": 0.9,
+      "minHitAt3": 0.8,
+      "minMrr": 0.75,
+      "maxEmptyResultRate": 0.0,
+      "maxDuplicateRate": 0.15,
+      "maxLatencyMsP95": 8000
+    },
+    "golden-hybrid-rerank": {
+      "rerank": { "enabled": true },
+      "minQuestionCount": 38,
+      "minHitAtK": 0.9,
+      "minHitAt3": 0.8,
+      "minMrr": 0.75,
+      "maxEmptyResultRate": 0.0,
+      "maxDuplicateRate": 0.15,
+      "maxLatencyMsP95": 12000
+    }
+  },
+  "acceptedRegressionsPath": "approved-regressions.json"
+}

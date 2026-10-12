@@ -1,0 +1,63 @@
+{
+  "formatVersion": "infowarden-benchmark-v2-metadata-reconciliation.v1",
+  "task": "0189",
+  "sourceTasks": [
+    "0183",
+    "0187"
+  ],
+  "qualityResultsRerun": false,
+  "changedMetadataOnly": true,
+  "semanticReviewStatus": "frozen-independent-review",
+  "independentReviewStatus": "passed",
+  "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending",
+  "partitions": {
+    "EN": {
+      "oldHashes": {
+        "manifest": "1452df8459eda120d7d8c408825cf2b939c05623d8448f994bde69dae608ba3c",
+        "questions": "31675409f56789618915fbcff98865b5b501fcff200f0b514520b0393ce3d36a",
+        "semantic": "9e037efef0127ea28059b81afaf932f9303f29bd021a24dc3df6a72322ddd50e"
+      },
+      "newHashes": {
+        "manifest": "776065aa6d5ecf1978884719bfd1e3fe04949d1fd2951c2f6eef7f7583b6ca56",
+        "questions": "553434d6a7b79e9f039da03ef62e8479114d6360560f9b6f6cb1073d8513ce41",
+        "semantic": "aa4c8386fc7157d8f414a47f0d816169b7612501b1918df581ea9fe3cca6d50a",
+        "semanticManifest": "83fc8249ace9b752a56ed67c4d88d81311190326be0155cbadce092a2ad389d6"
+      },
+      "questionSemanticProjectionUnchanged": true
+    },
+    "RU": {
+      "oldHashes": {
+        "manifest": "2c26a28ca8a4060633e311f8865751a4a399840f97fe6b634450d5dfdd73a3cb",
+        "questions": "764eceb5d0892bbce202e4795553cd85e5cf462a09133f0fbd696306870a6a3f",
+        "semantic": "34afe983e0b01533bc8e7fd8afe77496b3ffebcd1063124928996b743b65eaf5"
+      },
+      "newHashes": {
+        "manifest": "d56b3f0602327bd02a5e073f9c676d084f59c988f0eaf2416a05bfd4addbfb2e",
+        "questions": "df0e916cb7c477e824837268f5ab16bd2f5711068760cf825926862fc8cfeecf",
+        "semantic": "c32e635c0b57f8219bf94e8a66ba558bb3b2644249fd010e9eec7dcf75bbd7dd",
+        "semanticManifest": "07dc7e7d20ee1b4974238994c9c36405642699d2ad35fb564810626c4baef267"
+      },
+      "questionSemanticProjectionUnchanged": true
+    },
+    "MIXED": {
+      "oldHashes": {
+        "manifest": "e72b7eb17bd347923c5956be1ea413aa9ae573eb6a0ad6c4754c27583e8e287a",
+        "questions": "765b129c8c24cf2b49afd9ec0b6af225ad25a4a317ee3b8768249748be7fa553",
+        "semantic": "1b38a36d7a0043f0c408336cf37db1a11f96c8c26b528c8276f51adbff9acf0c"
+      },
+      "newHashes": {
+        "manifest": "4690287e08aea74f083984989846696263de6ee2f1b01819c09eb1a43c8323de",
+        "questions": "cf70469d7864568d19edbe1304b69676904b534391dab90c2c6a4124715fbcf0",
+        "semantic": "2565217dc87af7432785340c7d513606f4d1607c88f31fbdaa844ac19a6bb80c",
+        "semanticManifest": "4213cca1d1255fb09f24a471dd11dd593b47b47e4350eed00a0ef69ccfc2e373"
+      },
+      "questionSemanticProjectionUnchanged": true
+    }
+  },
+  "historicalEvidenceUpdated": true,
+  "rawReportFileHashesRebound": 9,
+  "notes": [
+    "Only provenance/status metadata and bound checksums were reconciled; query text, expected IDs, negative IDs, qrels, primary buckets, and ranked results were not changed.",
+    "No embedding, reranker, retrieval, or benchmark execution was performed by task 0189."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "cf-smoke-mini",
+  "version": "2026-07-18",
+  "tier": "smoke",
+  "description": "Tiny deterministic ContextForge retrieval evaluation pack for pre-LLM smoke and E2E checks.",
+  "license": "repo-owned",
+  "languages": ["en", "ru"],
+  "documentsPath": "documents",
+  "questionsPath": "questions.jsonl",
+  "defaultTopK": 5,
+  "sourceTypes": ["local_folder", "git_repo", "obsidian_vault", "upload", "url", "memory"],
+  "metrics": ["hit@1", "hit@3", "hit@5", "mrr", "empty_result_rate", "duplicate_rate"],
+  "documents": [
+    {
+      "id": "doc_rag_overview",
+      "path": "documents/docs/rag-overview.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["docs", "semantic", "rag"]
+    },
+    {
+      "id": "doc_source_refresh_policy",
+      "path": "documents/docs/source-refresh-policy.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["source-refresh", "policy", "truth"]
+    },
+    {
+      "id": "doc_obsidian_memory",
+      "path": "documents/docs/obsidian-memory.md",
+      "sourceType": "obsidian_vault",
+      "language": "en",
+      "tags": ["obsidian", "memory", "wikilinks"]
+    },
+    {
+      "id": "doc_metadata_filters",
+      "path": "documents/docs/metadata-filters.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["metadata", "filters"]
+    },
+    {
+      "id": "doc_exact_terms",
+      "path": "documents/docs/exact-terms.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["exact", "lexical"]
+    },
+    {
+      "id": "doc_russian_notes",
+      "path": "documents/docs/russian-notes.md",
+      "sourceType": "local_folder",
+      "language": "ru",
+      "tags": ["ru", "multilingual"]
+    },
+    {
+      "id": "doc_upload_processing",
+      "path": "documents/docs/upload-processing.md",
+      "sourceType": "upload",
+      "language": "en",
+      "tags": ["upload", "documents"]
+    },
+    {
+      "id": "doc_benchmark_notes",
+      "path": "documents/docs/benchmark-notes.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["benchmark", "evaluation"]
+    },
+    {
+      "id": "doc_structure_chunking",
+      "path": "documents/docs/structure-chunking.md",
+      "sourceType": "local_folder",
+      "language": "en",
+      "tags": ["chunking", "markdown", "structure"]
+    },
+    {
+      "id": "doc_search_pipeline_code",
+      "path": "documents/code/search_pipeline.ts",
+      "sourceType": "git_repo",
+      "language": "typescript",
+      "tags": ["code", "retrieval"]
+    },
+    {
+      "id": "doc_memory_session",
+      "path": "documents/memory/session-summary.json",
+      "sourceType": "memory",
+      "language": "en",
+      "tags": ["memory", "session_summary"]
+    },
+    {
+      "id": "doc_url_crawl",
+      "path": "documents/url/crawler-page.html",
+      "sourceType": "url",
+      "language": "en",
+      "tags": ["url", "html"]
+    }
+  ]
+}

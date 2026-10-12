@@ -1,0 +1,32 @@
+// InfoWarden MCP for OpenCode — HTTP (remote) transport, safe `read`
+// profile.
+//
+// Verified against OpenCode 1.18.33 on 2026-10-05 (see
+// docs/integrations.md, "Verified integration evidence").
+//
+// The MCP HTTP server must be running with inbound auth enabled:
+//   MCP_PROFILE=read \
+//   MCP_AUTH_ENABLED=true \
+//   ADMIN_API_KEY=<same value as CONTEXTFORGE_MCP_KEY below> \
+//   MCP_HTTP_HOST=127.0.0.1 \
+//   MCP_HTTP_PORT=3003 \
+//   pnpm --filter mcp-server start:http
+//
+// For a reverse-proxied deployment, replace "url" with the externally
+// reachable MCP endpoint (e.g. https://infowarden.example.com/mcp).
+// Replace <CONTEXTFORGE_MCP_KEY> with the server's ADMIN_API_KEY value.
+// Keep the server name unique per merged config (same merge rules as the
+// stdio example).
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "contextforge": {
+      "type": "remote",
+      "url": "http://localhost:3003/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer <CONTEXTFORGE_MCP_KEY>",
+      },
+    },
+  },
+}

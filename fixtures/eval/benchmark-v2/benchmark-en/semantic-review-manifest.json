@@ -1,0 +1,29 @@
+{
+  "id": "benchmark-v2-en-semantic-review",
+  "version": "2026-10-09-pre-execution-v2",
+  "partition": "EN",
+  "status": "frozen-independent-review",
+  "qualityResultsObserved": false,
+  "sourceQuestionSha256": "553434d6a7b79e9f039da03ef62e8479114d6360560f9b6f6cb1073d8513ce41",
+  "sourceQrelsSha256": "0664a6bd82d23072954147d4bc9aa4f1462837628621d249cd7083693b44747a",
+  "reviewRowsSha256": "aa4c8386fc7157d8f414a47f0d816169b7612501b1918df581ea9fe3cca6d50a",
+  "queryCount": 120,
+  "reviewedQueryCount": 120,
+  "reviewedBucketCounts": {
+    "exact_term_identifier": 10,
+    "paraphrase": 15,
+    "adjacent_topic": 85,
+    "entity_disambiguation": 10
+  },
+  "hardNegativeRule": "At least max(25% of partition queries, 25) queries must have two or more reviewed hard negatives; this pack reviews two judged negative candidates for every query.",
+  "reviewedHardNegativeQueryCount": 120,
+  "noModelOrRetrievalEvidenceUsed": true,
+  "unjudgedDiagnosticPolicy": "mixed_distractor opposite-language documents remain outside qrels and are not converted to grade 0.",
+  "preparedBy": "benchmark-v2-20261009",
+  "independentReviewStatus": "passed",
+  "morphologyDefinition": "Not applicable to EN; mandatory EN slices are exact_term_identifier, paraphrase, adjacent_topic, and entity_disambiguation.",
+  "reviewRowsCanonicalization": "UTF-8 JSONL bytes in questions.jsonl order, one compact JSON object per line, LF after the final record; the recorded SHA-256 covers these exact bytes.",
+  "reviewRowsSerialization": "JSON.stringify object order as committed; no re-sorting or whitespace normalization during verification.",
+  "preparedAt": "2026-10-09",
+  "reviewTask": "0183"
+}

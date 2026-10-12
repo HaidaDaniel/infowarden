@@ -1,0 +1,197 @@
+name: infowarden-prod
+
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: infowarden
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-__REQUIRED_POSTGRES_PASSWORD__}
+      POSTGRES_DB: infowarden
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U infowarden -d infowarden']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: ${POSTGRES_MEM_LIMIT:-1g}
+    cpus: ${POSTGRES_CPUS:-1.0}
+
+  redis:
+    image: redis:7.2-alpine
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-__REQUIRED_REDIS_PASSWORD__}
+    command: ['redis-server', '--appendonly', 'yes', '--requirepass', '${REDIS_PASSWORD:-__REQUIRED_REDIS_PASSWORD__}']
+    volumes:
+      - redis_data:/data
+    networks:
+      - data
+    healthcheck:
+      test: ['CMD-SHELL', 'redis-cli -a "$${REDIS_PASSWORD}" ping | grep PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: ${REDIS_MEM_LIMIT:-512m}
+    cpus: ${REDIS_CPUS:-0.5}
+
+  qdrant:
+    image: qdrant/qdrant:v1.17.0
+    restart: unless-stopped
+    environment:
+      QDRANT__SERVICE__API_KEY: ${QDRANT_API_KEY:-__REQUIRED_QDRANT_API_KEY__}
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - data
+    mem_limit: ${QDRANT_MEM_LIMIT:-2g}
+    cpus: ${QDRANT_CPUS:-2.0}
+
+  api-migrate:
+    profiles:
+      - migrate
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      target: api-migrate
+    image: ${CONTEXTFORGE_API_MIGRATE_IMAGE:-infowarden/api-migrate:local}
+    restart: 'no'
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL:-postgresql://infowarden:__REQUIRED_POSTGRES_PASSWORD__@postgres:5432/infowarden?schema=public}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-__REQUIRED_REDIS_PASSWORD__}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      QDRANT_HTTP_URL: http://qdrant:6333
+      QDRANT_GRPC_PORT: 6334
+      QDRANT_HTTPS: 'false'
+      API_KEY_AUTH_ENABLED: 'true'
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-__REQUIRED_ADMIN_API_KEY__}
+      CORS_ORIGIN: ${CORS_ORIGIN:-__REQUIRED_CORS_ORIGIN__}
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:-__REQUIRED_EMBEDDING_BASE_URL__}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-__REQUIRED_EMBEDDING_MODEL__}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-0}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-__REQUIRED_EMBEDDING_API_KEY__}
+    networks:
+      - data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      target: api-runtime
+    image: ${CONTEXTFORGE_API_IMAGE:-infowarden/api:local}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: ${DATABASE_URL:-postgresql://infowarden:__REQUIRED_POSTGRES_PASSWORD__@postgres:5432/infowarden?schema=public}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-__REQUIRED_REDIS_PASSWORD__}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      QDRANT_HTTP_URL: http://qdrant:6333
+      QDRANT_GRPC_PORT: 6334
+      QDRANT_HTTPS: 'false'
+      QDRANT_API_KEY_REF: QDRANT_API_KEY
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-__REQUIRED_QDRANT_API_KEY__}
+      API_KEY_AUTH_ENABLED: 'true'
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-__REQUIRED_ADMIN_API_KEY__}
+      CORS_ORIGIN: ${CORS_ORIGIN:-__REQUIRED_CORS_ORIGIN__}
+      API_MAX_BODY_BYTES: ${API_MAX_BODY_BYTES:-1048576}
+      INDEXING_WORKER_CONCURRENCY: ${INDEXING_WORKER_CONCURRENCY:-1}
+      MANAGED_UPLOAD_STORAGE_DIR: /var/lib/contextforge/uploads
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:-__REQUIRED_EMBEDDING_BASE_URL__}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-__REQUIRED_EMBEDDING_MODEL__}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-0}
+      EMBEDDING_TIMEOUT_MS: ${EMBEDDING_TIMEOUT_MS:-30000}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-__REQUIRED_EMBEDDING_API_KEY__}
+      RERANKER_BASE_URL: ${RERANKER_BASE_URL:-}
+      RERANKER_MODEL: ${RERANKER_MODEL:-}
+      RERANKER_TOP_N: ${RERANKER_TOP_N:-3}
+      RERANKER_TIMEOUT_MS: ${RERANKER_TIMEOUT_MS:-30000}
+      RERANKER_FALLBACK_ALLOWED: ${RERANKER_FALLBACK_ALLOWED:-true}
+    volumes:
+      - managed_uploads:/var/lib/contextforge/uploads
+    ports:
+      - '127.0.0.1:${CONTEXTFORGE_API_PORT:-3000}:3000'
+    networks:
+      - frontend
+      - data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    mem_limit: ${API_MEM_LIMIT:-2g}
+    cpus: ${API_CPUS:-2.0}
+
+  mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+      target: mcp-runtime
+    image: ${CONTEXTFORGE_MCP_IMAGE:-infowarden/mcp-server:local}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      CONTEXTFORGE_BACKEND_URL: http://api:3000
+      CONTEXTFORGE_API_KEY: ${ADMIN_API_KEY:-__REQUIRED_ADMIN_API_KEY__}
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-__REQUIRED_ADMIN_API_KEY__}
+      API_KEY_AUTH_ENABLED: 'true'
+      MCP_AUTH_ENABLED: 'true'
+      MCP_HTTP_HOST: 0.0.0.0
+      MCP_HTTP_PORT: 3003
+      MCP_HTTP_PATH: /mcp
+    ports:
+      - '127.0.0.1:${CONTEXTFORGE_MCP_PORT:-3003}:3003'
+    networks:
+      - frontend
+    depends_on:
+      api:
+        condition: service_healthy
+    mem_limit: ${MCP_MEM_LIMIT:-512m}
+    cpus: ${MCP_CPUS:-0.5}
+
+  studio:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      target: web-runtime
+    image: ${CONTEXTFORGE_STUDIO_IMAGE:-infowarden/studio:local}
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:${CONTEXTFORGE_STUDIO_PORT:-8080}:8080'
+    networks:
+      - frontend
+    depends_on:
+      api:
+        condition: service_healthy
+    mem_limit: ${STUDIO_MEM_LIMIT:-256m}
+    cpus: ${STUDIO_CPUS:-0.5}
+
+networks:
+  frontend:
+  data:
+    internal: true
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:
+  managed_uploads:

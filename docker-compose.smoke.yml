@@ -1,0 +1,49 @@
+services:
+  postgres:
+    volumes:
+      - smoke_postgres_data:/var/lib/postgresql/data
+  redis:
+    volumes:
+      - smoke_redis_data:/data
+  qdrant:
+    volumes:
+      - smoke_qdrant_data:/qdrant/storage
+  smoke-embeddings:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.9
+    container_name: context-forge-smoke-embeddings
+    command:
+      - --model-id
+      - ${SMOKE_EMBEDDING_MODEL:-BAAI/bge-small-en-v1.5}
+      - --hostname
+      - '0.0.0.0'
+      - --port
+      - '80'
+      - --api-key
+      - ${SMOKE_EMBEDDING_API_KEY:-local-smoke-key}
+    ports:
+      - '${SMOKE_EMBEDDING_PORT:-8080}:80'
+    volumes:
+      - smoke_embedding_cache:/data
+  smoke-reranker:
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.9
+    container_name: context-forge-smoke-reranker
+    profiles:
+      - reranker
+    command:
+      - --model-id
+      - ${SMOKE_RERANKER_MODEL:-cross-encoder/ms-marco-MiniLM-L6-v2}
+      - --hostname
+      - '0.0.0.0'
+      - --port
+      - '80'
+    ports:
+      - '${SMOKE_RERANKER_PORT:-8081}:80'
+    volumes:
+      - smoke_reranker_cache:/data
+
+volumes:
+  smoke_postgres_data:
+  smoke_redis_data:
+  smoke_qdrant_data:
+  smoke_embedding_cache:
+  smoke_reranker_cache:

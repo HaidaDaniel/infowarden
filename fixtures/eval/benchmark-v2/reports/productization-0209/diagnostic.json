@@ -1,0 +1,64 @@
+{
+  "formatVersion": "infowarden-productization-0209-diagnostic.v1",
+  "qualityRun": false,
+  "decision": "unsupported-for-v0.1",
+  "causeClassification": "no-deterministic-integration-bug-reproduced; the frozen model/pairing evidence is too harmful to expose",
+  "frozenEvidence": {
+    "profile": "lexical-lstar-reranker",
+    "candidateRecall": 0.7980769230769231,
+    "hitAt10": 0.08173076923076923,
+    "mrr": 0.05992254614904994,
+    "rerankerRegressions": 143,
+    "rerankerPromotions": 12,
+    "splitChecksumSha256": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3"
+  },
+  "targetedReproduction": {
+    "scope": "15 representative historical HOLDOUT failures: five per EN, RU, and MIXED",
+    "qualityGridRerun": false,
+    "newParameterTuning": false,
+    "queryIds": [
+      "mrtydi_en_q_2279",
+      "mrtydi_en_q_2148",
+      "mrtydi_en_q_2376",
+      "mrtydi_en_q_300",
+      "mrtydi_en_q_2686",
+      "mrtydi_ru_q_5417",
+      "mrtydi_ru_q_3540",
+      "mrtydi_ru_q_144",
+      "mrtydi_ru_q_3296",
+      "mrtydi_ru_q_1457",
+      "mixed_mrtydi_en_q_99",
+      "mixed_mrtydi_ru_q_5645",
+      "xquad_cross_language_ru_to_en_572957ad1d046914007792dd",
+      "xquad_cross_language_ru_to_en_5725c604271a42140099d186",
+      "xquad_cross_language_en_to_ru_571c8539dd7acb1400e4c0e3"
+    ],
+    "provider": "local-90-qwen3-reranker-0.6b",
+    "model": "qwen3-reranker-0.6b",
+    "endpointIdentityVerified": true,
+    "candidateInput": {
+      "queryDocumentOrder": "verified",
+      "candidateIdPreservation": "verified",
+      "candidateTextExtraction": "verified",
+      "topN": 10,
+      "scorePolarity": "descending relevance; verified",
+      "providerResponseIndexMapping": "verified",
+      "truncationAndMetadata": "no unexpected truncation or metadata dependency observed"
+    },
+    "concurrentApiResults": {
+      "requests": 15,
+      "successfulHttpResponses": 15,
+      "rerankedResponses": 15,
+      "relevantWithinTop10": 9,
+      "relevantNotWithinTop10": 6,
+      "note": "The same exact BM25 payload shape did not reproduce the frozen catastrophic ordering on the current live provider. This is not promoted as replacement benchmark evidence."
+    }
+  },
+  "conclusion": {
+    "integrationBugFound": false,
+    "modelPairingOrOperationalBehaviorUnsafe": true,
+    "lexicalRerankerSupport": "unsupported-for-v0.1",
+    "runtimeAction": "fail closed before candidate retrieval/provider execution when lexical retrieval requests reranking",
+    "denseAndHybridRerankerBehaviorChanged": false
+  }
+}

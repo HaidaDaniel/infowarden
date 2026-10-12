@@ -1,0 +1,35 @@
+# InfoWarden MCP for Hermes Agent — safe `read` profile.
+#
+# Verified live against Hermes Agent v0.19.0 (2026.7.20, PyPI
+# hermes-agent[mcp]) on 2026-10-05; config format cross-checked against the
+# v0.21.5 (tag v2026.9.24) official MCP reference. See
+# docs/integrations.md, "Verified integration evidence".
+#
+# Install as $HERMES_HOME/config.yaml (default: ~/.hermes/config.yaml).
+# Replace /ABS/PATH/TO/infowarden with the absolute path to this checkout
+# and build the adapter first:
+#   pnpm --filter mcp-server build
+#
+# The safe `read` profile is enforced twice:
+#   - server-side, by MCP_PROFILE=read in env (the adapter exposes exactly
+#     the four consumer tools);
+#   - client-side, by tools.include (Hermes registers only the listed
+#     tools with the agent).
+#
+# The `read` profile exposes exactly: list_workspaces, retrieve_context,
+# read_document, search_memory. No lifecycle, indexing, memory-write, or
+# maintenance tools are registered.
+mcp_servers:
+  contextforge:
+    command: 'node'
+    args:
+      - '/ABS/PATH/TO/infowarden/apps/mcp-server/dist/index.js'
+    env:
+      CONTEXTFORGE_BACKEND_URL: 'http://localhost:3000'
+      MCP_PROFILE: 'read'
+    tools:
+      include:
+        - list_workspaces
+        - retrieve_context
+        - read_document
+        - search_memory

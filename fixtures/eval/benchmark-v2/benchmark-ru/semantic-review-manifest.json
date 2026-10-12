@@ -1,0 +1,30 @@
+{
+  "id": "benchmark-v2-ru-semantic-review",
+  "version": "2026-10-09-pre-execution-v2",
+  "partition": "RU",
+  "status": "frozen-independent-review",
+  "preparedBy": "benchmark-v2-20261009",
+  "preparedAt": "2026-10-09",
+  "qualityResultsObserved": false,
+  "sourceQuestionSha256": "df0e916cb7c477e824837268f5ab16bd2f5711068760cf825926862fc8cfeecf",
+  "sourceQrelsSha256": "1186d425bb8633daba889e616dbfcc7e3107a805c124fc72c51ea26840835e5f",
+  "reviewRowsSha256": "c32e635c0b57f8219bf94e8a66ba558bb3b2644249fd010e9eec7dcf75bbd7dd",
+  "queryCount": 120,
+  "reviewedQueryCount": 120,
+  "reviewedBucketCounts": {
+    "exact_term_identifier": 10,
+    "paraphrase": 15,
+    "adjacent_topic": 70,
+    "entity_disambiguation": 10,
+    "morphology_inflection": 15
+  },
+  "hardNegativeRule": "At least max(25% of partition queries, 25) queries must have two or more reviewed hard negatives; this proposal records two specific candidates per query.",
+  "reviewedHardNegativeQueryCount": 120,
+  "noModelOrRetrievalEvidenceUsed": true,
+  "independentReviewStatus": "passed",
+  "morphologyDefinition": "A morphology/inflection row must show an explicit grammatical form contrast between the query and its positive passage/title for the same lemma or referent.",
+  "unjudgedDiagnosticPolicy": "No unjudged diagnostic distractors are converted to judged qrels.",
+  "reviewRowsCanonicalization": "UTF-8 JSONL bytes in questions.jsonl order, one compact JSON object per line, LF after the final record; the recorded SHA-256 covers these exact bytes.",
+  "reviewRowsSerialization": "JSON.stringify object order as committed; no re-sorting or whitespace normalization during verification.",
+  "reviewTask": "0183"
+}

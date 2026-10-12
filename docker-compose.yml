@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: context-forge-postgres
+    environment:
+      POSTGRES_USER: infowarden
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-infowarden_password}
+      POSTGRES_DB: infowarden
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U infowarden']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: context-forge-redis
+    ports:
+      - '127.0.0.1:6379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  qdrant:
+    image: qdrant/qdrant:v1.17.0
+    container_name: context-forge-qdrant
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - '127.0.0.1:6333:6333'
+      - '127.0.0.1:6334:6334'
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  postgres_data:
+  redis_data:
+  qdrant_data:

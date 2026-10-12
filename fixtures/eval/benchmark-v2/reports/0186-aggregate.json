@@ -1,0 +1,1122 @@
+{
+  "formatVersion": "infowarden-benchmark-v2-aggregate.v1",
+  "task": "0186",
+  "sourceTasks": [
+    "0174",
+    "0182",
+    "0183",
+    "0176",
+    "0185",
+    "0178"
+  ],
+  "benchmarkRevision": "a547a0c0f2edea3f457ef1294eec8461aa7fd449",
+  "repetitions": 3,
+  "partitions": {
+    "EN": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.7083333333333334,
+            "std": 0,
+            "repetitions": [
+              0.7083333333333334,
+              0.7083333333333334,
+              0.7083333333333334
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8416666666666667,
+            "std": 0,
+            "repetitions": [
+              0.8416666666666667,
+              0.8416666666666667,
+              0.8416666666666667
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9499999999999998,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "repetitions": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.7973809523809526,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.7973809523809525,
+              0.7973809523809525,
+              0.7973809523809525
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8425944777437574,
+            "std": 0,
+            "repetitions": [
+              0.8425944777437574,
+              0.8425944777437574,
+              0.8425944777437574
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 30.497016999999914,
+          "p95": 38.16074200000003
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6833333333333332,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.6833333333333333,
+              0.6833333333333333,
+              0.6833333333333333
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8249999999999998,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.825,
+              0.825,
+              0.825
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9499999999999998,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "repetitions": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.778075396825397,
+            "std": 0,
+            "repetitions": [
+              0.778075396825397,
+              0.778075396825397,
+              0.778075396825397
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8278434932740094,
+            "std": 0,
+            "repetitions": [
+              0.8278434932740094,
+              0.8278434932740094,
+              0.8278434932740094
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 214.52460200000132,
+          "p95": 243.85477099999844
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.7333333333333333,
+            "std": 0,
+            "repetitions": [
+              0.7333333333333333,
+              0.7333333333333333,
+              0.7333333333333333
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.875,
+            "std": 0,
+            "repetitions": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9333333333333332,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.9333333333333333,
+              0.9333333333333333,
+              0.9333333333333333
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "repetitions": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.8141269841269843,
+            "std": 0,
+            "repetitions": [
+              0.8141269841269843,
+              0.8141269841269843,
+              0.8141269841269843
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8552521166455364,
+            "std": 0,
+            "repetitions": [
+              0.8552521166455364,
+              0.8552521166455364,
+              0.8552521166455364
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 405.62365999999747,
+          "p95": 484.411626000001
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.019305555555555555,
+          "ci95": [
+            0.006388888888888888,
+            0.035416666666666666
+          ],
+          "seed": 2986465069,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 2479371091,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.016746031746031745,
+          "ci95": [
+            -0.052500000000000005,
+            0.01722222222222223
+          ],
+          "seed": 446038532,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.016666666666666666,
+          "ci95": [
+            -0.03333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 559621758,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.036051587301587286,
+          "ci95": [
+            -0.0743452380952381,
+            0.0009722222222222246
+          ],
+          "seed": 1880323146,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.016666666666666666,
+          "ci95": [
+            -0.03333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 2486147406,
+          "resamples": 10000
+        }
+      ]
+    },
+    "RU": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5833333333333334,
+            "std": 0,
+            "repetitions": [
+              0.5833333333333334,
+              0.5833333333333334,
+              0.5833333333333334
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.75,
+            "std": 0,
+            "repetitions": [
+              0.75,
+              0.75,
+              0.75
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.875,
+            "std": 0,
+            "repetitions": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "repetitions": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.6965079365079366,
+            "std": 0,
+            "repetitions": [
+              0.6965079365079366,
+              0.6965079365079366,
+              0.6965079365079366
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7594548407540622,
+            "std": 0,
+            "repetitions": [
+              0.7594548407540622,
+              0.7594548407540622,
+              0.7594548407540622
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.0008333333333333334,
+            "std": 0,
+            "repetitions": [
+              0.0008333333333333334,
+              0.0008333333333333334,
+              0.0008333333333333334
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 32.47961600000008,
+          "p95": 42.89731699999993
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.575,
+            "std": 0,
+            "repetitions": [
+              0.575,
+              0.575,
+              0.575
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7416666666666667,
+            "std": 0,
+            "repetitions": [
+              0.7416666666666667,
+              0.7416666666666667,
+              0.7416666666666667
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.875,
+            "std": 0,
+            "repetitions": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "repetitions": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.68984126984127,
+            "std": 0,
+            "repetitions": [
+              0.68984126984127,
+              0.68984126984127,
+              0.68984126984127
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7543452808143499,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.75434528081435,
+              0.75434528081435,
+              0.75434528081435
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.0008375209380234506,
+            "std": 0,
+            "repetitions": [
+              0.0008375209380234506,
+              0.0008375209380234506,
+              0.0008375209380234506
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 96.21493700000065,
+          "p95": 128.20736099999885
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6416666666666667,
+            "std": 0,
+            "repetitions": [
+              0.6416666666666667,
+              0.6416666666666667,
+              0.6416666666666667
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8083333333333332,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.8083333333333333,
+              0.8083333333333333,
+              0.8083333333333333
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8833333333333333,
+            "std": 0,
+            "repetitions": [
+              0.8833333333333333,
+              0.8833333333333333,
+              0.8833333333333333
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "repetitions": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.7436044973544972,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.7436044973544973,
+              0.7436044973544973,
+              0.7436044973544973
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7955172741096955,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.7955172741096954,
+              0.7955172741096954,
+              0.7955172741096954
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.0008375209380234506,
+            "std": 0,
+            "repetitions": [
+              0.0008375209380234506,
+              0.0008375209380234506,
+              0.0008375209380234506
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 402.3714800000016,
+          "p95": 575.7917069999967
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.006666666666666667,
+          "ci95": [
+            0,
+            0.01638888888888889
+          ],
+          "seed": 3692824761,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 683329284,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.04709656084656085,
+          "ci95": [
+            -0.09169973544973548,
+            -0.004811507936507935
+          ],
+          "seed": 4250060777,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.008333333333333333,
+          "ci95": [
+            -0.058333333333333334,
+            0.03333333333333333
+          ],
+          "seed": 2961926995,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.05376322751322752,
+          "ci95": [
+            -0.0983399470899471,
+            -0.010664682539682542
+          ],
+          "seed": 2590015576,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.008333333333333333,
+          "ci95": [
+            -0.05,
+            0.03333333333333333
+          ],
+          "seed": 3017942169,
+          "resamples": 10000
+        }
+      ]
+    },
+    "MIXED": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5714285714285714,
+            "std": 0,
+            "repetitions": [
+              0.5714285714285714,
+              0.5714285714285714,
+              0.5714285714285714
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7928571428571428,
+            "std": 0,
+            "repetitions": [
+              0.7928571428571428,
+              0.7928571428571428,
+              0.7928571428571428
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8785714285714286,
+            "std": 0,
+            "repetitions": [
+              0.8785714285714286,
+              0.8785714285714286,
+              0.8785714285714286
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.7012599206349206,
+            "std": 0,
+            "repetitions": [
+              0.7012599206349206,
+              0.7012599206349206,
+              0.7012599206349206
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7603019721645948,
+            "std": 0,
+            "repetitions": [
+              0.7603019721645948,
+              0.7603019721645948,
+              0.7603019721645948
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.00035714285714285714,
+            "std": 0,
+            "repetitions": [
+              0.00035714285714285714,
+              0.00035714285714285714,
+              0.00035714285714285714
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 33.07450700000027,
+          "p95": 41.708033999999316
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5571428571428572,
+            "std": 0,
+            "repetitions": [
+              0.5571428571428572,
+              0.5571428571428572,
+              0.5571428571428572
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7821428571428571,
+            "std": 0,
+            "repetitions": [
+              0.7821428571428571,
+              0.7821428571428571,
+              0.7821428571428571
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8785714285714286,
+            "std": 0,
+            "repetitions": [
+              0.8785714285714286,
+              0.8785714285714286,
+              0.8785714285714286
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.6913194444444443,
+            "std": 0,
+            "repetitions": [
+              0.6913194444444443,
+              0.6913194444444443,
+              0.6913194444444443
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7527255228003366,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.7527255228003364,
+              0.7527255228003364,
+              0.7527255228003364
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.00036390101892285295,
+            "std": 5.421010862427522e-20,
+            "repetitions": [
+              0.000363901018922853,
+              0.000363901018922853,
+              0.000363901018922853
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 213.89514800000325,
+          "p95": 367.2864180000033
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6071428571428571,
+            "std": 0,
+            "repetitions": [
+              0.6071428571428571,
+              0.6071428571428571,
+              0.6071428571428571
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8214285714285715,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.8214285714285714,
+              0.8214285714285714,
+              0.8214285714285714
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8964285714285715,
+            "std": 0,
+            "repetitions": [
+              0.8964285714285715,
+              0.8964285714285715,
+              0.8964285714285715
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "repetitions": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.730344387755102,
+            "std": 0,
+            "repetitions": [
+              0.730344387755102,
+              0.730344387755102,
+              0.730344387755102
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7827536369045057,
+            "std": 0,
+            "repetitions": [
+              0.7827536369045057,
+              0.7827536369045057,
+              0.7827536369045057
+            ]
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0,
+            "repetitions": [
+              0,
+              0,
+              0
+            ]
+          },
+          "duplicate_rate": {
+            "mean": 0.00036390101892285295,
+            "std": 5.421010862427522e-20,
+            "repetitions": [
+              0.000363901018922853,
+              0.000363901018922853,
+              0.000363901018922853
+            ]
+          }
+        },
+        "latencyMs": {
+          "p50": 501.71459399999003,
+          "p95": 655.5262339999899
+        },
+        "failedQueryCount": 0,
+        "unidentifiedCount": 0,
+        "crossPartitionPathCount": 0
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0.00994047619047619,
+          "ci95": [
+            0.0033928571428571436,
+            0.018035714285714283
+          ],
+          "seed": 1282410206,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 1067777069,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.029084467120181413,
+          "ci95": [
+            -0.05633503401360547,
+            -0.0022208049886621325
+          ],
+          "seed": 2806951084,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.017857142857142856,
+          "ci95": [
+            -0.04642857142857143,
+            0.010714285714285714
+          ],
+          "seed": 925274175,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.03902494331065761,
+          "ci95": [
+            -0.06696286848072565,
+            -0.01163265306122449
+          ],
+          "seed": 2252265261,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.017857142857142856,
+          "ci95": [
+            -0.04642857142857143,
+            0.010714285714285714
+          ],
+          "seed": 2145044568,
+          "resamples": 10000
+        }
+      ]
+    }
+  },
+  "workspaceIdsByPartition": {
+    "en": "3c9b8049-e303-41ad-9c33-763304989a22",
+    "ru": "87f038da-2011-4c95-bb81-009bbfb6f6a3",
+    "mixed": "e7552836-0e6d-4550-924b-563084ea5843"
+  },
+  "indexBuildIdsByPartition": {
+    "en": "62c16d49-c446-48e9-b19e-a4ef8e563581",
+    "ru": "b4b73c33-834a-4ec6-baf1-6389c2ad5ae1",
+    "mixed": "efdd5d16-0f6c-4fa5-b3db-d70c95519aac"
+  },
+  "partitionIsolation": {
+    "crossPartitionPathCount": 0,
+    "unidentifiedCount": 0,
+    "namespaces": {
+      "en": "en/",
+      "ru": "ru/",
+      "mixed": "mixed/"
+    }
+  },
+  "models": {
+    "provider": "local-qwen-0.6b",
+    "embeddingModel": "qwen3-embedding-0.6b",
+    "rerankerModel": "qwen3-reranker-0.6b",
+    "embeddingDimension": 1024,
+    "environment": "local-qwen-0.6b-isolated-0186-path-namespaced"
+  },
+  "unsupportedModes": [
+    {
+      "key": "lexical-only",
+      "reason": "runtime has no product-supported zero-dense contract"
+    }
+  ]
+}

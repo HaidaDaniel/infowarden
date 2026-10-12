@@ -1,0 +1,31 @@
+{
+  "id": "cf-smoke-mini-local-dev-baseline",
+  "datasetId": "cf-smoke-mini",
+  "datasetVersion": "2026-07-18",
+  "environmentClass": "local-dev-4cpu-8gb",
+  "description": "Fixed pre-LLM retrieval baseline for the committed cf-smoke-mini pack. Thresholds are intentionally local-dev smoke gates, not production SLOs.",
+  "topK": 5,
+  "profiles": {
+    "default": {
+      "rerank": { "enabled": false },
+      "minQuestionCount": 18,
+      "minHitAtK": 0.55,
+      "minHitAt3": 0.35,
+      "minMrr": 0.35,
+      "maxEmptyResultRate": 0.35,
+      "maxDuplicateRate": 0.35,
+      "maxLatencyMsP95": 5000
+    },
+    "cf-smoke-hybrid": {
+      "rerank": { "enabled": false },
+      "minQuestionCount": 18,
+      "minHitAtK": 0.6,
+      "minHitAt3": 0.4,
+      "minMrr": 0.4,
+      "maxEmptyResultRate": 0.3,
+      "maxDuplicateRate": 0.35,
+      "maxLatencyMsP95": 5000
+    }
+  },
+  "acceptedRegressionsPath": "approved-regressions.json"
+}

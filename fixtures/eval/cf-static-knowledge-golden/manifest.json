@@ -1,0 +1,168 @@
+{
+  "id": "cf-static-knowledge-golden",
+  "version": "2026-10-05",
+  "tier": "golden",
+  "description": "Sanitized static-knowledge retrieval golden set for public v0.1: persistent Markdown documentation, a managed upload book/reference archive, and an Obsidian vault. Expected labels are reviewed and never derived from retrieval output.",
+  "license": "repo-owned synthetic content",
+  "languages": ["en"],
+  "documentsPath": "documents",
+  "questionsPath": "questions.jsonl",
+  "defaultTopK": 5,
+  "sourceTypes": ["local_folder", "upload", "obsidian_vault"],
+  "sourceClasses": ["markdown_docs", "book_reference", "obsidian_notes"],
+  "metrics": ["hit@1", "hit@3", "hit@5", "mrr", "empty_result_rate", "duplicate_rate", "latency_p50", "latency_p95"],
+  "documents": [
+    {
+      "id": "doc_ops_runbook",
+      "path": "documents/docs/ops-runbook.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["ops", "runbook", "on-call"]
+    },
+    {
+      "id": "doc_api_design",
+      "path": "documents/docs/api-design.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["api", "conventions"]
+    },
+    {
+      "id": "doc_deployment_guide",
+      "path": "documents/docs/deployment-guide.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["deployment", "rollback"]
+    },
+    {
+      "id": "doc_troubleshooting",
+      "path": "documents/docs/troubleshooting-search.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["troubleshooting", "retrieval"]
+    },
+    {
+      "id": "doc_backup_policy",
+      "path": "documents/docs/backup-policy.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["backup", "recovery"]
+    },
+    {
+      "id": "doc_security_notes",
+      "path": "documents/docs/security-notes.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["security", "auth"]
+    },
+    {
+      "id": "doc_chunking_guide",
+      "path": "documents/docs/chunking-guide.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["chunking"]
+    },
+    {
+      "id": "doc_data_retention",
+      "path": "documents/docs/data-retention.md",
+      "sourceType": "local_folder",
+      "sourceClass": "markdown_docs",
+      "language": "en",
+      "tags": ["retention", "purge"]
+    },
+    {
+      "id": "doc_book_ch01",
+      "path": "documents/book/chapter-01-fundamentals.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "embeddings"]
+    },
+    {
+      "id": "doc_book_ch02",
+      "path": "documents/book/chapter-02-lexical.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "lexical"]
+    },
+    {
+      "id": "doc_book_ch03",
+      "path": "documents/book/chapter-03-hybrid.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "hybrid"]
+    },
+    {
+      "id": "doc_book_ch04",
+      "path": "documents/book/chapter-04-reranking.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "reranking"]
+    },
+    {
+      "id": "doc_book_ch05",
+      "path": "documents/book/chapter-05-evaluation.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "evaluation"]
+    },
+    {
+      "id": "doc_book_ch06",
+      "path": "documents/book/chapter-06-operations.md",
+      "sourceType": "upload",
+      "sourceClass": "book_reference",
+      "language": "en",
+      "tags": ["book", "operations"]
+    },
+    {
+      "id": "doc_vault_decisions",
+      "path": "documents/vault/project-meridian-decisions.md",
+      "sourceType": "obsidian_vault",
+      "sourceClass": "obsidian_notes",
+      "language": "en",
+      "tags": ["obsidian", "decisions"]
+    },
+    {
+      "id": "doc_vault_architecture",
+      "path": "documents/vault/architecture-notes.md",
+      "sourceType": "obsidian_vault",
+      "sourceClass": "obsidian_notes",
+      "language": "en",
+      "tags": ["obsidian", "architecture"]
+    },
+    {
+      "id": "doc_vault_onboarding",
+      "path": "documents/vault/onboarding-notes.md",
+      "sourceType": "obsidian_vault",
+      "sourceClass": "obsidian_notes",
+      "language": "en",
+      "tags": ["obsidian", "onboarding"]
+    },
+    {
+      "id": "doc_vault_incident",
+      "path": "documents/vault/incident-2026-08-14.md",
+      "sourceType": "obsidian_vault",
+      "sourceClass": "obsidian_notes",
+      "language": "en",
+      "tags": ["obsidian", "incident"]
+    },
+    {
+      "id": "doc_vault_meeting",
+      "path": "documents/vault/meeting-2026-09-02-roadmap.md",
+      "sourceType": "obsidian_vault",
+      "sourceClass": "obsidian_notes",
+      "language": "en",
+      "tags": ["obsidian", "roadmap"]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "formatVersion": "infowarden-benchmark-v21-configurations.v1",
+  "qualityRun": false,
+  "splitChecksumSha256": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3",
+  "matrixChecksumSha256": "1f0b604b3a1cd950619fe4d583d9110c27bb4d7cd6787556f0d5589482a8205b",
+  "configurationChecksumSha256": "605a94923f5120003b8a93b37825d84113a367a05b29ce5e8c70725e87cb6c5a",
+  "parameterGrids": {
+    "bm25": {
+      "k1": [0.9, 1.2, 1.5],
+      "b": [0.5, 0.75, 0.9]
+    },
+    "bm25fFieldWeights": [
+      {
+        "id": "balanced",
+        "weights": {"chunkText": 1, "pathTitle": 1.5, "identifierMetadata": 2}
+      },
+      {
+        "id": "text-first",
+        "weights": {"chunkText": 2, "pathTitle": 1, "identifierMetadata": 1}
+      },
+      {
+        "id": "identifier-first",
+        "weights": {"chunkText": 1, "pathTitle": 2, "identifierMetadata": 3}
+      }
+    ],
+    "rrf": {
+      "k": [20, 60, 100],
+      "candidateDepth": [25, 50],
+      "weights": "equal"
+    }
+  },
+  "configurations": [
+    {"id": "dense", "stage": "baseline", "profileKey": "dense", "candidateStrategy": "dense", "reranker": false},
+    {"id": "dense-reranker", "stage": "reranker-pair", "profileKey": "dense-reranker", "candidateStrategy": "dense", "reranker": true},
+    {"id": "lexical-pg-fts", "stage": "lexical-leg-selection", "profileKey": "lexical-pg-fts", "candidateStrategy": "lexical", "lexicalStrategy": "pg-fts", "reranker": false},
+    {"id": "lexical-structured", "stage": "lexical-leg-selection", "profileKey": "lexical-structured", "candidateStrategy": "lexical", "lexicalStrategy": "structured", "reranker": false},
+    {"id": "lexical-bm25", "stage": "lexical-leg-selection", "profileKey": "lexical-bm25", "candidateStrategy": "lexical", "lexicalStrategy": "bm25", "parameterGridRef": "bm25", "reranker": false},
+    {"id": "lexical-bm25f", "stage": "lexical-leg-selection", "profileKey": "lexical-bm25f", "candidateStrategy": "lexical", "lexicalStrategy": "bm25f", "parameterGridRef": "bm25fFieldWeights", "reranker": false},
+    {"id": "lexical-lstar", "stage": "reranker-pair", "profileKey": "L_STAR_FROM_DEV", "candidateStrategy": "lexical", "lexicalStrategy": "L_STAR_FROM_DEV", "reranker": false},
+    {"id": "lexical-lstar-reranker", "stage": "reranker-pair", "profileKey": "L_STAR_FROM_DEV-reranker", "candidateStrategy": "lexical", "lexicalStrategy": "L_STAR_FROM_DEV", "reranker": true},
+    {"id": "fusion-legacy", "stage": "controlled-fusion", "profileKey": "hybrid-legacy", "candidateStrategy": "hybrid", "lexicalStrategy": "L_STAR_FROM_DEV", "fusionStrategy": "legacy-weighted-rank", "reranker": false},
+    {"id": "fusion-rrf", "stage": "controlled-fusion", "profileKey": "hybrid-rrf", "candidateStrategy": "hybrid", "lexicalStrategy": "L_STAR_FROM_DEV", "fusionStrategy": "rrf", "parameterGridRef": "rrf", "reranker": false},
+    {"id": "fusion-dbsf", "stage": "controlled-fusion", "profileKey": "hybrid-dbsf", "candidateStrategy": "hybrid", "lexicalStrategy": "L_STAR_FROM_DEV", "fusionStrategy": "dbsf", "reranker": false},
+    {"id": "fusion-selected", "stage": "reranker-pair", "profileKey": "SELECTED_FUSION_FROM_DEV", "candidateStrategy": "hybrid", "lexicalStrategy": "L_STAR_FROM_DEV", "fusionStrategy": "SELECTED_FUSION_FROM_DEV", "reranker": false},
+    {"id": "fusion-selected-reranker", "stage": "reranker-pair", "profileKey": "SELECTED_FUSION_FROM_DEV-reranker", "candidateStrategy": "hybrid", "lexicalStrategy": "L_STAR_FROM_DEV", "fusionStrategy": "SELECTED_FUSION_FROM_DEV", "reranker": true}
+  ]
+}

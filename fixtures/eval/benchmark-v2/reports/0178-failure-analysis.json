@@ -1,0 +1,992 @@
+{
+  "formatVersion": "infowarden-benchmark-v2-analysis.v1",
+  "task": "0178",
+  "sourceTask": "0185",
+  "sourceRuntimeSha": "e1a01e33d6e7c8d65cb9530ce890887b2233d3d8",
+  "repetitions": 3,
+  "representativeRepetition": 1,
+  "models": {
+    "apiUrl": "http://localhost:3000",
+    "workspaceId": "5f630b83-567a-4d02-8b5f-69f1fb6b856f",
+    "node": "v24.21.0",
+    "environment": "local-qwen-0.6b",
+    "provider": "local-qwen-0.6b",
+    "embeddingModel": "qwen3-embedding-0.6b",
+    "rerankerModel": "qwen3-reranker-0.6b",
+    "embeddingDimension": 1024,
+    "hybridProfileKey": "benchmark-v2-hybrid",
+    "hardware": {
+      "platform": "linux",
+      "architecture": "x64",
+      "osRelease": "6.8.0-142-generic",
+      "cpuModel": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+      "cpuCount": 4,
+      "totalMemoryBytes": 8201256960,
+      "node": "v24.21.0"
+    }
+  },
+  "breakdown": {
+    "EN/dense": {
+      "queryCount": 120,
+      "missCount": 7,
+      "counts": {
+        "exact-term miss": 0,
+        "semantic miss": 0,
+        "hard-negative confusion": 6,
+        "entity/identifier confusion": 1,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_en_q_2569",
+          "mrtydi_en_q_541",
+          "mrtydi_en_q_3562"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_en_q_3707"
+        ],
+        "Russian morphology/inflection": [],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "EN/hybrid": {
+      "queryCount": 120,
+      "missCount": 7,
+      "counts": {
+        "exact-term miss": 0,
+        "semantic miss": 0,
+        "hard-negative confusion": 6,
+        "entity/identifier confusion": 1,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_en_q_2569",
+          "mrtydi_en_q_541",
+          "mrtydi_en_q_3562"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_en_q_3707"
+        ],
+        "Russian morphology/inflection": [],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "EN/hybrid-reranker": {
+      "queryCount": 120,
+      "missCount": 8,
+      "counts": {
+        "exact-term miss": 0,
+        "semantic miss": 0,
+        "hard-negative confusion": 6,
+        "entity/identifier confusion": 1,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 1,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_en_q_2569",
+          "mrtydi_en_q_541",
+          "mrtydi_en_q_3562"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_en_q_3707"
+        ],
+        "Russian morphology/inflection": [],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [
+          "mrtydi_en_q_1210"
+        ],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "RU/dense": {
+      "queryCount": 120,
+      "missCount": 16,
+      "counts": {
+        "exact-term miss": 2,
+        "semantic miss": 0,
+        "hard-negative confusion": 8,
+        "entity/identifier confusion": 3,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mrtydi_ru_q_557",
+          "mrtydi_ru_q_2652"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_ru_q_5609",
+          "mrtydi_ru_q_3612",
+          "mrtydi_ru_q_1486"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_ru_q_1496",
+          "mrtydi_ru_q_5645",
+          "mrtydi_ru_q_1394"
+        ],
+        "Russian morphology/inflection": [
+          "mrtydi_ru_q_90",
+          "mrtydi_ru_q_127",
+          "mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "RU/hybrid": {
+      "queryCount": 120,
+      "missCount": 16,
+      "counts": {
+        "exact-term miss": 2,
+        "semantic miss": 0,
+        "hard-negative confusion": 8,
+        "entity/identifier confusion": 3,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mrtydi_ru_q_557",
+          "mrtydi_ru_q_2652"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_ru_q_5609",
+          "mrtydi_ru_q_3612",
+          "mrtydi_ru_q_1486"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_ru_q_1496",
+          "mrtydi_ru_q_5645",
+          "mrtydi_ru_q_1394"
+        ],
+        "Russian morphology/inflection": [
+          "mrtydi_ru_q_90",
+          "mrtydi_ru_q_127",
+          "mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "RU/hybrid-reranker": {
+      "queryCount": 120,
+      "missCount": 16,
+      "counts": {
+        "exact-term miss": 2,
+        "semantic miss": 0,
+        "hard-negative confusion": 8,
+        "entity/identifier confusion": 3,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 0,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mrtydi_ru_q_557",
+          "mrtydi_ru_q_2652"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mrtydi_ru_q_5609",
+          "mrtydi_ru_q_3612",
+          "mrtydi_ru_q_1486"
+        ],
+        "entity/identifier confusion": [
+          "mrtydi_ru_q_1496",
+          "mrtydi_ru_q_5645",
+          "mrtydi_ru_q_1394"
+        ],
+        "Russian morphology/inflection": [
+          "mrtydi_ru_q_90",
+          "mrtydi_ru_q_127",
+          "mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "MIXED/dense": {
+      "queryCount": 280,
+      "missCount": 35,
+      "counts": {
+        "exact-term miss": 3,
+        "semantic miss": 0,
+        "hard-negative confusion": 16,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 9,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mixed_mrtydi_ru_q_557",
+          "mixed_mrtydi_ru_q_2652",
+          "mixed_mrtydi_ru_q_484"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mixed_mrtydi_en_q_3562",
+          "mixed_mrtydi_en_q_1210",
+          "mixed_mrtydi_en_q_2569"
+        ],
+        "entity/identifier confusion": [
+          "mixed_mrtydi_en_q_3707",
+          "mixed_mrtydi_ru_q_1496",
+          "mixed_mrtydi_ru_q_5645"
+        ],
+        "Russian morphology/inflection": [
+          "mixed_mrtydi_ru_q_90",
+          "mixed_mrtydi_ru_q_127",
+          "mixed_mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [
+          "xquad_cross_language_ru_to_en_571c8539dd7acb1400e4c0e6",
+          "xquad_cross_language_en_to_ru_57339c16d058e614000b5ec5",
+          "xquad_cross_language_ru_to_en_57339c16d058e614000b5ec5"
+        ],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "MIXED/hybrid": {
+      "queryCount": 280,
+      "missCount": 35,
+      "counts": {
+        "exact-term miss": 3,
+        "semantic miss": 0,
+        "hard-negative confusion": 16,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 9,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mixed_mrtydi_ru_q_557",
+          "mixed_mrtydi_ru_q_2652",
+          "mixed_mrtydi_ru_q_484"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mixed_mrtydi_en_q_3562",
+          "mixed_mrtydi_en_q_1210",
+          "mixed_mrtydi_en_q_2569"
+        ],
+        "entity/identifier confusion": [
+          "mixed_mrtydi_en_q_3707",
+          "mixed_mrtydi_ru_q_1496",
+          "mixed_mrtydi_ru_q_5645"
+        ],
+        "Russian morphology/inflection": [
+          "mixed_mrtydi_ru_q_90",
+          "mixed_mrtydi_ru_q_127",
+          "mixed_mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [
+          "xquad_cross_language_ru_to_en_571c8539dd7acb1400e4c0e6",
+          "xquad_cross_language_en_to_ru_57339c16d058e614000b5ec5",
+          "xquad_cross_language_ru_to_en_57339c16d058e614000b5ec5"
+        ],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    },
+    "MIXED/hybrid-reranker": {
+      "queryCount": 280,
+      "missCount": 34,
+      "counts": {
+        "exact-term miss": 3,
+        "semantic miss": 0,
+        "hard-negative confusion": 15,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 3,
+        "cross-language miss": 9,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 0,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0
+      },
+      "examples": {
+        "exact-term miss": [
+          "mixed_mrtydi_ru_q_557",
+          "mixed_mrtydi_ru_q_2652",
+          "mixed_mrtydi_ru_q_484"
+        ],
+        "semantic miss": [],
+        "hard-negative confusion": [
+          "mixed_mrtydi_en_q_3562",
+          "mixed_mrtydi_en_q_2569",
+          "mixed_mrtydi_en_q_1120"
+        ],
+        "entity/identifier confusion": [
+          "mixed_mrtydi_en_q_3707",
+          "mixed_mrtydi_ru_q_1496",
+          "mixed_mrtydi_ru_q_5645"
+        ],
+        "Russian morphology/inflection": [
+          "mixed_mrtydi_ru_q_90",
+          "mixed_mrtydi_ru_q_127",
+          "mixed_mrtydi_ru_q_141"
+        ],
+        "cross-language miss": [
+          "xquad_cross_language_ru_to_en_571c8539dd7acb1400e4c0e6",
+          "xquad_cross_language_en_to_ru_57339c16d058e614000b5ec5",
+          "xquad_cross_language_ru_to_en_57339c16d058e614000b5ec5"
+        ],
+        "chunk-boundary issue": [],
+        "candidate-generation miss": [],
+        "reranker regression": [],
+        "duplicate result": [],
+        "empty result": [],
+        "dataset/qrel ambiguity": []
+      },
+      "failedQueryCount": 0,
+      "emptyCount": 0,
+      "duplicateCount": 0
+    }
+  },
+  "quality": {
+    "EN": {
+      "dense": {
+        "hitAt1": 0.7083333333333334,
+        "hitAt3": 0.8416666666666667,
+        "hitAt5": 0.9416666666666668,
+        "hitAt10": 0.9416666666666668,
+        "mrr": 0.7905555555555556,
+        "ndcgAt10": 0.8278783623427803,
+        "p50": 35.350450999999794,
+        "p95": 67.88183209999985
+      },
+      "hybrid": {
+        "hitAt1": 0.6750000000000002,
+        "hitAt3": 0.8249999999999998,
+        "hitAt5": 0.9416666666666668,
+        "hitAt10": 0.9416666666666668,
+        "mrr": 0.770277777777778,
+        "ndcgAt10": 0.8125991529693092,
+        "p50": 562.8483680000008,
+        "p95": 660.4302279500009
+      },
+      "hybrid-reranker": {
+        "hitAt1": 0.725,
+        "hitAt3": 0.8666666666666667,
+        "hitAt5": 0.9083333333333333,
+        "hitAt10": 0.9333333333333332,
+        "mrr": 0.7988293650793651,
+        "ndcgAt10": 0.8319427752522958,
+        "p50": 785.8765925000043,
+        "p95": 968.8015750000013
+      }
+    },
+    "RU": {
+      "dense": {
+        "hitAt1": 0.5833333333333334,
+        "hitAt3": 0.75,
+        "hitAt5": 0.8666666666666667,
+        "hitAt10": 0.8666666666666667,
+        "mrr": 0.682638888888889,
+        "ndcgAt10": 0.7281792508474229,
+        "p50": 32.40147899999283,
+        "p95": 43.331740050012016
+      },
+      "hybrid": {
+        "hitAt1": 0.5833333333333334,
+        "hitAt3": 0.7416666666666667,
+        "hitAt5": 0.8666666666666667,
+        "hitAt10": 0.8666666666666667,
+        "mrr": 0.6815277777777778,
+        "ndcgAt10": 0.7272363575743773,
+        "p50": 246.3340320000134,
+        "p95": 325.8882520500236
+      },
+      "hybrid-reranker": {
+        "hitAt1": 0.625,
+        "hitAt3": 0.7916666666666666,
+        "hitAt5": 0.8666666666666667,
+        "hitAt10": 0.8666666666666667,
+        "mrr": 0.7197222222222223,
+        "ndcgAt10": 0.7566350964616128,
+        "p50": 512.025773500005,
+        "p95": 767.4601956500032
+      }
+    },
+    "MIXED": {
+      "dense": {
+        "hitAt1": 0.5678571428571428,
+        "hitAt3": 0.7892857142857143,
+        "hitAt5": 0.8678571428571429,
+        "hitAt10": 0.875,
+        "mrr": 0.6869146825396827,
+        "ndcgAt10": 0.7339346367874908,
+        "p50": 33.182366500026546,
+        "p95": 44.26438004996161
+      },
+      "hybrid": {
+        "hitAt1": 0.55,
+        "hitAt3": 0.7785714285714286,
+        "hitAt5": 0.8678571428571429,
+        "hitAt10": 0.875,
+        "mrr": 0.6759623015873016,
+        "ndcgAt10": 0.7256641990588816,
+        "p50": 372.83628950000275,
+        "p95": 650.1108432000211
+      },
+      "hybrid-reranker": {
+        "hitAt1": 0.5964285714285714,
+        "hitAt3": 0.8178571428571427,
+        "hitAt5": 0.875,
+        "hitAt10": 0.8785714285714286,
+        "mrr": 0.7135714285714286,
+        "ndcgAt10": 0.7553117679926,
+        "p50": 673.4131255000248,
+        "p95": 929.4240760500192
+      }
+    }
+  },
+  "crossChecks": [
+    {
+      "partition": "EN",
+      "mode": "dense",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "EN",
+      "mode": "hybrid",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "EN",
+      "mode": "hybrid-reranker",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "RU",
+      "mode": "dense",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "RU",
+      "mode": "hybrid",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "RU",
+      "mode": "hybrid-reranker",
+      "queryCount": 120,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "MIXED",
+      "mode": "dense",
+      "queryCount": 280,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "MIXED",
+      "mode": "hybrid",
+      "queryCount": 280,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    },
+    {
+      "partition": "MIXED",
+      "mode": "hybrid-reranker",
+      "queryCount": 280,
+      "failed": 0,
+      "empty": 0,
+      "duplicates": 0
+    }
+  ],
+  "categories": [
+    "exact-term miss",
+    "semantic miss",
+    "hard-negative confusion",
+    "entity/identifier confusion",
+    "Russian morphology/inflection",
+    "cross-language miss",
+    "chunk-boundary issue",
+    "candidate-generation miss",
+    "reranker regression",
+    "duplicate result",
+    "empty result",
+    "dataset/qrel ambiguity"
+  ],
+  "notes": [
+    "Counts use repetition 1 as the representative quality run because all three repetitions have identical query-level quality outcomes; repetition 2 and 3 were checked for the same miss signatures.",
+    "No source text is included; examples are stable query IDs only.",
+    "chunk-boundary issue, candidate-generation miss, and dataset/qrel ambiguity have no direct positive diagnostic in the committed trace and are reported as none observed rather than inferred."
+  ],
+  "sourceAggregate": {
+    "path": "0185-aggregate.json",
+    "sha256": "6bbb87f9c5468be5c426d57f73e2b3b0b260a4598d2b991fd02b22e285cfbdcb"
+  },
+  "verdict": {
+    "status": "PASS",
+    "benchmarkDifficulty": "PASS",
+    "publicationClaim": false
+  },
+  "saturation": {
+    "status": "PASS",
+    "thresholds": {
+      "hit_at_10": 0.98,
+      "hit_at_3": 0.95,
+      "mrr": 0.95
+    },
+    "warnings": {
+      "EN": false,
+      "RU": false,
+      "MIXED": false
+    },
+    "overall": "no partition triggered saturation warning"
+  },
+  "pairedBootstrap": {
+    "EN": [
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 120,
+        "meanDifference": 0.02027777777777778,
+        "ci95": [
+          0.005277777777777778,
+          0.03833333333333333
+        ],
+        "seed": 3784836627,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 120,
+        "meanDifference": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "seed": 2676741437,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": -0.008273809523809527,
+        "ci95": [
+          -0.048412698412698414,
+          0.031031746031746032
+        ],
+        "seed": 4025068293,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": 0.03333333333333333,
+        "ci95": [
+          0.008333333333333333,
+          0.06666666666666667
+        ],
+        "seed": 887987568,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": -0.0285515873015873,
+        "ci95": [
+          -0.07138888888888889,
+          0.013670634920634923
+        ],
+        "seed": 3533793807,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": 0.03333333333333333,
+        "ci95": [
+          0.008333333333333333,
+          0.06666666666666667
+        ],
+        "seed": 3319242392,
+        "resamples": 10000
+      }
+    ],
+    "RU": [
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 120,
+        "meanDifference": 0.001111111111111111,
+        "ci95": [
+          0,
+          0.0033333333333333327
+        ],
+        "seed": 3457197564,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 120,
+        "meanDifference": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "seed": 45101986,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": -0.037083333333333336,
+        "ci95": [
+          -0.07749999999999999,
+          0.0018055555555555553
+        ],
+        "seed": 2826733458,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "seed": 1450266812,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": -0.03819444444444445,
+        "ci95": [
+          -0.07861111111111113,
+          0.001111111111111111
+        ],
+        "seed": 1223739999,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 120,
+        "meanDifference": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "seed": 2035100915,
+        "resamples": 10000
+      }
+    ],
+    "MIXED": [
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 280,
+        "meanDifference": 0.010952380952380953,
+        "ci95": [
+          0.0036309523809523805,
+          0.01988095238095238
+        ],
+        "seed": 3119196434,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid",
+        "queryCount": 280,
+        "meanDifference": 0,
+        "ci95": [
+          0,
+          0
+        ],
+        "seed": 2392337513,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 280,
+        "meanDifference": -0.02665674603174604,
+        "ci95": [
+          -0.052073412698412674,
+          -0.0015972222222222236
+        ],
+        "seed": 2048709049,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "dense",
+        "right": "hybrid-reranker",
+        "queryCount": 280,
+        "meanDifference": -0.007142857142857143,
+        "ci95": [
+          -0.017857142857142856,
+          0
+        ],
+        "seed": 3037853248,
+        "resamples": 10000
+      },
+      {
+        "metric": "mrr",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 280,
+        "meanDifference": -0.037609126984126974,
+        "ci95": [
+          -0.0640277777777778,
+          -0.011220238095238092
+        ],
+        "seed": 4053665955,
+        "resamples": 10000
+      },
+      {
+        "metric": "hit_at_5",
+        "left": "hybrid",
+        "right": "hybrid-reranker",
+        "queryCount": 280,
+        "meanDifference": -0.007142857142857143,
+        "ci95": [
+          -0.017857142857142856,
+          0
+        ],
+        "seed": 1599273023,
+        "resamples": 10000
+      }
+    ]
+  },
+  "meaningfulComparisons": {
+    "EN": [
+      {
+        "comparison": "dense vs hybrid",
+        "metric": "MRR",
+        "signedDifference": 0.02027777777777778,
+        "direction": "dense higher",
+        "ci95": [
+          0.005277777777777778,
+          0.03833333333333333
+        ],
+        "meetsFrozenDelta": true
+      },
+      {
+        "comparison": "dense vs hybrid-reranker",
+        "metric": "Hit@5",
+        "signedDifference": 0.03333333333333333,
+        "direction": "dense higher",
+        "ci95": [
+          0.008333333333333333,
+          0.06666666666666667
+        ],
+        "meetsFrozenDelta": true
+      }
+    ],
+    "RU": [
+      {
+        "comparison": "dense vs hybrid-reranker",
+        "metric": "MRR",
+        "signedDifference": -0.037083333333333336,
+        "direction": "hybrid-reranker higher",
+        "ci95": [
+          -0.07749999999999999,
+          0.0018055555555555553
+        ],
+        "meetsFrozenDelta": true,
+        "intervalExcludesZero": false
+      }
+    ],
+    "MIXED": [
+      {
+        "comparison": "dense vs hybrid-reranker",
+        "metric": "MRR",
+        "signedDifference": -0.02665674603174604,
+        "direction": "hybrid-reranker higher",
+        "ci95": [
+          -0.052073412698412674,
+          -0.0015972222222222236
+        ],
+        "meetsFrozenDelta": true,
+        "intervalExcludesZero": true
+      },
+      {
+        "comparison": "hybrid vs hybrid-reranker",
+        "metric": "MRR",
+        "signedDifference": -0.037609126984126974,
+        "direction": "hybrid-reranker higher",
+        "ci95": [
+          -0.0640277777777778,
+          -0.011220238095238092
+        ],
+        "meetsFrozenDelta": true,
+        "intervalExcludesZero": true
+      }
+    ]
+  }
+}

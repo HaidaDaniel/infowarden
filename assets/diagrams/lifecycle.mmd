@@ -1,0 +1,12 @@
+flowchart TD
+  Input["Scan read-only source / import managed upload"] --> Revision["Immutable source revision"]
+  Revision --> Parse["Deterministic parse + chunk"]
+  Parse --> Canonical[("PostgreSQL documents + chunks")]
+  Canonical --> Vectors["Materialize dense vectors"]
+  Vectors --> Validate["Validate complete workspace serving manifest"]
+  Validate -->|success| Activate["Activate serving revision"]
+  Validate -->|failure| Keep["Keep prior serving revision; report failure / retry"]
+  Vectors -->|failure| Keep
+  Activate --> Retrieve["Retrieve only active source revisions + provenance"]
+  Activate --> Cleanup["Retryable superseded-index cleanup"]
+  Canonical -. lexical serving .-> Retrieve

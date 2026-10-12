@@ -1,0 +1,840 @@
+{
+  "formatVersion": "infowarden-benchmark-v2-aggregate.v1",
+  "task": "0185",
+  "benchmarkRevision": "e1a01e33d6e7c8d65cb9530ce890887b2233d3d8",
+  "repetitions": 3,
+  "partitions": {
+    "EN": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.7083333333333334,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.8416666666666667,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.9416666666666668,
+            "std": 1.1102230246251565e-16
+          },
+          "hit_at_10": {
+            "mean": 0.9416666666666668,
+            "std": 1.1102230246251565e-16
+          },
+          "mrr": {
+            "mean": 0.7905555555555556,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.8278783623427803,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 35.350450999999794,
+          "p95": 67.88183209999985
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6750000000000002,
+            "std": 1.1102230246251565e-16
+          },
+          "hit_at_3": {
+            "mean": 0.8249999999999998,
+            "std": 1.1102230246251565e-16
+          },
+          "hit_at_5": {
+            "mean": 0.9416666666666668,
+            "std": 1.1102230246251565e-16
+          },
+          "hit_at_10": {
+            "mean": 0.9416666666666668,
+            "std": 1.1102230246251565e-16
+          },
+          "mrr": {
+            "mean": 0.770277777777778,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.8125991529693092,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 562.8483680000008,
+          "p95": 660.4302279500009
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.725,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.9083333333333333,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.9333333333333332,
+            "std": 1.1102230246251565e-16
+          },
+          "mrr": {
+            "mean": 0.7988293650793651,
+            "std": 1.1102230246251565e-16
+          },
+          "ndcg_at_10": {
+            "mean": 0.8319427752522958,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 785.8765925000043,
+          "p95": 968.8015750000013
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.02027777777777778,
+          "ci95": [
+            0.005277777777777778,
+            0.03833333333333333
+          ],
+          "seed": 3784836627,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 2676741437,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.008273809523809527,
+          "ci95": [
+            -0.048412698412698414,
+            0.031031746031746032
+          ],
+          "seed": 4025068293,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.03333333333333333,
+          "ci95": [
+            0.008333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 887987568,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.0285515873015873,
+          "ci95": [
+            -0.07138888888888889,
+            0.013670634920634923
+          ],
+          "seed": 3533793807,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.03333333333333333,
+          "ci95": [
+            0.008333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 3319242392,
+          "resamples": 10000
+        }
+      ]
+    },
+    "RU": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5833333333333334,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.75,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.682638888888889,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.7281792508474229,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 32.40147899999283,
+          "p95": 43.331740050012016
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5833333333333334,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.7416666666666667,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.6815277777777778,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.7272363575743773,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 246.3340320000134,
+          "p95": 325.8882520500236
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.625,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.7916666666666666,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.8666666666666667,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.7197222222222223,
+            "std": 1.1102230246251565e-16
+          },
+          "ndcg_at_10": {
+            "mean": 0.7566350964616128,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 512.025773500005,
+          "p95": 767.4601956500032
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.001111111111111111,
+          "ci95": [
+            0,
+            0.0033333333333333327
+          ],
+          "seed": 3457197564,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 45101986,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.037083333333333336,
+          "ci95": [
+            -0.07749999999999999,
+            0.0018055555555555553
+          ],
+          "seed": 2826733458,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 1450266812,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.03819444444444445,
+          "ci95": [
+            -0.07861111111111113,
+            0.001111111111111111
+          ],
+          "seed": 1223739999,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 2035100915,
+          "resamples": 10000
+        }
+      ]
+    },
+    "MIXED": {
+      "dense": {
+        "mode": {
+          "key": "dense",
+          "label": "dense-only",
+          "profileKey": "default",
+          "lexical": false,
+          "reranker": false
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5678571428571428,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.7892857142857143,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.8678571428571429,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.875,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.6869146825396827,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.7339346367874908,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 33.182366500026546,
+          "p95": 44.26438004996161
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid": {
+        "mode": {
+          "key": "hybrid",
+          "label": "hybrid",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": false
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.55,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.7785714285714286,
+            "std": 0
+          },
+          "hit_at_5": {
+            "mean": 0.8678571428571429,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.875,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.6759623015873016,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.7256641990588816,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 372.83628950000275,
+          "p95": 650.1108432000211
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "hybrid-reranker": {
+        "mode": {
+          "key": "hybrid-reranker",
+          "label": "hybrid + reranker",
+          "profileKey": "benchmark-v2-hybrid",
+          "lexical": true,
+          "reranker": true
+        },
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5964285714285714,
+            "std": 0
+          },
+          "hit_at_3": {
+            "mean": 0.8178571428571427,
+            "std": 1.1102230246251565e-16
+          },
+          "hit_at_5": {
+            "mean": 0.875,
+            "std": 0
+          },
+          "hit_at_10": {
+            "mean": 0.8785714285714286,
+            "std": 0
+          },
+          "mrr": {
+            "mean": 0.7135714285714286,
+            "std": 0
+          },
+          "ndcg_at_10": {
+            "mean": 0.7553117679926,
+            "std": 0
+          },
+          "empty_rate": {
+            "mean": 0,
+            "std": 0
+          },
+          "duplicate_rate": {
+            "mean": 0,
+            "std": 0
+          }
+        },
+        "latencyMs": {
+          "p50": 673.4131255000248,
+          "p95": 929.4240760500192
+        },
+        "failedQueryCount": 0,
+        "rawResultCount": null,
+        "duplicateCount": null,
+        "unidentifiedCount": null
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0.010952380952380953,
+          "ci95": [
+            0.0036309523809523805,
+            0.01988095238095238
+          ],
+          "seed": 3119196434,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 2392337513,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.02665674603174604,
+          "ci95": [
+            -0.052073412698412674,
+            -0.0015972222222222236
+          ],
+          "seed": 2048709049,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.007142857142857143,
+          "ci95": [
+            -0.017857142857142856,
+            0
+          ],
+          "seed": 3037853248,
+          "resamples": 10000
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.037609126984126974,
+          "ci95": [
+            -0.0640277777777778,
+            -0.011220238095238092
+          ],
+          "seed": 4053665955,
+          "resamples": 10000
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.007142857142857143,
+          "ci95": [
+            -0.017857142857142856,
+            0
+          ],
+          "seed": 1599273023,
+          "resamples": 10000
+        }
+      ]
+    }
+  },
+  "configuration": {
+    "runtime": {
+      "apiUrl": "http://localhost:3000",
+      "workspaceId": "5f630b83-567a-4d02-8b5f-69f1fb6b856f",
+      "node": "v24.21.0",
+      "environment": "local-qwen-0.6b",
+      "provider": "local-qwen-0.6b",
+      "embeddingModel": "qwen3-embedding-0.6b",
+      "rerankerModel": "qwen3-reranker-0.6b",
+      "embeddingDimension": 1024,
+      "hybridProfileKey": "benchmark-v2-hybrid",
+      "hardware": {
+        "platform": "linux",
+        "architecture": "x64",
+        "osRelease": "6.8.0-142-generic",
+        "cpuModel": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+        "cpuCount": 4,
+        "totalMemoryBytes": 8201256960,
+        "node": "v24.21.0"
+      }
+    },
+    "topK": 10,
+    "datasetChecksums": {
+      "en": {
+        "id": "benchmark-v2-en",
+        "version": "2026-10-09-mrtydi-v1.1-train-en-120-hash-v1",
+        "manifestSha256": "1452df8459eda120d7d8c408825cf2b939c05623d8448f994bde69dae608ba3c",
+        "qrelsSha256": "0664a6bd82d23072954147d4bc9aa4f1462837628621d249cd7083693b44747a",
+        "semanticReviewSha256": "9e037efef0127ea28059b81afaf932f9303f29bd021a24dc3df6a72322ddd50e"
+      },
+      "ru": {
+        "id": "benchmark-v2-ru",
+        "version": "2026-10-09-mrtydi-v1.1-train-ru-120-hash-v2-morphology-v1",
+        "manifestSha256": "2c26a28ca8a4060633e311f8865751a4a399840f97fe6b634450d5dfdd73a3cb",
+        "qrelsSha256": "1186d425bb8633daba889e616dbfcc7e3107a805c124fc72c51ea26840835e5f",
+        "semanticReviewSha256": "34afe983e0b01533bc8e7fd8afe77496b3ffebcd1063124928996b743b65eaf5"
+      },
+      "mixed": {
+        "id": "benchmark-v2-mixed",
+        "version": "2026-10-09-mrtydi-v1.1-train-en-ru-xquad-r-280-hash-v2-morphology-v1",
+        "manifestSha256": "e72b7eb17bd347923c5956be1ea413aa9ae573eb6a0ad6c4754c27583e8e287a",
+        "qrelsSha256": "5a109932ef8355cc2dd98d6b110cb8cd89ed3233f2179facdcc8045de0af776e",
+        "semanticReviewSha256": "1b38a36d7a0043f0c408336cf37db1a11f96c8c26b528c8276f51adbff9acf0c"
+      }
+    },
+    "indexBuild": {
+      "topK": 10,
+      "query_count": 120,
+      "corpus_document_count": 839,
+      "corpus_chunk_count": 3268,
+      "index_build_duration_ms": 145909,
+      "index_build_id": "0459bc5c-f8f2-4dea-a1a6-0cdc3fdb3d19",
+      "provider_call_count": 2405,
+      "retry_count": 0,
+      "identity_path_pattern": "en/<frozen-document-id>.md"
+    },
+    "unsupportedModes": [
+      {
+        "key": "lexical-only",
+        "reason": "runtime has no product-supported zero-dense contract"
+      }
+    ],
+    "qualityRunCount": 27,
+    "failedQualityRuns": 0,
+    "warmup": {
+      "queryCountPerRun": 10,
+      "requestCountPerRepetition": 90,
+      "excludedFromLatency": true,
+      "selection": "first 10 frozen query IDs in each partition/mode run"
+    },
+    "evidence": {
+      "perQueryJsonl": [
+        {
+          "repetition": 1,
+          "path": "../runs/0185-repetition-1/per-query.jsonl",
+          "lineCount": 1560,
+          "sha256": "979ba30fa5815041c2aee562f4d35c74a0f9d81aeeb213d7bac1a64ba9a53eb6"
+        },
+        {
+          "repetition": 2,
+          "path": "../runs/0185-repetition-2/per-query.jsonl",
+          "lineCount": 1560,
+          "sha256": "531a44a36ff9789f0586196311559818f983c2bb68fc4401ecfc0397fce53f23"
+        },
+        {
+          "repetition": 3,
+          "path": "../runs/0185-repetition-3/per-query.jsonl",
+          "lineCount": 1560,
+          "sha256": "58435d25ca5a1c526bea2327ace8f96d47e215acd0a3442255aeeb69703fabcf"
+        }
+      ],
+      "perQuerySchema": "infowarden-benchmark-v2-per-query.v1",
+      "rawResultPolicy": "sanitized ranked IDs and diagnostics; no source text"
+    },
+    "providerCallCountNote": "Repetition 1 reports 2405 provider calls because it includes 205 one-time cold provider/index setup calls; repetitions 2 and 3 report 2200 after cache reuse. This operational counter difference is retained as evidence and is not used to alter quality or latency results."
+  },
+  "saturation": {
+    "thresholds": {
+      "hit_at_10": 0.98,
+      "hit_at_3": 0.95,
+      "mrr": 0.95
+    },
+    "warnings": {
+      "EN": false,
+      "RU": false,
+      "MIXED": false
+    },
+    "overall": "no partition triggered saturation warning"
+  }
+}

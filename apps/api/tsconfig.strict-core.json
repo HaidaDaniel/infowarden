@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/jobs/indexing-rollback.ts",
+    "src/jobs/indexing-resource-snapshot.ts",
+    "src/jobs/indexing-resource-snapshot.spec.ts",
+    "src/jobs/indexing.types.ts",
+    "src/jobs/local-folder-indexer.ts",
+    "src/ingestion/micromatch.d.ts",
+    "src/retrieval/retrieval-context-packaging.ts",
+    "src/retrieval/retrieval-ranking.pipeline.ts",
+    "src/retrieval/retrieval-ranking.pipeline.spec.ts",
+    "src/retrieval/retrieval.types.ts"
+  ]
+}

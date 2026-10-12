@@ -1,0 +1,13 @@
+flowchart LR
+  Studio["Studio / React"] -->|REST| API["NestJS API + workers"]
+  Agent["Agent clients"] -->|REST| API
+  Agent -->|stdio / HTTP| MCP["MCP"]
+  MCP -->|REST| API
+  Sources["Read-only sources"] -->|ingestion| API
+  Uploads["Managed uploads"] -->|source bytes| API
+  API -->|canonical state| PG[("PostgreSQL")]
+  API -->|jobs| Redis[("Redis")]
+  API -->|derived vectors| Qdrant[("Qdrant")]
+  API -->|dense| Embedding["Embedding endpoint"]
+  API -. optional .-> Reranker["Reranker"]
+  API -. optional answer .-> LLM["Answer LLM"]

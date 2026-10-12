@@ -1,0 +1,1056 @@
+{
+  "formatVersion": "infowarden-benchmark-v21-holdout-report.v1",
+  "qualityRun": true,
+  "split": {
+    "path": "fixtures/eval/benchmark-v2/metadata/v2.1-split.json",
+    "checksumSha256": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3",
+    "assignmentCount": 520,
+    "devCount": 312,
+    "holdoutCount": 208,
+    "executedSplit": "HOLDOUT"
+  },
+  "methodology": {
+    "matrixChecksumSha256": "1f0b604b3a1cd950619fe4d583d9110c27bb4d7cd6787556f0d5589482a8205b",
+    "configurationChecksumSha256": "605a94923f5120003b8a93b37825d84113a367a05b29ce5e8c70725e87cb6c5a",
+    "selectedFromDevCandidate": "2026-10-10T10:18:39.421Z",
+    "tuningPerformed": false,
+    "historicalV2PerQueryHoldoutRead": false,
+    "repetitions": 3
+  },
+  "runtime": {
+    "apiUrl": "http://localhost:3000",
+    "node": "v24.21.0",
+    "environment": "local-dev-external",
+    "provider": "local-90-qwen3-embedding-0.6b",
+    "embeddingModel": "qwen3-embedding-0.6b",
+    "rerankerModel": "qwen3-reranker-0.6b",
+    "embeddingDimension": 1024,
+    "embeddingBaseUrl": "http://192.168.0.90:8001/v1",
+    "rerankerBaseUrl": "http://192.168.0.90:8002",
+    "modelVerification": {
+      "embedding": {
+        "url": "http://192.168.0.90:8001/v1/models",
+        "expectedModel": "qwen3-embedding-0.6b",
+        "advertisedModels": [
+          "qwen3-embedding-0.6b"
+        ]
+      },
+      "reranker": {
+        "url": "http://192.168.0.90:8002/v1/models",
+        "expectedModel": "qwen3-reranker-0.6b",
+        "advertisedModels": [
+          "qwen3-reranker-0.6b"
+        ]
+      }
+    }
+  },
+  "configurations": [
+    {
+      "id": "dense",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50
+      },
+      "parameterHash": "399f7f619a99c82dc1ba4f26e1a5ee392d3995d16f6dbb02681230a14990f484",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 0
+      }
+    },
+    {
+      "id": "dense-reranker",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "1218bf3e1c3eec6f0c7ebc71203b0d76b3dfdbc6fb8fbe185552a6685057f3ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 0
+      }
+    },
+    {
+      "id": "lexical-lstar",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75
+      },
+      "parameterHash": "5b6b2d7a010b6bcb3fa055a4da1e6af539c005e9e31157d0e8b2e837e384bc2f",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": false,
+        "cost": 1,
+        "complexity": 3
+      }
+    },
+    {
+      "id": "lexical-lstar-reranker",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "57cfc3997cccc10c7717eb38c4803e1a9705120b59eae8339cedf7308562e494",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": true,
+        "cost": 3,
+        "complexity": 3
+      }
+    },
+    {
+      "id": "fusion-legacy",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50
+      },
+      "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 4
+      }
+    },
+    {
+      "id": "fusion-rrf-k-60-depth-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 60,
+        "candidateDepth": 25
+      },
+      "parameterHash": "ce44784394703e41c261bd11c402d4b0e35fc449625bdcae494540923f5b360b",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 25
+      },
+      "parameterHash": "a9092d1c4f4a5849fc7e8f01d5ba2b3129cd3a805869d983f0b2e52471d59444",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      }
+    },
+    {
+      "id": "fusion-selected-reranker",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "cc1782645a11f35cfe8336ce6f3c7c2ddaafcff7518f22532369f09d88510b45",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 4
+      }
+    }
+  ],
+  "workspaces": [
+    {
+      "partition": "EN",
+      "workspaceId": "064702b7-df89-4138-a634-88c3f07faaf5",
+      "sourceId": "fb8341c3-09e9-4cfe-af67-d6d5563e7f72",
+      "indexJobId": "d92b49a8-e427-40b5-8e18-0b9457d8c20e",
+      "indexBuildDurationMs": 40128,
+      "documentCount": 839,
+      "holdoutQueryCount": 48,
+      "resourceObservation": {
+        "lifecycle": {
+          "status": "loaded",
+          "activeIndexVersionId": "9c17c1b4-4899-44ba-83f3-4cccf9901d2f",
+          "vectorCollectionName": "kb-064702b7-df89-4138-a634-88c3f07faaf5",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "placementState": "loaded",
+          "collectionAvailable": true
+        },
+        "estimate": {
+          "workspace": {
+            "id": "064702b7-df89-4138-a634-88c3f07faaf5",
+            "slug": "benchmark-v21-holdout-en-1791630469824",
+            "name": "Benchmark v2.1 HOLDOUT EN",
+            "workspaceKind": "benchmarks"
+          },
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "storageProfile": "balanced",
+            "onDiskVectors": true,
+            "onDiskPayload": true,
+            "onDiskHnsw": false,
+            "scalarQuantization": true
+          },
+          "documentCount": 839,
+          "sourceFileCount": 839,
+          "sourceContentBytes": 547895,
+          "estimatedChunks": 842,
+          "embeddingDimension": 1024,
+          "rawVectorBytes": 3448832,
+          "qdrantDiskBytesLow": 5518131,
+          "qdrantDiskBytesHigh": 8277197,
+          "estimatedRamBytes": 1724416,
+          "target": {
+            "cpuCores": 4,
+            "ramBytes": 8589934592
+          },
+          "warnings": [],
+          "generatedAt": "2026-10-10T11:08:30.180Z"
+        },
+        "resources": {
+          "estimate": {
+            "workspace": {
+              "id": "064702b7-df89-4138-a634-88c3f07faaf5",
+              "slug": "benchmark-v21-holdout-en-1791630469824",
+              "name": "Benchmark v2.1 HOLDOUT EN",
+              "workspaceKind": "benchmarks"
+            },
+            "storageProfile": "balanced",
+            "storageConfig": {
+              "storageProfile": "balanced",
+              "onDiskVectors": true,
+              "onDiskPayload": true,
+              "onDiskHnsw": false,
+              "scalarQuantization": true
+            },
+            "documentCount": 839,
+            "sourceFileCount": 839,
+            "sourceContentBytes": 547895,
+            "estimatedChunks": 842,
+            "embeddingDimension": 1024,
+            "rawVectorBytes": 3448832,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197,
+            "estimatedRamBytes": 1724416,
+            "target": {
+              "cpuCores": 4,
+              "ramBytes": 8589934592
+            },
+            "warnings": [],
+            "generatedAt": "2026-10-10T11:08:30.180Z"
+          },
+          "requested": {
+            "kind": "requested",
+            "requestedAt": "2026-10-10T11:07:50.421Z",
+            "storageConfig": {
+              "onDiskHnsw": false,
+              "onDiskPayload": true,
+              "onDiskVectors": true,
+              "storageProfile": "balanced",
+              "scalarQuantization": true
+            },
+            "storageProfile": "balanced"
+          },
+          "allocated": {
+            "kind": "allocated",
+            "allocatedAt": "2026-10-10T11:08:29.623Z",
+            "collectionName": "kb-064702b7-df89-4138-a634-88c3f07faaf5",
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041"
+          },
+          "observed": {
+            "kind": "observed",
+            "chunks": 842,
+            "capturedAt": "2026-10-10T11:08:29.623Z",
+            "measuredAt": "2026-10-10T11:08:29.623Z",
+            "collectionName": "kb-064702b7-df89-4138-a634-88c3f07faaf5",
+            "rawVectorBytes": 3448832,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 842,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197,
+            "collectionAvailable": true
+          }
+        },
+        "activeIndexVersion": {
+          "id": "9c17c1b4-4899-44ba-83f3-4cccf9901d2f",
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "onDiskHnsw": false,
+            "onDiskPayload": true,
+            "onDiskVectors": true,
+            "storageProfile": "balanced",
+            "scalarQuantization": true
+          },
+          "resourceActual": {
+            "kind": "observed",
+            "chunks": 842,
+            "capturedAt": "2026-10-10T11:08:29.623Z",
+            "measuredAt": "2026-10-10T11:08:29.623Z",
+            "collectionName": "kb-064702b7-df89-4138-a634-88c3f07faaf5",
+            "rawVectorBytes": 3448832,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 842,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197
+          }
+        }
+      }
+    },
+    {
+      "partition": "RU",
+      "workspaceId": "96dcc0ed-dc22-433a-9427-6acb248442f2",
+      "sourceId": "c3109993-2385-4489-89c1-b4673ab79cfe",
+      "indexJobId": "559b69fc-f265-4717-bed4-574c0361ceda",
+      "indexBuildDurationMs": 86176,
+      "documentCount": 834,
+      "holdoutQueryCount": 48,
+      "resourceObservation": {
+        "lifecycle": {
+          "status": "loaded",
+          "activeIndexVersionId": "46ba7762-67e7-4112-8431-012f2e9353c5",
+          "vectorCollectionName": "kb-96dcc0ed-dc22-433a-9427-6acb248442f2",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "placementState": "loaded",
+          "collectionAvailable": true
+        },
+        "estimate": {
+          "workspace": {
+            "id": "96dcc0ed-dc22-433a-9427-6acb248442f2",
+            "slug": "benchmark-v21-holdout-ru-1791630510206",
+            "name": "Benchmark v2.1 HOLDOUT RU",
+            "workspaceKind": "benchmarks"
+          },
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "storageProfile": "balanced",
+            "onDiskVectors": true,
+            "onDiskPayload": true,
+            "onDiskHnsw": false,
+            "scalarQuantization": true
+          },
+          "documentCount": 834,
+          "sourceFileCount": 834,
+          "sourceContentBytes": 982593,
+          "estimatedChunks": 842,
+          "embeddingDimension": 1024,
+          "rawVectorBytes": 3448832,
+          "qdrantDiskBytesLow": 5518131,
+          "qdrantDiskBytesHigh": 8277197,
+          "estimatedRamBytes": 1724416,
+          "target": {
+            "cpuCores": 4,
+            "ramBytes": 8589934592
+          },
+          "warnings": [],
+          "generatedAt": "2026-10-10T11:09:56.516Z"
+        },
+        "resources": {
+          "estimate": {
+            "workspace": {
+              "id": "96dcc0ed-dc22-433a-9427-6acb248442f2",
+              "slug": "benchmark-v21-holdout-ru-1791630510206",
+              "name": "Benchmark v2.1 HOLDOUT RU",
+              "workspaceKind": "benchmarks"
+            },
+            "storageProfile": "balanced",
+            "storageConfig": {
+              "storageProfile": "balanced",
+              "onDiskVectors": true,
+              "onDiskPayload": true,
+              "onDiskHnsw": false,
+              "scalarQuantization": true
+            },
+            "documentCount": 834,
+            "sourceFileCount": 834,
+            "sourceContentBytes": 982593,
+            "estimatedChunks": 842,
+            "embeddingDimension": 1024,
+            "rawVectorBytes": 3448832,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197,
+            "estimatedRamBytes": 1724416,
+            "target": {
+              "cpuCores": 4,
+              "ramBytes": 8589934592
+            },
+            "warnings": [],
+            "generatedAt": "2026-10-10T11:09:56.516Z"
+          },
+          "requested": {
+            "kind": "requested",
+            "requestedAt": "2026-10-10T11:08:30.516Z",
+            "storageConfig": {
+              "onDiskHnsw": false,
+              "onDiskPayload": true,
+              "onDiskVectors": true,
+              "storageProfile": "balanced",
+              "scalarQuantization": true
+            },
+            "storageProfile": "balanced"
+          },
+          "allocated": {
+            "kind": "allocated",
+            "allocatedAt": "2026-10-10T11:09:54.696Z",
+            "collectionName": "kb-96dcc0ed-dc22-433a-9427-6acb248442f2",
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041"
+          },
+          "observed": {
+            "kind": "observed",
+            "chunks": 842,
+            "capturedAt": "2026-10-10T11:09:54.696Z",
+            "measuredAt": "2026-10-10T11:09:54.696Z",
+            "collectionName": "kb-96dcc0ed-dc22-433a-9427-6acb248442f2",
+            "rawVectorBytes": 3448832,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 842,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197,
+            "collectionAvailable": true
+          }
+        },
+        "activeIndexVersion": {
+          "id": "46ba7762-67e7-4112-8431-012f2e9353c5",
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "onDiskHnsw": false,
+            "onDiskPayload": true,
+            "onDiskVectors": true,
+            "storageProfile": "balanced",
+            "scalarQuantization": true
+          },
+          "resourceActual": {
+            "kind": "observed",
+            "chunks": 842,
+            "capturedAt": "2026-10-10T11:09:54.696Z",
+            "measuredAt": "2026-10-10T11:09:54.696Z",
+            "collectionName": "kb-96dcc0ed-dc22-433a-9427-6acb248442f2",
+            "rawVectorBytes": 3448832,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 842,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 5518131,
+            "qdrantDiskBytesHigh": 8277197
+          }
+        }
+      }
+    },
+    {
+      "partition": "MIXED",
+      "workspaceId": "0e9e090f-10fa-47df-89fe-58dc76bd0874",
+      "sourceId": "ef88556a-afdf-42e9-a780-8b03e9dfeb82",
+      "indexJobId": "84fc4052-3119-4092-8ced-ac2b3e9c77de",
+      "indexBuildDurationMs": 80167,
+      "documentCount": 1573,
+      "holdoutQueryCount": 112,
+      "resourceObservation": {
+        "lifecycle": {
+          "status": "loaded",
+          "activeIndexVersionId": "8bbfac4e-36e2-41da-88ba-3662e3ef6267",
+          "vectorCollectionName": "kb-0e9e090f-10fa-47df-89fe-58dc76bd0874",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "placementState": "loaded",
+          "collectionAvailable": true
+        },
+        "estimate": {
+          "workspace": {
+            "id": "0e9e090f-10fa-47df-89fe-58dc76bd0874",
+            "slug": "benchmark-v21-holdout-mixed-1791630596525",
+            "name": "Benchmark v2.1 HOLDOUT MIXED",
+            "workspaceKind": "benchmarks"
+          },
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "storageProfile": "balanced",
+            "onDiskVectors": true,
+            "onDiskPayload": true,
+            "onDiskHnsw": false,
+            "scalarQuantization": true
+          },
+          "documentCount": 1573,
+          "sourceFileCount": 1573,
+          "sourceContentBytes": 1498039,
+          "estimatedChunks": 1584,
+          "embeddingDimension": 1024,
+          "rawVectorBytes": 6488064,
+          "qdrantDiskBytesLow": 10380902,
+          "qdrantDiskBytesHigh": 15571354,
+          "estimatedRamBytes": 3244032,
+          "target": {
+            "cpuCores": 4,
+            "ramBytes": 8589934592
+          },
+          "warnings": [],
+          "generatedAt": "2026-10-10T11:11:17.078Z"
+        },
+        "resources": {
+          "estimate": {
+            "workspace": {
+              "id": "0e9e090f-10fa-47df-89fe-58dc76bd0874",
+              "slug": "benchmark-v21-holdout-mixed-1791630596525",
+              "name": "Benchmark v2.1 HOLDOUT MIXED",
+              "workspaceKind": "benchmarks"
+            },
+            "storageProfile": "balanced",
+            "storageConfig": {
+              "storageProfile": "balanced",
+              "onDiskVectors": true,
+              "onDiskPayload": true,
+              "onDiskHnsw": false,
+              "scalarQuantization": true
+            },
+            "documentCount": 1573,
+            "sourceFileCount": 1573,
+            "sourceContentBytes": 1498039,
+            "estimatedChunks": 1584,
+            "embeddingDimension": 1024,
+            "rawVectorBytes": 6488064,
+            "qdrantDiskBytesLow": 10380902,
+            "qdrantDiskBytesHigh": 15571354,
+            "estimatedRamBytes": 3244032,
+            "target": {
+              "cpuCores": 4,
+              "ramBytes": 8589934592
+            },
+            "warnings": [],
+            "generatedAt": "2026-10-10T11:11:17.078Z"
+          },
+          "requested": {
+            "kind": "requested",
+            "requestedAt": "2026-10-10T11:09:57.214Z",
+            "storageConfig": {
+              "onDiskHnsw": false,
+              "onDiskPayload": true,
+              "onDiskVectors": true,
+              "storageProfile": "balanced",
+              "scalarQuantization": true
+            },
+            "storageProfile": "balanced"
+          },
+          "allocated": {
+            "kind": "allocated",
+            "allocatedAt": "2026-10-10T11:11:15.029Z",
+            "collectionName": "kb-0e9e090f-10fa-47df-89fe-58dc76bd0874",
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041"
+          },
+          "observed": {
+            "kind": "observed",
+            "chunks": 1584,
+            "capturedAt": "2026-10-10T11:11:15.029Z",
+            "measuredAt": "2026-10-10T11:11:15.029Z",
+            "collectionName": "kb-0e9e090f-10fa-47df-89fe-58dc76bd0874",
+            "rawVectorBytes": 6488064,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 1584,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 10380902,
+            "qdrantDiskBytesHigh": 15571354,
+            "collectionAvailable": true
+          }
+        },
+        "activeIndexVersion": {
+          "id": "8bbfac4e-36e2-41da-88ba-3662e3ef6267",
+          "storageProfile": "balanced",
+          "storageConfig": {
+            "onDiskHnsw": false,
+            "onDiskPayload": true,
+            "onDiskVectors": true,
+            "storageProfile": "balanced",
+            "scalarQuantization": true
+          },
+          "resourceActual": {
+            "kind": "observed",
+            "chunks": 1584,
+            "capturedAt": "2026-10-10T11:11:15.029Z",
+            "measuredAt": "2026-10-10T11:11:15.029Z",
+            "collectionName": "kb-0e9e090f-10fa-47df-89fe-58dc76bd0874",
+            "rawVectorBytes": 6488064,
+            "storageProfile": "balanced",
+            "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+            "vectorsUpserted": 1584,
+            "embeddingDimension": 1024,
+            "qdrantDiskBytesLow": 10380902,
+            "qdrantDiskBytesHigh": 15571354
+          }
+        }
+      }
+    }
+  ],
+  "attemptedConfigurations": [
+    {
+      "id": "dense",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50
+      },
+      "parameterHash": "399f7f619a99c82dc1ba4f26e1a5ee392d3995d16f6dbb02681230a14990f484",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 0
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.5817307692307693,
+        "hit_at_3": 0.7740384615384616,
+        "hit_at_5": 0.8701923076923077,
+        "hit_at_10": 0.9375,
+        "mrr": 0.7047494263963922,
+        "ndcg_at_10": 0.7592076100350083,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0015384615384615385,
+        "latency_p50_ms": 197.37724999999045,
+        "latency_p95_ms": 248.29081700008828,
+        "latencyMs": {
+          "p50": 197.37724999999045,
+          "p95": 248.29081700008828
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 621,
+        "relevant_lexical_only": 0,
+        "relevant_both": 0,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 0,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "dense-reranker",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "1218bf3e1c3eec6f0c7ebc71203b0d76b3dfdbc6fb8fbe185552a6685057f3ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 0
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.625,
+        "hit_at_3": 0.7980769230769231,
+        "hit_at_5": 0.8365384615384616,
+        "hit_at_10": 0.8894230769230769,
+        "mrr": 0.7244480227923606,
+        "ndcg_at_10": 0.7617437957225515,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0015384615384615385,
+        "latency_p50_ms": 2500.1169219999574,
+        "latency_p95_ms": 3018.7930620000698,
+        "latencyMs": {
+          "p50": 2500.1169219999574,
+          "p95": 3018.7930620000698
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 621,
+        "relevant_lexical_only": 0,
+        "relevant_both": 0,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 624,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "lexical-lstar",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75
+      },
+      "parameterHash": "5b6b2d7a010b6bcb3fa055a4da1e6af539c005e9e31157d0e8b2e837e384bc2f",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": false,
+        "cost": 1,
+        "complexity": 3
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.20192307692307693,
+        "hit_at_3": 0.3557692307692308,
+        "hit_at_5": 0.46153846153846156,
+        "hit_at_10": 0.7115384615384616,
+        "mrr": 0.3328026463242804,
+        "ndcg_at_10": 0.4168652896894271,
+        "empty_rate": 0,
+        "duplicate_rate": 0.00010039152695512498,
+        "latency_p50_ms": 1039.6874570000218,
+        "latency_p95_ms": 2178.2842039999086,
+        "latencyMs": {
+          "p50": 1039.6874570000218,
+          "p95": 2178.2842039999086
+        },
+        "candidate_recall": 0.7980769230769231,
+        "relevant_dense_only": 0,
+        "relevant_lexical_only": 498,
+        "relevant_both": 0,
+        "relevant_neither": 126,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 0,
+        "rerankerCallsExpected": 0,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "lexical-lstar-reranker",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "57cfc3997cccc10c7717eb38c4803e1a9705120b59eae8339cedf7308562e494",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": true,
+        "cost": 3,
+        "complexity": 3
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.028846153846153848,
+        "hit_at_3": 0.04326923076923077,
+        "hit_at_5": 0.04807692307692308,
+        "hit_at_10": 0.08173076923076923,
+        "mrr": 0.05992254614904994,
+        "ndcg_at_10": 0.049990717666973015,
+        "empty_rate": 0,
+        "duplicate_rate": 0.00010039152695512498,
+        "latency_p50_ms": 2504.026628999971,
+        "latency_p95_ms": 3299.9622230000095,
+        "latencyMs": {
+          "p50": 2504.026628999971,
+          "p95": 3299.9622230000095
+        },
+        "candidate_recall": 0.7980769230769231,
+        "relevant_dense_only": 0,
+        "relevant_lexical_only": 498,
+        "relevant_both": 0,
+        "relevant_neither": 126,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 0,
+        "rerankerCallsExpected": 624,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "fusion-legacy",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50
+      },
+      "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 4
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.5817307692307693,
+        "hit_at_3": 0.7355769230769231,
+        "hit_at_5": 0.8221153846153846,
+        "hit_at_10": 0.9423076923076923,
+        "mrr": 0.6896356995121754,
+        "ndcg_at_10": 0.7477367274022,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0014423076923076924,
+        "latency_p50_ms": 1124.6699299998581,
+        "latency_p95_ms": 2335.267885999987,
+        "latencyMs": {
+          "p50": 1124.6699299998581,
+          "p95": 2335.267885999987
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 123,
+        "relevant_lexical_only": 0,
+        "relevant_both": 498,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 0,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "fusion-rrf-k-60-depth-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 60,
+        "candidateDepth": 25
+      },
+      "parameterHash": "ce44784394703e41c261bd11c402d4b0e35fc449625bdcae494540923f5b360b",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3269230769230769,
+        "hit_at_3": 0.5288461538461539,
+        "hit_at_5": 0.7355769230769231,
+        "hit_at_10": 0.9182692307692307,
+        "mrr": 0.48854249604734207,
+        "ndcg_at_10": 0.5868170269102814,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0009256402344955261,
+        "latency_p50_ms": 1057.1354179999325,
+        "latency_p95_ms": 2219.972963999957,
+        "latencyMs": {
+          "p50": 1057.1354179999325,
+          "p95": 2219.972963999957
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 123,
+        "relevant_lexical_only": 0,
+        "relevant_both": 498,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 0,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 25
+      },
+      "parameterHash": "a9092d1c4f4a5849fc7e8f01d5ba2b3129cd3a805869d983f0b2e52471d59444",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3798076923076923,
+        "hit_at_3": 0.6153846153846154,
+        "hit_at_5": 0.7644230769230769,
+        "hit_at_10": 0.9230769230769231,
+        "mrr": 0.5424550014789858,
+        "ndcg_at_10": 0.6308125844620925,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0009257116408238834,
+        "latency_p50_ms": 1082.8580889999866,
+        "latency_p95_ms": 2315.4774190000026,
+        "latencyMs": {
+          "p50": 1082.8580889999866,
+          "p95": 2315.4774190000026
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 123,
+        "relevant_lexical_only": 0,
+        "relevant_both": 498,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 0,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    },
+    {
+      "id": "fusion-selected-reranker",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "cc1782645a11f35cfe8336ce6f3c7c2ddaafcff7518f22532369f09d88510b45",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 4
+      },
+      "summary": {
+        "questionCount": 624,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6298076923076923,
+        "hit_at_3": 0.8125,
+        "hit_at_5": 0.8605769230769231,
+        "hit_at_10": 0.9182692307692307,
+        "mrr": 0.7356744502109809,
+        "ndcg_at_10": 0.7781293585345704,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0014423076923076924,
+        "latency_p50_ms": 2536.826310000033,
+        "latency_p95_ms": 3140.5754489999963,
+        "latencyMs": {
+          "p50": 2536.826310000033,
+          "p95": 3140.5754489999963
+        },
+        "candidate_recall": 0.9951923076923077,
+        "relevant_dense_only": 123,
+        "relevant_lexical_only": 0,
+        "relevant_both": 498,
+        "relevant_neither": 3,
+        "repetitionCount": 3
+      },
+      "providerCallAccounting": {
+        "queryEmbeddingCallsExpected": 624,
+        "rerankerCallsExpected": 624,
+        "indexingEmbeddingCallsExpected": 3268,
+        "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+      }
+    }
+  ],
+  "completedAt": "2026-10-10T11:28:08.907Z"
+}

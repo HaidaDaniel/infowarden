@@ -1,0 +1,16 @@
+services:
+  qdrant-b:
+    image: qdrant/qdrant:v1.17.0
+    container_name: context-forge-qdrant-b
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    ports:
+      - '127.0.0.1:${SMOKE_QDRANT_B_PORT:-6335}:6333'
+      - '127.0.0.1:${SMOKE_QDRANT_B_GRPC_PORT:-6336}:6334'
+    volumes:
+      - qdrant_b_data:/qdrant/storage
+
+volumes:
+  qdrant_b_data:

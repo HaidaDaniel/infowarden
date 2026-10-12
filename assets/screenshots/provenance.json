@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "runtimeSourceSha": "735de885367f8bdf5b465d1a5a1fb6a0da7595ea",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "data": "Original synthetic Orbital engineering handbook and deliberately written memory; no real user data.",
+  "fixtureSha256": "cf5daa5e57e9f007fb87701995e19e86e214ca84edb0179492d5add42f4e0771",
+  "browser": "148.0.7778.96",
+  "images": [
+    {
+      "file": "workspace-overview.png",
+      "sha256": "890661c0877c1ae8be0744490016f0927c59511771b1aaf7dea27d88c4bdf8cf",
+      "capture": "Real Chromium viewport capture; original pixels, no compositing.",
+      "state": "workspace-overview"
+    },
+    {
+      "file": "retrieval-provenance.png",
+      "sha256": "ba37af72026ca633423d42d8bbd6c9f53e1f26158ccb4d3243c75a0a0b8f760b",
+      "capture": "Real Chromium viewport capture; original pixels, no compositing.",
+      "state": "retrieval-provenance"
+    },
+    {
+      "file": "source-management.png",
+      "sha256": "cdabaea56177d2dcfcec25f814f40c0b8159615c35f4955d1787d3faae9e1dc7",
+      "capture": "Real Chromium viewport capture; original pixels, no compositing.",
+      "state": "source-management"
+    },
+    {
+      "file": "durable-memory.png",
+      "sha256": "33d2cde6618fef9ddb630ef6f422d20eee3c38fe4cde345b9ec150eecbc04510",
+      "capture": "Real Chromium viewport capture; original pixels, no compositing.",
+      "state": "durable-memory"
+    }
+  ],
+  "embedding": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "dimensions": 384
+  }
+}

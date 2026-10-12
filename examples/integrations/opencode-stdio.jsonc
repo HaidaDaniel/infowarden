@@ -1,0 +1,32 @@
+// InfoWarden MCP for OpenCode — stdio transport, safe `read` profile.
+//
+// Verified against OpenCode 1.18.33 on 2026-10-05 (see
+// docs/integrations.md, "Verified integration evidence").
+//
+// Setup:
+//   1. Build the MCP adapter once: pnpm --filter mcp-server build
+//   2. Replace <CONTEXT_FORGE_HOME> with the absolute path to this checkout.
+//   3. Merge the "mcp" block into your OpenCode config, e.g.
+//      ~/.config/opencode/opencode.jsonc, or point OPENCODE_CONFIG at this
+//      file from a neutral working directory.
+//   4. Keep the server name unique per merged config. OpenCode merges config
+//      files (remote, global, OPENCODE_CONFIG, project); for the same MCP
+//      name the project opencode.json wins over OPENCODE_CONFIG.
+//
+// The `read` profile is the safe daily default. It exposes exactly
+// list_workspaces, retrieve_context, read_document, and search_memory.
+// No lifecycle, indexing, memory-write, or maintenance tools are exposed.
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "contextforge": {
+      "type": "local",
+      "command": ["node", "<INFOWARDEN_HOME>/apps/mcp-server/dist/index.js"],
+      "enabled": true,
+      "environment": {
+        "CONTEXTFORGE_BACKEND_URL": "http://localhost:3000",
+        "MCP_PROFILE": "read",
+      },
+    },
+  },
+}

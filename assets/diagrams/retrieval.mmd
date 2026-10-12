@@ -1,0 +1,15 @@
+flowchart TD
+  Request["Query + profile + filters + budget"] --> Serving["Resolve active serving revision"]
+  Serving --> Mode{"Candidate strategy"}
+  Mode -->|dense| Dense["Embedding query + Qdrant candidates"]
+  Mode -->|lexical| Lexical["PostgreSQL BM25 candidates; no query embedding"]
+  Mode -->|hybrid| Both["Dense + BM25 candidates"]
+  Both --> Fusion["Configured fusion; default hybrid uses legacy"]
+  Dense --> Filter["Metadata filters + exact deduplication"]
+  Lexical --> Filter
+  Fusion --> Filter
+  Filter --> Rerank["Optional reranker; unsupported for lexical"]
+  Rerank --> Context["Near deduplication + optional neighbor expansion"]
+  Context --> Package["Hard-budget context package"]
+  Package --> Provenance["Source / source revision / serving revision provenance"]
+  Provenance --> Consumers["REST / Studio / MCP"]

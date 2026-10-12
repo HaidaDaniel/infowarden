@@ -1,0 +1,33 @@
+{
+  "id": "benchmark-v2-mixed-semantic-review",
+  "version": "2026-10-09-pre-execution-v2",
+  "partition": "MIXED",
+  "status": "frozen-independent-review",
+  "preparedBy": "benchmark-v2-20261009",
+  "preparedAt": "2026-10-09",
+  "qualityResultsObserved": false,
+  "sourceQuestionSha256": "cf70469d7864568d19edbe1304b69676904b534391dab90c2c6a4124715fbcf0",
+  "sourceQrelsSha256": "5a109932ef8355cc2dd98d6b110cb8cd89ed3233f2179facdcc8045de0af776e",
+  "reviewRowsSha256": "2565217dc87af7432785340c7d513606f4d1607c88f31fbdaa844ac19a6bb80c",
+  "queryCount": 280,
+  "reviewedQueryCount": 280,
+  "reviewedBucketCounts": {
+    "paraphrase": 30,
+    "adjacent_topic": 135,
+    "entity_disambiguation": 20,
+    "exact_term_identifier": 20,
+    "morphology_inflection": 15,
+    "cross_language_en_to_ru": 20,
+    "mixed_distractor": 20,
+    "cross_language_ru_to_en": 20
+  },
+  "hardNegativeRule": "At least max(25% of partition queries, 25) queries must have two or more reviewed hard negatives; this proposal records two specific candidates per query.",
+  "reviewedHardNegativeQueryCount": 280,
+  "noModelOrRetrievalEvidenceUsed": true,
+  "independentReviewStatus": "passed",
+  "morphologyDefinition": "A morphology/inflection row must show an explicit grammatical form contrast between the query and its positive passage/title for the same lemma or referent.",
+  "unjudgedDiagnosticPolicy": "Cross-language/source-aligned and mixed-distractor qrels retain only explicit judged relations; no unknown distractor is converted to grade 0.",
+  "reviewRowsCanonicalization": "UTF-8 JSONL bytes in questions.jsonl order, one compact JSON object per line, LF after the final record; the recorded SHA-256 covers these exact bytes.",
+  "reviewRowsSerialization": "JSON.stringify object order as committed; no re-sorting or whitespace normalization during verification.",
+  "reviewTask": "0183"
+}

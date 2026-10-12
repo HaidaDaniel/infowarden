@@ -1,0 +1,53 @@
+{
+  "name": "infowarden",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.30.3",
+  "description": "Self-hosted context, retrieval, and durable-memory service for AI agents",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm --workspace-concurrency=1 -r run test",
+    "typecheck": "pnpm --filter api typecheck && pnpm --filter mcp-server typecheck && pnpm --filter web typecheck",
+    "dev": "bash scripts/dev-stack.sh",
+    "dev:api": "bash scripts/dev-api.sh",
+    "dev:cpu": "bash scripts/dev-cpu.sh",
+    "dev:external": "bash scripts/dev-external.sh",
+    "dev:heavy": "bash scripts/dev-heavy.sh",
+    "dev:mcp:http": "bash scripts/dev-mcp-http.sh",
+    "dev:stack": "bash scripts/dev-stack.sh",
+    "dev:web": "pnpm --filter web dev",
+    "demo": "bash scripts/demo-bootstrap.sh",
+    "prisma:generate": "prisma generate --schema prisma/schema.prisma",
+    "prisma:migrate": "prisma migrate dev --schema prisma/schema.prisma",
+    "prisma:deploy": "prisma migrate deploy --schema prisma/schema.prisma",
+    "prisma:validate": "prisma validate --schema prisma/schema.prisma",
+    "eval:validate-fixtures": "node scripts/benchmarks/validate-eval-pack.mjs fixtures/eval/cf-smoke-mini && node scripts/benchmarks/validate-eval-pack.mjs fixtures/eval/cf-static-knowledge-golden && node scripts/benchmarks/assert-eval-baseline.mjs --self-test-regression",
+    "benchmark:static-knowledge": "node scripts/benchmarks/run-static-knowledge-golden.mjs",
+    "benchmark:import-standard": "node scripts/benchmarks/import-standard-benchmark.mjs --profile cpu-mini",
+    "smoke:live": "bash scripts/smoke/live.sh",
+    "smoke:pre-llm": "SMOKE_CASES=core,indexing,retrieval,resources,memory,export,mcp,git,documents,url,refresh,restore,providers,truth-refresh,eval,reranker pnpm smoke:live",
+    "smoke:pre-llm-reliability": "SMOKE_CLEAN_STATE=1 SMOKE_CASES=pre-llm-reliability pnpm smoke:live",
+    "benchmark:v2": "node scripts/benchmarks/benchmark-v2/index.mjs"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.11.0",
+    "husky": "9.1.7",
+    "knip": "5.88.1",
+    "lint-staged": "16.4.0",
+    "prettier": "3.9.6",
+    "prisma": "5.22.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.22.0"
+  }
+}

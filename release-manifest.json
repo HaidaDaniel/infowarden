@@ -1,0 +1,4221 @@
+{
+  "schemaVersion": 1,
+  "status": "validated",
+  "sourceSha": "75dabae13ae796ebdd1375307ec8e202616143f2",
+  "policySha256": "b7577ecbc6465d95d82c419de1475077cebe4c84f1e0dfe5bed52a002066be8b",
+  "evidenceSha256": "3ded22806c3497e6802ff523b750d46bf8d9e487167df0ba0b6a5597fd24628a",
+  "snapshotSha256": "b748ac851e287e59e35f1ff32de77fce086e1050b6ea455ecc3f6be06f5e48d2",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "fb5861bdbbba1fe1d7cd915741da309c234da148de9297b52a4648f5fad17d0c",
+      "executable": false
+    },
+    {
+      "path": ".env.example",
+      "sha256": "7cb1460606e5bc2992bb639ca69d7e67e89e722fef4594f869cbdc4af5830c11",
+      "executable": false
+    },
+    {
+      "path": ".env.smoke.example",
+      "sha256": "c85577a0df89534a1f4c5f5db27685ec821deec0c7f3dbbdad4afff2c032c382",
+      "executable": false
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "d843e521f08a78e320c23e13ff4a36b945ca00c09cfeea0954c53751d31f77ee",
+      "executable": false
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c9b236b0ae5f4a4847b0de56515790b50ff68ef91cd33600118539ec14a954bb",
+      "executable": false
+    },
+    {
+      "path": ".prettierrc.json",
+      "sha256": "6d71eec8adea796860c9a10ec91d24b6d26d1c5f2b59d649bff9ba6376438f72",
+      "executable": false
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "4f9c36a89ddf566327dd1a30ad16210098f5f6ac9e910ec128fea226d9611804",
+      "executable": false
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "8dfb8e9b0771827c771d5d45bc9b42d1825a115c2317d0841498d53582125233",
+      "executable": false
+    },
+    {
+      "path": "Dockerfile.api",
+      "sha256": "a0bb03f6d47e2f33b78b9569888474245135abf251e55819adb4ff7d52632bc3",
+      "executable": false
+    },
+    {
+      "path": "Dockerfile.mcp",
+      "sha256": "79bd4bd3785b977074f64adf8d1a91cb75a673c926b4f0b491633e4f82e46921",
+      "executable": false
+    },
+    {
+      "path": "Dockerfile.web",
+      "sha256": "6dd2c83763f29410bd483c80bce8ae35d9e607805d31a6c0e547d97c290125f5",
+      "executable": false
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "8ef614f286ee16765b87cff408c518886864f065b06796a0a9c340dea6d37d41",
+      "executable": false
+    },
+    {
+      "path": "README.md",
+      "sha256": "be6107578088494a0f28cfdc34c4a7e60241bd4cbda42cbe11e2884461b67f80",
+      "executable": false
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "b840261b854b1958a005f7bf7f5d2d1baa1012747220ca26b4a417d11302a5b5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/nest-cli.json",
+      "sha256": "bcb15e3049ff5d131762d2bfe3a6f917c3c64c83ac772467a4073975cd423b5b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/package.json",
+      "sha256": "5a735451daf66c81e737da33bbe243ec50c13ddb0c77c501d8d352825b529d78",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answer-llm.client.spec.ts",
+      "sha256": "386b052d05ca55bc7d5e32f42579657c3addf3dbba9ad3f798094905c4d4f62e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answer-llm.client.ts",
+      "sha256": "8ea36bf3869b39d1e8f163c0e8ac49adc7ffc586a308a8c6d4233d31a20b6ca3",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answer.types.ts",
+      "sha256": "61a02d783c830b39dd9f5100da6061023e46d8657810954b9b66db8a0c4b3abe",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answers.controller.ts",
+      "sha256": "982f8ca9097b2611d63b73b8831e3d715883379a114a42528f11f199b2d61aaa",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answers.module.ts",
+      "sha256": "642e86bcde0207b307e04374a6a1dc11adc5f85d005f4f8a1affc232cd55e1be",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answers.service.spec.ts",
+      "sha256": "7d7c8d5f23938880f582330a69ae8f10899cc21cda57c169bfd0b0ffb9511cba",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/answers/answers.service.ts",
+      "sha256": "dbd4e7a9daee6edc19df4d26d15f95d0d044fdac471e1172a7ba20b3ade3c5cc",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/app.controller.spec.ts",
+      "sha256": "88faf5523fd7f5dae5a6c78be2dd1709eb6c20ee82c64fc399f8a2e8fb767527",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/app.controller.ts",
+      "sha256": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/app.module.ts",
+      "sha256": "e559159764ed9449df1e87098f1d6f7a05138403b494b10530498830f73e4e7d",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/app.service.spec.ts",
+      "sha256": "50b4802bf4179fc4b7b9e1283f656f679460ba378d16fdd01814bb5141d6e3b0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/app.service.ts",
+      "sha256": "eaf8514ce110fa428a93a27408df4d06d133dbd9ed0a775c315ddfdd507853a9",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/api-key-auth.guard.spec.ts",
+      "sha256": "8698c035d5092dbd368638f86e015c41fcf6472ea0f8c986a53127d324f4dd12",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/api-key-auth.guard.ts",
+      "sha256": "b61fa968cbc47f4414b64156571864563fdf8c88d8c1596a531a09fdc9583fc5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/api-key-auth.middleware.spec.ts",
+      "sha256": "00253627a85f453a2ed63d53d9ddc9e567dd4f8195a64469d8ef56315f559a8a",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/api-key-auth.middleware.ts",
+      "sha256": "351ad16ed4dcd6b31d1d91111e8b9de8567d96497dda7d2fe4f5c26963f52366",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/api-key-auth.ts",
+      "sha256": "ab13f85ae3bb09d7793a728e28fd30e564aaca634591c99c97651a9cc9963e8c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/auth/public.decorator.ts",
+      "sha256": "3186fae2cda923eaad910cae00bc866d1cf7f9ec8dfd52f20fcf316affa15dae",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/benchmarks/benchmarks.controller.ts",
+      "sha256": "4c1188bc3a6562df9eb06c573997a2a80afa345c408a8a6d6d8310e6f90aa1c5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/benchmarks/benchmarks.module.ts",
+      "sha256": "e11c3602c7b4772c99028805da2557a11ee1e9fb76081e7d322dbde92083f6ba",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/benchmarks/standard-benchmark.service.ts",
+      "sha256": "7f4295b4276134a727fbd40aa9bd6b8ed5578ae44d3f751ab6e376dd96cd865c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/chunking.controller.ts",
+      "sha256": "ec21a690c4aded235d2ecb415ecebb9edb0474284883d7ae87440c07cc983573",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/chunking.module.ts",
+      "sha256": "f3d72ade84badb75a893a524d5b72484f87f0eccbcae626261f84fdd77b33b0e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/chunking.service.ts",
+      "sha256": "de72e84880924330a07309d8497302f2b223e78350e04c2b15c20251595e3b0e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/simple.chunker.ts",
+      "sha256": "489dfae5bd296a873af3961090996bdf103e8676b9bfa4a524a84c07abf950ff",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/structure-aware.chunker.spec.ts",
+      "sha256": "ac3ed87bdad4f813e4c0fec937900656f3ceca625260be1178310b308955db61",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/chunking/structure-aware.chunker.ts",
+      "sha256": "a3c2aacd781aaf644cba5527e3adb16ad0620aa6fb52f7eb60d2b9beee96b75a",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/common/app-error.ts",
+      "sha256": "cbf9f5875a24bcf879b64477fd9d16147ee77d37e9b2bc924e436e1b9b78037c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/common/app-exception.filter.spec.ts",
+      "sha256": "21dd61ab6f253277902742201175a27a9f685f578b28ed8e27765146693aec23",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/common/app-exception.filter.ts",
+      "sha256": "e349cab2a58b66a882a6d8859f3cda807241a99ddbcc22446541f4d77749f3fb",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/config/app.config.spec.ts",
+      "sha256": "6070dc21454882f5add924601ed93691a77d22faa843e277e7d8b8b3c3cc9d93",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/config/app.config.ts",
+      "sha256": "5ac0ae63e99cf2dfe2eba0e7039eab386886afc2bbd216f5ac52e3ab0279aa27",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/config/config.module.ts",
+      "sha256": "23f3639897a4327e154c8ed38e48d0b963e2dd45069e6c9b4fd852e981954578",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embedding-provider.error.ts",
+      "sha256": "c3bea2156f8dfdf127e8154a7c07f07b558930ce654e1035e76f7091f11aaf44",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embedding-provider.interface.ts",
+      "sha256": "c83749550df48f0e2b77fc62b1e3543ccaf26a1355371a16aae62399992864cd",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embeddings.controller.ts",
+      "sha256": "7f1135029c789de8833eca5f1e9023e4797c07a42ff15e6318c8b8f3b058598c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embeddings.module.ts",
+      "sha256": "9dddd951055d191a51bc9dec53aee5be72371d81dd682d0bf3c636ced7850063",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embeddings.service.spec.ts",
+      "sha256": "11215321a1a9cba71126ad684653104191a9d931cfb36cef78b250532c62ae84",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/embeddings.service.ts",
+      "sha256": "f97d625b09c45feb14afe40154b5e89aba08c9d32bf1b11b2636e3996ae5ba60",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/openai-embedding.provider.spec.ts",
+      "sha256": "ada4c5393c22f3b0491c07a415d4005eab2fe6baa2c4016a57a700d6d0709d55",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/embeddings/openai-embedding.provider.ts",
+      "sha256": "23e651fa3bb0eb9a730cd24116e22ab0b3326b04b9bae86a7e8a7df1d69538ff",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/health/health.controller.ts",
+      "sha256": "a17040f88f498235b24f5f4d480c5e0163be08d2fc3e5f39bccfcaa54fa27458",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/health/health.module.ts",
+      "sha256": "b4761fea81e9bb87f48250a45b3d905c91095ab7b03c276eae45c67f8a488000",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/health/health.service.ts",
+      "sha256": "8f3ffce9d174ac928a32aa38dd84bbbf2d26e80204712c0dc00ad017a1a5318b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/git.manager.ts",
+      "sha256": "eb8b4017617638b44627765f4611ebffbf0c832496f05fa9102f25786b6a0fa7",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/ingestion.controller.ts",
+      "sha256": "d12669768281a3596dd1ca23ea9fbf61466aa21c006ba9ad4eb5c15d5a5b33d1",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/ingestion.module.ts",
+      "sha256": "fb3d9206b1473fd8a9bbf7f6b90a475d7b3b94b7d0fdb6bbdc1e83f895aae3fc",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/ingestion.service.ts",
+      "sha256": "1c316b6a0b7a107718e1abf642c6bf96c20946aaec933c1542921130bfcaca3f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/local-folder.scanner.spec.ts",
+      "sha256": "4ce191f267afb77f3c13c080f15338c9e9d7e289af37ebc43baeff176d69e152",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/local-folder.scanner.ts",
+      "sha256": "a7eb07ded1e5e9f573913e9f27b7fd51b995286d49beeab23da8a1d629fdfc4f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/micromatch.d.ts",
+      "sha256": "995f5299947cc7c673c2c045ab5f4bb423cd4fe39e053b218e601c7e0cac5d12",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/outbound-url-policy.ts",
+      "sha256": "e8a74d28d8274a6d6f95e36b90889ab9ac09c6d0ee9520437f446251ff85ce0f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/text-code.parser.spec.ts",
+      "sha256": "0075fa1bd9daa697291032a3138d496bec944615f67025e6eff4da8a3dcd6400",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/text-code.parser.ts",
+      "sha256": "ba364f8f2b0900b81bcbbd9adfcb1e6be28012d2b83188c37ae5e7960ab2c513",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/url-crawler.spec.ts",
+      "sha256": "91ba4488a11c8bc353e3f48b445e07bf97ee8207daf349aedcf7f85146786272",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/ingestion/url-crawler.ts",
+      "sha256": "6aefb27182d3bf722afdb5011f76ab248a57c8ff298410554059dc245d2b7c25",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/bootstrap-indexing.service.spec.ts",
+      "sha256": "68fdefe107d86ce0ded3688ada49305de891f7f5e63e88b74b612f8149ad8328",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/bootstrap-indexing.service.ts",
+      "sha256": "9f6cceb19d87b19b304f4509b604318cfb722174402782509db60ca23f587cec",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/dto/bootstrap-indexing.dto.ts",
+      "sha256": "738810f2464727b876950364e39398eb9d597105436574411533c983c58d3538",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/dto/enqueue-indexing-job.dto.ts",
+      "sha256": "c85d3283c1c34a03135cb76c4e7cea1c9ffd6568d219dadc0583d213a2ddf8a2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/dto/refresh-source.dto.ts",
+      "sha256": "737babf40c4bf592b139dec7fd41e839378b4384bb59cc6472f43b744639e11f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/embedding-materialization-buffer.ts",
+      "sha256": "9d7c5a5ba5c0d92adf9677ea67d2bdadc37a5131ac834f84bd0ac9f8fe7e942f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-change-planner.service.ts",
+      "sha256": "8b9c694ec8803c7e96eebc2645605f89d6ddcfa6c2337a3f6344a7baf08266fd",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-materialization.service.spec.ts",
+      "sha256": "32d5f05ed61d521434db5ecb7265e2bdc858e57340f35e2ba6de62123987c268",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-materialization.service.ts",
+      "sha256": "1d6e96e844cca9893899eb65cc48a79d7b6feaa76eb51c2d46ca7e6f0ded2527",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-resource-snapshot.spec.ts",
+      "sha256": "b7ab6c87e2009a3df46d803a8d93639f02ab60b100db2ee6e1c119c10e093128",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-resource-snapshot.ts",
+      "sha256": "b8ad40f39a13bd0bd4bf46f507de38a9563855d28a96eed04793e2ab76b6ac94",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-rollback.ts",
+      "sha256": "a2c4b16d987c9e10d6dc9026ede50c7cbe6d66d423e067672ad2169c8e7c065b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-source-preparation.service.spec.ts",
+      "sha256": "7ebf6b3dfe9abc87c9a67ab519eef5f589ced273ed8b26bc827c8dbbc90a4663",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing-source-preparation.service.ts",
+      "sha256": "fd36957e606858be00e39813c34ce859d56b0d907ed4628fdf7d1e90fb03fd9b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/indexing.types.ts",
+      "sha256": "1eff58fa2928fb1d234bc1dbb449b08ffdd1fb32456d432e3452dbdad514cb78",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/jobs.controller.spec.ts",
+      "sha256": "30d2c56e722477020431991b01fecda1a2c8462a4d36e31f35ae0380a29bf729",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/jobs.controller.ts",
+      "sha256": "ca1f5faff1c301bd616706d8ee42ac5a7f306671284bb1d436ccc5c0874235b9",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/jobs.module.ts",
+      "sha256": "6a3f12d472cabdf721f740b9dc689a7f5a364e6d982a643196129d609ba15d01",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/local-folder-indexer.spec.ts",
+      "sha256": "b85b5e2c52ec177bcbfddb8f76a9b1e65f0a5acf6a3176223a24743dae5c596a",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/local-folder-indexer.ts",
+      "sha256": "949ba0c391be72ea04d1557f8ed23bafc77ac893eab888fe2a38f69653552a3b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/queue.service.spec.ts",
+      "sha256": "081d8207d2e3c2132dbe5052d418064d028ed649899d60f5838c185636b22d18",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/queue.service.ts",
+      "sha256": "fbcda703d169cb711aa68409ee9a50b70b25c256fb5d679823330f40af504a1b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/redis.service.ts",
+      "sha256": "8d2a04ca57f60e276b6f4a47efd1f573eb04143df5ec461cd66b1234790bbeaf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-refresh.controller.ts",
+      "sha256": "77ab3d4fc7757d424d23420c465c5f49f3b34ffd1ca031a9250ed2b5b6ecef83",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-refresh.service.spec.ts",
+      "sha256": "52256b6401fcc2859371fa42370b72710e8ac427b8410d296ff195409edbbef6",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-refresh.service.ts",
+      "sha256": "ea81e3049a36c54c01f04325afbf54c06a61b1037e3bc93530b219cf23d0c618",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-trigger-scheduler.service.ts",
+      "sha256": "fd75d74089d7ad36dcbcb0beadf1cd116be5d561d523ce0a37f6d8d31d99f3d0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-trigger-watch.service.ts",
+      "sha256": "a462eaa0242518799cef0d0a30ed826cb8a662e0a0e60a0bf1ac518510f110f3",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-trigger.controller.ts",
+      "sha256": "9d444e297baccf249daedb8cbaab7f0471c9ef5e4ddb04dc98b20a3f9b8423b1",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-trigger.service.spec.ts",
+      "sha256": "3456962f78d6ad47c9117f7549d593b8bbcef2988434f357fb09c69467ee6d1b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/source-trigger.service.ts",
+      "sha256": "fda448e64336d2a7d2423288e20b2c6ea2d651fe23e103d1a7aa817bad5e5c0b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/workspace-load-reconciliation.service.spec.ts",
+      "sha256": "e6afbfdd11ca79861e18c4be8af860d4a5d75dec82470294d8235aa7c7c1e10b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/workspace-load-reconciliation.service.ts",
+      "sha256": "e822c850d00b9c95d44db4eb945f2fde583ea25299bf729e745f1e844fde3e90",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/workspace-serving-revisions.service.spec.ts",
+      "sha256": "6d470bf3bc28e1f622551667434d1fa5910c9d09466f68104e3b24c55db26ad2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/jobs/workspace-serving-revisions.service.ts",
+      "sha256": "f40816f5d18ca24a8776761eedbb44bff6b2b8bd165cb86c7ba9621c0288b8dd",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/admin-read-models.controller.ts",
+      "sha256": "e79f96822d0567dab186fe25d48a47e9f8de3d59f638155699f89677136b9999",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/admin-read-models.service.spec.ts",
+      "sha256": "1477caa913cf61402ded4d1f01476494385fafda44f426ffb2e2b5073ac7f7a5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/admin-read-models.service.ts",
+      "sha256": "2feac4fb546a07ef5da52dcfd11598af14c5fd1eb1a1585d7e206f383024f13b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/dto/create-knowledge-base.dto.ts",
+      "sha256": "d265784afd3243b2db048f9a8dc6040ab82c1a701f7b8ee1e4b9ea3aebbcb3bd",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/dto/update-knowledge-base.dto.ts",
+      "sha256": "7b1539be68c652bc1bbca1133ade0e172e40ab24891911f5597617d7934c7998",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/dto/workspace-kind.enum.ts",
+      "sha256": "8ebde645954c4bc97b20a7f3a75c6ab1c87e82188b58bbc73d7d2a08b23c1d05",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/index-version-operations.controller.ts",
+      "sha256": "6b72a6cbf91311a1e7fb43b11c7182997fed5bd535d8fb533b4db311b99cdedc",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/index-version-operations.service.spec.ts",
+      "sha256": "8a2e3983d4817981951c6a2abe029361875ec7361ce97de16ef987f763904442",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/index-version-operations.service.ts",
+      "sha256": "eaf1368e4b73d37431900fa6ad4daee5b48375b46e538b465dc899133e8e6059",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/knowledge-bases.controller.ts",
+      "sha256": "0eef9b6c2b0c4020b1830d7d526e781898faa1b5bd75b41c6462f157a3b9f8a4",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/knowledge-bases.module.ts",
+      "sha256": "df2a644db8eb52f80901cc759cc398251cfc846a4c25fa877209a88c61ccb539",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/knowledge-bases.service.spec.ts",
+      "sha256": "c4641623a0a3a8544f8e79ec8548de545bb95c0c3382d9e03d2dc23f6e8ccd40",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/knowledge-bases.service.ts",
+      "sha256": "8c77c445275c46002ef39e2fe186cb44f8b178ad9a7c7ce016d46f3a21cf7560",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/workspace-availability.service.spec.ts",
+      "sha256": "b890bcfbb80d9c31fe609d070c1eb21dd651eff626717d47b15304d4413d173f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/workspace-availability.service.ts",
+      "sha256": "bca62307585821cf2c272f92dbb5b4f9dfbef141689f0f8a6854840e842c28b5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/knowledge-bases/workspaces.controller.ts",
+      "sha256": "2764bf05e1ac166a8cf757624ca810eb1b7192d01b2fbe4a14425a326af42ba0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/main.ts",
+      "sha256": "f3d463fc748f42a37860a5e27ab2c9a7f9d1a4eb55e4781199a3c07adc908b29",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/archive-memory-entry.dto.ts",
+      "sha256": "a59fe0436e901586a46c7bf7b079aafc689b20152c0d14cdb36ae13fbb15cc78",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/create-decision-note.dto.ts",
+      "sha256": "b8ff1c4f17a0938761589a003bdcff0e68542b539f1339546fe2df9fb0100caf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/create-memory-entry.dto.ts",
+      "sha256": "7dcab0528960934b4bf78d7427747dc1857ba5272a411c5b1b23bd88487a360b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/create-session-summary.dto.ts",
+      "sha256": "1df51ec8d26cfc3d70c77d71c1ec21757229fc643375ac7a9afaa80a8a1724ab",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/list-memory-entries.dto.ts",
+      "sha256": "c66fd4deb676285faf1f87140bc9c6e5c305d0c012235457fe2b41efa48c8ae4",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/memory-entry-type.enum.ts",
+      "sha256": "f4b0c75f42cff0edfce7da558dc4e9ff56d8b185fa786d29dc2eecac44c337c2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/dto/update-memory-entry.dto.ts",
+      "sha256": "d1efc7746d42dc7468d61be05ed951127ccac1b9dd3ace691e314a5ecda1d442",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/memory.controller.ts",
+      "sha256": "3172046397f18b349811ab251a92e2cb696395dd759314ec9efedb6fbb60d46c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/memory.module.ts",
+      "sha256": "aa4c6a157521800d6081d54d887cf8cecd92280f8534db5690f791bd584a2261",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/memory.service.spec.ts",
+      "sha256": "6849cc21ec19e76b9f80ded9fe302b05788e6dc5ffde706f141587175f62c2fa",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/memory/memory.service.ts",
+      "sha256": "db885db9797b24c7013e6942cdb3d1ca1ee532391cf88235330d125aeb02f6bf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/prisma/prisma.module.ts",
+      "sha256": "9223a0889abb0669020e94a9b8c1e68274cdc05533c1f79d84fe516450e94ebd",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/prisma/prisma.service.ts",
+      "sha256": "092fb7b72bf76e2bd33dbe21228a3613df5c21383dfe961629672135c86c9508",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/providers/providers.controller.ts",
+      "sha256": "9cb4d294df9fdaf08cefc59fc6661babdd0aae87c70488386de7b371debd2b30",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/providers/providers.module.ts",
+      "sha256": "28d7a388d2858122385756b0085bdd97a34f15a6a94ded8ea0f0769995c4ef40",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/providers/providers.service.spec.ts",
+      "sha256": "cbdec8c2200c3ce0d22fbd706a5f70aecca09de34da14df0278318beca4d1ee2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/providers/providers.service.ts",
+      "sha256": "e0f147a4c2f42928f09f1577c33a2c6e618edcd10cb599f634392c3996a707a0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/resource-management/resource-management.controller.ts",
+      "sha256": "312bdbc31c653d0b103c56502c6978f6b3c49e36a389e1c5c537aad3a019cff5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/resource-management/resource-management.module.ts",
+      "sha256": "f304d581387533b543c98501ea15071833e44b5818f88a835819102b6c5ef3c0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/resource-management/resource-management.service.spec.ts",
+      "sha256": "c92de88779fe178d4780b762a3976970df458fc7c0fd8039a19b087b49872a14",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/resource-management/resource-management.service.ts",
+      "sha256": "28f2f090031f5e025efa44fb2aa8023dee3860cc0c87efacb89b06a2805cc622",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/bm25.spec.ts",
+      "sha256": "1f0eb0437faad1065acfe0aac90a1c897520635feecf4f0fb2208acd2e9d780f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/bm25.ts",
+      "sha256": "30c58281344a28f17363beb6e1537747342aa82ac0974f693c6adca8a4b6cdb8",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/bm25f.spec.ts",
+      "sha256": "5f641bcd2ac2bd1f52beb83cb2672fe63a3419886df93f87b6dc4606af68c842",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/fusion.spec.ts",
+      "sha256": "1690471dc7a93c5de9c316f18c7869117e6f9df8e7d2c88665bfe819c398e3ac",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/hotspot-boundary.spec.ts",
+      "sha256": "16753aa49470fafe72d457f376650dd06b57d93872e84cc4623485703a92b19d",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/lexical-bm25f.spec.ts",
+      "sha256": "ee014046b992f296747468bfe65bbbe00d15b3313c3b415ab41cb370458dfb7a",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-candidate.service.spec.ts",
+      "sha256": "7715dff03de51456595f410cec6a6b3ab9d2c8f9cb34e2ac6ab1f321d72659a3",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-candidate.service.ts",
+      "sha256": "d663308aa8738976a361249cadd4929d5b405da607bfeb8672f784a468bbab25",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-context-packaging.ts",
+      "sha256": "204eb6f325d2236290e6a381730917a151d566af001c5075256dd05aa95cc9a3",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-context.controller.ts",
+      "sha256": "518eb9ff58582773cb58d7f62eb67500bc8bee604f5e864b7fdca346ef8c9dca",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-eval-metrics.ts",
+      "sha256": "a96d3b226641c5f59077a19dc6b12e769d770d0bf9ee6b6bf7ee715e9237a145",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-eval.controller.ts",
+      "sha256": "743e40b24d05737c44b328a3ca7189792fea79f5ad6828c940764cb5a3a2b629",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-eval.service.spec.ts",
+      "sha256": "af2908d163273fe29116ef6a15f6932fb94577dfaf0e3d7bf1941580b6c5a441",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-eval.service.ts",
+      "sha256": "4a406f47af202e612fa212c847ac3a7c37018ac58d14386cf3eafe2a281f3f94",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-internal.types.ts",
+      "sha256": "d2ddcb6bb9edcf035551828e063ad7bdb7d1e1a633a9ac5e2fa4dd88003f578e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-neighbor-expansion.service.ts",
+      "sha256": "c884b62a56c436bee873fa23068498efbc9c4c1ccced289dc24eb26010185a54",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-profile.resolver.spec.ts",
+      "sha256": "e6391c097b882ab6644926c4400b404bacd1d31706564b9278e22b73f7a3f47f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-profile.resolver.ts",
+      "sha256": "2fc56d4b0252250463194f1474c8a3f5ae4907a6fa950fd70f8623f7716803d2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-ranking.pipeline.spec.ts",
+      "sha256": "2251f2db4a378108535bb321b5e98210d9b8befedfb1fd389bbb02c06bf6f9f2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval-ranking.pipeline.ts",
+      "sha256": "99a5ddcda037f1ec375772521a4724792f5cb55d7f72c64d9b2fe9936309f2cf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval.controller.ts",
+      "sha256": "e514111a0195d6dc5527a39d4b051243302f03728393bea2974b2deb0de1dac5",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval.module.ts",
+      "sha256": "3a2a02234c9501f52ccbbe128a6252a23020d529b9778e2197aada5d7706a350",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval.service.spec.ts",
+      "sha256": "ce04b4e3054a0a90d4bcf187e09a6fbe59f16870496120c1f6a362ae6cef3c4f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval.service.ts",
+      "sha256": "ddc53e7fe4f958af34b75fba52e20153f98386fe5444d83b6900d835d3ddb249",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/retrieval/retrieval.types.ts",
+      "sha256": "3c3005d4986d41763a86ea3dbb42a486bbb20d3d790adacabe044c9489ca90ea",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/dto/create-source.dto.ts",
+      "sha256": "de4b0c19cef9cc43c4848676b8f5d88d046116c9a35e20ab53fc76d1054f91b8",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/dto/update-source.dto.ts",
+      "sha256": "8281cc00f99c4e0d9167060406f0163d42fb0eda1caf2595eb01a4532b41718f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/dto/upload-source.dto.ts",
+      "sha256": "66bb5f4c293ae6be986c88d1f649f6aceaae37c46172d9e5103373e68e24aa3c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/enums/source.enums.ts",
+      "sha256": "6642849a245e4f5eb98fc5a23e71b486058ab76c9f6319b621c2cd85ecdea4cb",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/managed-upload-storage.service.spec.ts",
+      "sha256": "90d3c935c54e2eaaed3de2b279121f2cc4106a689652b3df8294e12fb3b2dcdf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/managed-upload-storage.service.ts",
+      "sha256": "cc8a28f07d3ca2b8989526780743915c5b4ac954c583f140831960737cff8885",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/source-policy.controller.ts",
+      "sha256": "e770a97d3ac245bfe34d1ab4efa67bbcc78dfad6a44889a9d0f6bfbac6d55a29",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/source-sync-policy.ts",
+      "sha256": "a93c50d6f04967aa7916d261bed62cc4c80b826d97d7721a34f95599dccfd22a",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/sources.controller.ts",
+      "sha256": "9ac09342a52ae8e02dfbe26e3beda70deaa8f03d817197bacf327f8f6e248dfa",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/sources.module.ts",
+      "sha256": "1f02454d4185398836c2238a7ea98915718ce11445038adbd4821021ef650009",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/sources.service.spec.ts",
+      "sha256": "47d76d9c1272c4cb86ef95ab1a07fb3f993c7a687b6d1b705198bc72ef1855e3",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/sources.service.ts",
+      "sha256": "c188b178fed5c2174db1fad8e6995a7596fb612d7f08ff7c3d03b79c5ed806ab",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/upload-sources.controller.ts",
+      "sha256": "46dc8f795c2c3f4c043b0bafa0117fa665f6d66b3326e6e04daaa36a8c31e3bc",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/upload-sources.service.spec.ts",
+      "sha256": "f705b228f6d57b403e178c7e6b4ef1c3fd6ede43a763566e780e25d30371cf8b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/upload-sources.service.ts",
+      "sha256": "07386809dc24a22102023f2ed32ee908430d9a00ec0ba827543d5be2731c00d4",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/zip-archive.service.spec.ts",
+      "sha256": "6c95db6100a31c518b7c0bfb92d1ce8a41aa6f023c6f331062e38f45e78b549d",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/sources/zip-archive.service.ts",
+      "sha256": "1fb0616d5ab7be4c896963a33742c6234227ad87b842a2422d6fb9d9f7c30912",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/telemetry.middleware.ts",
+      "sha256": "5494ae07650dd5798d47eeaea276599df0c76d07c08dbbc054faeda4a9da2155",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/telemetry.module.ts",
+      "sha256": "f95001056b79c3c1d541bf806bd621622ce14a3d9adcf423a874b0b1effc19e2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/telemetry.service.spec.ts",
+      "sha256": "cd2baa9d1eec1559bbdcf3ef578c4151aca43a956523fefbe4c88271cd54da1c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/telemetry.service.ts",
+      "sha256": "17d68064db5cc643641804af5204a9b7d1ec47b2178db55928fd516c9aa821f0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/trace-context.spec.ts",
+      "sha256": "053b08807784746e7382a265845709e1aa7eb9c7fb8b327f2d0dc22650a2b918",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/telemetry/trace-context.ts",
+      "sha256": "af94cd67e4331e77495dcb197f786b1546936b6929350b2bba1667e89f11b247",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/validation/validation.module.ts",
+      "sha256": "3b86174d0bff0aef06a897a5313ac9efb778322ea385c6dd5dbf0d611db9e814",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/validation/validation.service.ts",
+      "sha256": "4e4d8deb080558becc0902d59e667aea643b82b994cde5c1e0496cb5f365160e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-backends/vector-backends.controller.ts",
+      "sha256": "bfa6ced459565df4b4ccae5560646ada3fc29cf03876d10d108a7090845df17c",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-backends/vector-backends.module.ts",
+      "sha256": "20c23aac9e63fdb805df1938e5b2434ad78a445ca85b9b3aa36f7fec504afea2",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-backends/vector-backends.service.spec.ts",
+      "sha256": "30744999a0ab52bd9aa831dde1dda219908e54f5871662cc52af176190639f65",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-backends/vector-backends.service.ts",
+      "sha256": "a2534f93783fe6fc399bd006a822759a90bb2d50691cc5267fb0340d8b057c08",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/qdrant.adapter.spec.ts",
+      "sha256": "3f87f146a2efbfe0c0df1e44b3026875daf39dc777cb8538859f8190d0b79ffe",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/qdrant.adapter.ts",
+      "sha256": "bc6ab457500e9c0b82d8e50006cbb580bc278d21b2ee681a05b758608417f8a6",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/storage-profile.ts",
+      "sha256": "f7396b3371559303f7595662f02df6a88c14f77a7b61884c677e8ce3b577ceae",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/vector-index.controller.ts",
+      "sha256": "dc0b747c76becad55bef446ee76efdf2857fd05ce0497ea521f4f429d0c836cf",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/vector-index.module.ts",
+      "sha256": "5b2d6a6f4813e7a2ce89f7b3abec03b4d16cce9fde2ab2bc72c7168eb90b0d2e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/vector-index/vector-index.service.ts",
+      "sha256": "b37c7b8073e620b3f21cacf9d56d147780d05d7821ccc4b8561a5232bf61e44e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/dto/workspace-import.dto.ts",
+      "sha256": "1a921da3d52b2cd307d93932604ff0888486920846ed4c2f234a190dc3c0daa0",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/portable-metadata-sanitizer.ts",
+      "sha256": "2f1bba149a87275676fb84f4f1db160e24541cb7047dd465cc71b7db3c07b57e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/workspace-exports.controller.ts",
+      "sha256": "b6cc827ba986a4249e34d5aa59984ec10881e94171b70528b7da48015e4ee674",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/workspace-exports.module.ts",
+      "sha256": "3a806f397d00be615360580fbc6a5f0ef1ffd3f5672b5ba382f26890d8cb2963",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/workspace-exports.service.spec.ts",
+      "sha256": "a9dd92849f1be6a6a8ae981fa15790b1b1b5e76ac9e069db84af66d9bae533d9",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-exports/workspace-exports.service.ts",
+      "sha256": "b22b7ca8e38403552d4274f69ad0892bad572bac3c3fd75d61b97ad6f7547407",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/vector-backend-selector.service.ts",
+      "sha256": "ed5bebb52efc764f3d3d2de661058fe399ab1af22844ac30b0695a0c467ebcad",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/vector-materialization-queue.service.spec.ts",
+      "sha256": "08f6abe42e3585eec1c5eaf1f689517398cdd89818ca999736f1d776bd07f11f",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/vector-materialization-queue.service.ts",
+      "sha256": "049fd3c017d7e0390306d5d163752cf916177a8d655c27f833e677166e170a60",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/vector-materialization-validator.service.ts",
+      "sha256": "c35d6b2b6d4e36f881d322cc1f77df11d90522131123aec40541747d3c0500cb",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/vector-placement.utils.ts",
+      "sha256": "844f0648a72df6cb0f3bd6b5f14a2321502ebd7f24b86e1df062a6b8083e2cdb",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/workspace-vector-placement.controller.ts",
+      "sha256": "eff5c77715c06964b0c8fba829e2fba59bee4979465545f2d0df10916ec07a7b",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/workspace-vector-placement.module.ts",
+      "sha256": "bfc0839278526a16be9c7c50f2ad2baacccc27a8a96e209266536743bff6ea50",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/workspace-vector-placement.service.spec.ts",
+      "sha256": "31008cfcbfa2c4c377de88b76ce97832234374e9b2d65471a5a72c2a52bbffce",
+      "executable": false
+    },
+    {
+      "path": "apps/api/src/workspace-vector-placement/workspace-vector-placement.service.ts",
+      "sha256": "f48cd5dd3cd2b65688ab1b459c85fc6e1391b5e2f11e99ca1de0fb1903143c80",
+      "executable": false
+    },
+    {
+      "path": "apps/api/tsconfig.json",
+      "sha256": "ee4e1f77e1436f198cd1be4fadf7052682fb86d32d513696955917cd21f4635e",
+      "executable": false
+    },
+    {
+      "path": "apps/api/tsconfig.strict-core.json",
+      "sha256": "2253fd6b3dc92da7c219d735335ac4f43b608b4ca21352292f334df1288c6d0a",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/package.json",
+      "sha256": "979771052cbab19550a715ec60d8bbbb99e8f942836d207569d432e5cc87cf85",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/backend-client.spec.ts",
+      "sha256": "74c68a6ddab0eb6f3c27a9f3d87ecb2c10088c0c68e92079de690f111f571012",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/backend-client.ts",
+      "sha256": "3f9e71b550dadf442a9f7b8c6617a58127f807dd0cf73b1e28f26b3bb904573f",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/config.ts",
+      "sha256": "451a76c52e93a8ba2e21de24ae62fcddaa0ee6d3fbd039eb941e42f9d8d72598",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/dispatch/tool-dispatcher.ts",
+      "sha256": "daab3bfbfb6e5f65a3bae974267867c2c363a673a46217f23ea8ead625da4cf5",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/http-server.spec.ts",
+      "sha256": "e4b71ab16bf86b40da44207c941a7b3dbdc35182f8f0f765e2df8b3e8ba5cd58",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/index.spec.ts",
+      "sha256": "afde3c1f89edcf1a752f73bc00605bc44e8d81761013b9cd290e0aeebde554f0",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/index.ts",
+      "sha256": "0955076b50bd2370f6664d2127bab42bd81b2da5d48784eb2975c3f85958b1af",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/profile.ts",
+      "sha256": "37209ca1910c27b41506f2f245824b72723cbb7bcce7fd5de28384cd38de6ea7",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/registry/tool-definitions.ts",
+      "sha256": "a07855d43c9bb2e4fa94a33a84984c5b05ca9712c2601890a2876ce183e6c9d3",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/agent-tools.ts",
+      "sha256": "05da73269d14cfbf3d01a71fb9b9fadb0de3bcedaa384b46128f03f65daf5d5e",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/consumer-tools.ts",
+      "sha256": "3cea0338950ca30486c13dc44cbfa9aec3a3d29c2fda4299516d8d19000a91a2",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/context-tools.ts",
+      "sha256": "0eeb9e4c8d23c7aff65e03533ac2d6425ad15a50ccaaab1d0ef7f86d83c35217",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/list-status-tools.ts",
+      "sha256": "e6a0ae31568677068634ad9bb78b6b74eb55e231ce389a8240588a3d82c4eecb",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/memory-tools.ts",
+      "sha256": "7286269e8fb00aa63f293a68ed21f93218fd20c8f925114c32971881ad71a151",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/tools/search-tools.ts",
+      "sha256": "69f0ce1f904c7701c8639dd47559b79af2ac9a3704978ed2c606c0b22acf551e",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/src/transport/http-server.ts",
+      "sha256": "738b5d8af31f08524ff6a7b913442b8251156296630cbef3c81f871ad51f8773",
+      "executable": false
+    },
+    {
+      "path": "apps/mcp-server/tsconfig.json",
+      "sha256": "02829056a19feb214e7ec195c0549926771685761825efe7f34b556a55e58e2e",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/ask.e2e.spec.ts",
+      "sha256": "21f1a7307ac546708a0d0b06dacb4456b8a675de76ba33461d10f95ba41675d0",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/benchmarks.e2e.spec.ts",
+      "sha256": "ab55f2e067cacf1f71cc60d18b008b7899600bfa6b2fae7b6fa5cdf9c66600dc",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/dashboard.e2e.spec.ts",
+      "sha256": "d81bfc2236d6e67ab9f11054a13d6f9c49e7d6b0105a031b2352ff22ae41491c",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/import-job.e2e.spec.ts",
+      "sha256": "56770ebea7d72fa039413fd564362d4acc1159aff4177017c83a6e2e4f954ece",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/live-smoke.e2e.spec.ts",
+      "sha256": "694f0f7890b8b339c87df9afb3dafe5c3cf616b2cb21d72e6e22b87b75386e67",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/studio-api-fixtures.ts",
+      "sha256": "889dcd089f017ee283d5b1e7264f02d80d4c59ca1448fa96cccef14c062a98cc",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/studio-release-qa.e2e.spec.ts",
+      "sha256": "4a78a2178d7a216c26706f493d6fddfec5469043356b3056c5a08838f0d1c3c6",
+      "executable": false
+    },
+    {
+      "path": "apps/web/e2e/workspace.e2e.spec.ts",
+      "sha256": "1a9e5f51bb26c502a467f77f06c2c3ca448da4560e6b49e03fbd4ea10a785f07",
+      "executable": false
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "ebe79ce200b511c010fd129c8eb1c5f012c7c91f56f97f713c931c388abc3017",
+      "executable": false
+    },
+    {
+      "path": "apps/web/nginx.conf",
+      "sha256": "f5e5ea3d6ec5642b3cb9a56f83edb6ecef08493f05e44dc70876cc51fa78d7e3",
+      "executable": false
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "ae7d30f25a1de3f74772ef13a99124a537020d13a1938ceacaa25417d9a8570c",
+      "executable": false
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "sha256": "c456364f53aac24bd9bdfd3a89aca4741fbaae999874fe9861ed2c58e7d26ce5",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "b240e46f867049a78d0ba42bc50e7ef83516659df6151f50b3f0ecdc65fe6d9b",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.ask.spec.tsx",
+      "sha256": "567ba3085170850282c3a0f49c3a5905764cda6a83466a69b6ef3a6545a0744a",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.auth.spec.tsx",
+      "sha256": "5a52e1c4f498b37313616da3dc618109974a0f96df2849c8f8ca614e7dff9a52",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.empty.spec.tsx",
+      "sha256": "40ff07a23e0f8c4c918654296345d6e3999068903e0b5b182393620ebdde5997",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.import.spec.tsx",
+      "sha256": "03fcb987fed0dcdd617b36f31fbb4992449b1d27dc5747ffb3336f9fab95c89b",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.populated.spec.tsx",
+      "sha256": "47e552b570d7365e5b7eff2bd72aec91f70687f38015379d5d02090271499786",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/app.workspace-detail.spec.tsx",
+      "sha256": "48178030fde926f5b14b4d29d4ed91332bdbc87bb863ec353c0992a8175c2064",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/__tests__/hotspot-boundary.spec.ts",
+      "sha256": "4e6c62d8af29a093bcbaa58def68ea62c29e98644513a1a03ab08bb4d71bf701",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/EmptyState.tsx",
+      "sha256": "d0b7837bed7880e664a422f5c6cfa785f3d0a8a77acbda8c7b6113c3dcfd545a",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/JobProgress.tsx",
+      "sha256": "2735262db7ec8481ef40c4e8dd92e62787d3cd1f33bce76a44310cfa98cb4451",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/SectionCard.tsx",
+      "sha256": "8a54a422302f729c147063ec7ea783f72b52ca280f7f4ea633e4d586850a1a07",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/StatusPill.tsx",
+      "sha256": "b45c7a7d7604995f1dc2a6f2960db4b6200c4fa105bcd16489e71edcef7c87bc",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/workspace/KnowledgeBasePanels.tsx",
+      "sha256": "a3b8518ccc5cb5df18a80a6773556a78ac28d68f7b660a6cd464de845de9c040",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/components/workspace/ResourcePanels.tsx",
+      "sha256": "48868c82a2932e8b09d20c4d13065bf799aa2cec5ba5f51a41d849e5eab37647",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-eval/EvaluationSection.tsx",
+      "sha256": "533a8e78f9c2a23d5dc6291369f446d186695db004903cb3fd55ea8c4a23769a",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-eval/useRetrievalEvaluation.ts",
+      "sha256": "8e11006c2af7704bbb0b8d45c11dd5228f2d6996e0493a37d5f85a7ab7cdab1e",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-playground/RetrievalPlaygroundSection.tsx",
+      "sha256": "152fd71f30684e6d1c9c52d757db0cb5042f39e9eeeefc806fa5cc6bb92206e3",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-playground/retrieval-presets.spec.ts",
+      "sha256": "b9e259b04c2fd5557da9b2b3c1f84c8ac94b6cb7758add416c9f8d62bafd1e27",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-playground/retrieval-presets.ts",
+      "sha256": "cb2cfe7ff2c43f9d2b7bc466741bf3e31ffdcd5bfe97a7d48f1e5062a38dd81d",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-playground/useRetrievalPlayground.spec.ts",
+      "sha256": "d1d5b254ddb0c657aa38c1e47596b076c9f23547273f174b2e6029afd947a128",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/retrieval-playground/useRetrievalPlayground.ts",
+      "sha256": "2f39037ab95aa7622c183401b753924ab3607e878441de1dc1390014820a0a90",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/source-management/useSourceManagement.ts",
+      "sha256": "f9033e09c353fb57f0c5a1a1694846640631704bb6ede3a096b72c254c83fd76",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/vector-operations/useVectorOperations.ts",
+      "sha256": "0badd0d1255961fe2d4b5d9cb12c234f5eeeb6d6936a9f1b70eac86ef936fced",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/workspace-detail/useWorkspaceDetail.ts",
+      "sha256": "52f736d3a32068827675e3ef8f44985a968fba57afa5a4a2d60c7c19b94a98e3",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/workspace-memory/WorkspaceMemorySection.tsx",
+      "sha256": "77054393a468b03a618983051ff8b98b8ba573beec08b8f100a197a5caf03717",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/workspace-memory/useWorkspaceMemory.ts",
+      "sha256": "04e0a1fbfe152d0984138a82d101446da97599cbcab6537bdb37874ef613ddeb",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/workspace-resources/useWorkspaceExport.ts",
+      "sha256": "9caddd3f0a768738a75842f3951b820af4838a89bf403b136571217812bc7fa0",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/features/workspace-resources/useWorkspaceResources.ts",
+      "sha256": "4ad5fd93f4f61e4fada43f2458bc3d0979dae42dd7435e3170025db425718738",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/lib/api.ts",
+      "sha256": "5086faeb58f469b51182a5065121510802ded9192829eee83977711ce2128304",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/lib/format.ts",
+      "sha256": "ec11f267faf8879d21f0fa35f35fb554098f3d1b1edee57f2709ccf46d1d6255",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/lib/types.ts",
+      "sha256": "376ad8512167ac3aacc0ce1997e4cdf53dd20b9af0bd35758eb783ce3230449c",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "fa23dd06f3f5878d977259331d728c8929b5046179a027863856da7cc3065c18",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/AskPage.tsx",
+      "sha256": "8df84d4c0266120f5897dafa834d6abce20d561fc0866d764fbde3d88bcd277a",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/BenchmarksPage.tsx",
+      "sha256": "377b2e5f101a5ee5a677128fe4f43a81b84435c78f903d03ffdee68fc660223a",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/DashboardPage.tsx",
+      "sha256": "03da9cf934f34848d147dae8884f03b296de791829bed705fb1ce765d0add720",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/ImportPage.tsx",
+      "sha256": "c0ced4ccc39f2e448c2794ede86c3985e6ba4b04fc6a532803d0e555a434d69f",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/JobPage.tsx",
+      "sha256": "873d668f78e584e8b31bfc7f86200fdb14032d1efdb3808cf012bf14860b0eb2",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/pages/KnowledgeBasePage.tsx",
+      "sha256": "21cb04675a246ad0e267f8d4d38463fd4f36f3239690bc655c961a6d57423fcd",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/setup-tests.ts",
+      "sha256": "377d3d5019cf5752743148d495ada4844dd02c404a559f4f9fd01663e5ed2933",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "b7c5c958406b12be76c82f8301c58411c869b6bfa26b37fae206536c6a224f1d",
+      "executable": false
+    },
+    {
+      "path": "apps/web/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "executable": false
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "a04a992fcce664c575439eca716e0af973c740f39b1dbd438642dde752d71caf",
+      "executable": false
+    },
+    {
+      "path": "apps/web/tsconfig.node.json",
+      "sha256": "3a9c9ee06b834e96cae6fd9e48eeb24c67371efbaec64922055b755655be4b89",
+      "executable": false
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "ad3f1162846fb5df3d13a34b57d74ade8ec561205f557a87a99ba711eec344ae",
+      "executable": false
+    },
+    {
+      "path": "assets/benchmarks/data.json",
+      "sha256": "2bfd434fef6e9d69b3aaa0c5d5445831ad9dccefdc32c941457495e513621eac",
+      "executable": false
+    },
+    {
+      "path": "assets/benchmarks/quality-latency.svg",
+      "sha256": "ff0ae7421a2cafacd3dcd45b8f813184bded197a3a14deaa017b7f99bf416726",
+      "executable": false
+    },
+    {
+      "path": "assets/benchmarks/quality.svg",
+      "sha256": "247b662261e7a18de09ad390cb84889872b3dfdd8f52fa4046da6193c6540b7b",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/lifecycle.mmd",
+      "sha256": "d13d9788ec32fccd9f80599bd0e31bbadfd5a9d9d591f33b4597fadd74e1072d",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/lifecycle.svg",
+      "sha256": "4562d426ccf6b764ca99c0280a2f3fa478c0689f9d3d881d7d86e280b2d4d99f",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/retrieval.mmd",
+      "sha256": "36ed6aae042c30665881118d554c47b567817540fd079bb56b49820eb5adccb5",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/retrieval.svg",
+      "sha256": "e5c6274e1e8647f749e8397c7fb25abd23c95370132b6a93e3c38c8d786d826b",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/runtime.mmd",
+      "sha256": "c4dabf082c729c82ade703d694eb32b73fa17b88c14f2c9b13f70b9abd3fc662",
+      "executable": false
+    },
+    {
+      "path": "assets/diagrams/runtime.svg",
+      "sha256": "410970061a45e085c5a8b3b81c032f43b36d0e6ad380eec5497f490e458a874e",
+      "executable": false
+    },
+    {
+      "path": "assets/screenshots/durable-memory.png",
+      "sha256": "33d2cde6618fef9ddb630ef6f422d20eee3c38fe4cde345b9ec150eecbc04510",
+      "executable": false
+    },
+    {
+      "path": "assets/screenshots/provenance.json",
+      "sha256": "c6d2bd1f86c67ef378950682541d5ff15d11ef7bc11b1848b0eff290ad97de5a",
+      "executable": false
+    },
+    {
+      "path": "assets/screenshots/retrieval-provenance.png",
+      "sha256": "ba37af72026ca633423d42d8bbd6c9f53e1f26158ccb4d3243c75a0a0b8f760b",
+      "executable": false
+    },
+    {
+      "path": "assets/screenshots/source-management.png",
+      "sha256": "cdabaea56177d2dcfcec25f814f40c0b8159615c35f4955d1787d3faae9e1dc7",
+      "executable": false
+    },
+    {
+      "path": "assets/screenshots/workspace-overview.png",
+      "sha256": "890661c0877c1ae8be0744490016f0927c59511771b1aaf7dea27d88c4bdf8cf",
+      "executable": false
+    },
+    {
+      "path": "docker-compose.production.yml",
+      "sha256": "1840acf710c65f26d05ca6a1a2f97b75bacd52e7d489e186c9f0f8ff86e79518",
+      "executable": false
+    },
+    {
+      "path": "docker-compose.reliability.yml",
+      "sha256": "dbd5da364453a743b5eb1740f3ea15a9ec4249e3376f7eea9e21963931b86a97",
+      "executable": false
+    },
+    {
+      "path": "docker-compose.smoke.yml",
+      "sha256": "66e3cda94a842930ca56ccf5406a22ce9a4dc92dc9b41dbdc5002984bd6c9631",
+      "executable": false
+    },
+    {
+      "path": "docker-compose.yml",
+      "sha256": "baea29e91a43f7ec72023755bc5645f1bff0e6fd2ab7337d7c7b25e54d48378d",
+      "executable": false
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "740c2b29969277846db4b5e4902ed94c2b30bef242affefe4dcaae7afd64f162",
+      "executable": false
+    },
+    {
+      "path": "examples/integrations/hermes-config.yaml",
+      "sha256": "83b113cad129111d00f96d939861757029546477c72923028dde79d571485bd6",
+      "executable": false
+    },
+    {
+      "path": "examples/integrations/opencode-http.jsonc",
+      "sha256": "cabd80e85705231162085a628dcf6a2aa51b28b84a4df435a5e82fe848b16ddb",
+      "executable": false
+    },
+    {
+      "path": "examples/integrations/opencode-stdio.jsonc",
+      "sha256": "4e2138e5e0cbe49951785166e6b56e0a9f686b8153a14214e927b36293a318c8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/alpha/README.md",
+      "sha256": "422c6e915de654a92d01d7eaaab61cddaeef1e02691454e73a649cbf755608c1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/alpha/architecture.md",
+      "sha256": "2bf704630c5fdfaa47a9e4d92ccb73030cfd45450c9b734aa081b3ec41b454c2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/alpha/decisions.md",
+      "sha256": "816040053f15cf0bf9e36c6a2a3b5a136f99eb841be6ad1f664fdc71a6ba8cc4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/alpha/operations.md",
+      "sha256": "9b5300feeee024fc520426b5d31f738843d7033e89a88633bb702b65f323e110",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/alpha/retrieval.md",
+      "sha256": "72b25a9a8617c2236b0bf2462dc86e214fed07529f18c722aed16deee523eca4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/beta/memory.md",
+      "sha256": "f4e121316fcb1c4bf38384bfd621e1379f7ff27520a508055fb9a0f147cb6b8d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/beta/notes.md",
+      "sha256": "973b95f6b3e8f2fe74b8e70d40b25434c29e8bdadc814c350c6d63d1e725fb60",
+      "executable": false
+    },
+    {
+      "path": "fixtures/demo/beta/sources.md",
+      "sha256": "8e9b125c331b32761a4d51d2971d0a1254ae8281806af92a71d3747220f6eb2c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/README.md",
+      "sha256": "a7cf064f982e116bd0286d7bb8300c3aea1bbc522cadc4068bc529c381c26983",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/approved-regressions.json",
+      "sha256": "9224edae8c665e7d999c28702006dcf59bab0a4b4ef8072542d043f45714e496",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/baseline.json",
+      "sha256": "7f07455baea91cad55411c65dc71a66af50419c7da0af3086886204f62f70488",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-00.jsonl",
+      "sha256": "56615f9ebbd1d9ae35857f8cd3cf6820a1a73e96605bfe1ca18c50c459179c7e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-01.jsonl",
+      "sha256": "e9998a74fa99546fc88f2fccfb2bd29f18cf84e7bc7fd71c6d378236add53dc0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-02.jsonl",
+      "sha256": "c9ab1e86f2acea9cf126d294173322201daa8c5ec140dc4d3e2b83e210f96fc3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-03.jsonl",
+      "sha256": "964271b2b0ac8007f403fbcc655bc864ce08cfa002b73185d2075a3af2833f72",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-04.jsonl",
+      "sha256": "e1ea83823221f22d990fc6a2bb3c123effa43a42df3b886814c3cba259b60d99",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-05.jsonl",
+      "sha256": "03a4c507fd5f63ee0215e87e2669c314b64e8bfa036bae5a9780adc207c13bfe",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-06.jsonl",
+      "sha256": "2fb83d509b65c163fe024243d3e6adf98cb1e78fa81dd6092df60eb720315b29",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-07.jsonl",
+      "sha256": "59fecd56f617502930eabfb509c33ceb4b1ded5bd60ca1dbaab6c54da81b3899",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-08.jsonl",
+      "sha256": "2ebb9114a94ca14b4bf341bf0245cd4dc11c408f5d3eabd420dc8af88af884b0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-09.jsonl",
+      "sha256": "a47842427493d122b54d5da98bf5a0ab91b69337f52e04f7d6c939260a9f5686",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-10.jsonl",
+      "sha256": "81d7f7686a9db3aae08e6ffc4795b10fd79bf8037b51d2859284e31c039864a4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-11.jsonl",
+      "sha256": "19c91060d287cdcf8eb84b961ca4063d4eee763f3ef69e447871ddc22fde5aef",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-12.jsonl",
+      "sha256": "d1a79a686f0c05021b4a375c2c9dc7f54e335e0e434b9ea99c02049bcb13e08c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-13.jsonl",
+      "sha256": "00764b0bff3493f916ae8b8ea1f2ba8913138b528adaf3560295b46a964b37e8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-14.jsonl",
+      "sha256": "6fed4b8149252de8c1298297ea5e30caca693e389500b7b45ea587192dbaf6ee",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-15.jsonl",
+      "sha256": "978d7ad7a5590e13aa41d17d406bf24519c1863b7c3552094d6578a286940687",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-16.jsonl",
+      "sha256": "755abe647e4052a2b03ed1a3a7f040548ce9a8139d2c4bd0708cbf2ba27cb063",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-17.jsonl",
+      "sha256": "2c3a55adace06aa651f6ef22d00d8f439605548f9e56b03558e2e31900b0c372",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-18.jsonl",
+      "sha256": "d8b5ed3ca311e6926042ccd6bf3975128d94dbba3ae32cc3ef1bb0a9256d05e8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-19.jsonl",
+      "sha256": "0fe6a712d1a1d5fffd6e4c23b4df2a2e91da90d4792c55edfc24d3c4a9418ca3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-20.jsonl",
+      "sha256": "79f252f66b178b8a0f792913688c8c4d0b3575cb633ee4939004832e3936bfad",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-21.jsonl",
+      "sha256": "6c6378014b9794ff0b15356e63abb8327ad8a48587dfc8d93958a7f4d5e53e23",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-22.jsonl",
+      "sha256": "c6a84b90fc868f840a84865f6b14f7195f69c490c25d844820d7329db13e46d3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-23.jsonl",
+      "sha256": "e7816123d37c5dd6b5f1d7730c9a53a8a28422d31bfb7172445b02b3a4b7d093",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-24.jsonl",
+      "sha256": "d277dc397fda80fec45c2991cbb465c61c96edcc56f1cdc2eb911637f0305888",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-25.jsonl",
+      "sha256": "bccd3659e7c3003fce6cd516b7666644c78d6da918226c67e69736b1adead8df",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-26.jsonl",
+      "sha256": "61c4b9a79be7ae523a99f285db6dd1e179602a28514306f139f61ea37fa67668",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-27.jsonl",
+      "sha256": "a07a7d96cc077037b08570a40cad48560c001d7a156da40b0c6602238bee1f0e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-28.jsonl",
+      "sha256": "a8d90fc89d40ee264480351008a91f6247ea1fe5fe591f873fabefc53cfd2fdb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-29.jsonl",
+      "sha256": "4f428053614938264a69715f4d897adeb227150354e2ac0f4197a4c22b4acd17",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-30.jsonl",
+      "sha256": "56c6d8cfcaba91b565675b27a366826b3cc1107617486843ad632323d80f03ef",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-31.jsonl",
+      "sha256": "6a0dc06a9d9c8d928c745b99b0672cf3e85c1125ce5dcfe4da0979c34fa444ad",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-32.jsonl",
+      "sha256": "2f2958a6e9056fdaefaf683e8abad2ec992e1e4714a67a6320403572f56ae246",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-33.jsonl",
+      "sha256": "d24ba846a1917016aabefbff86d062e0117de8b60f1a49164426a16afecc3ebd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-34.jsonl",
+      "sha256": "e2a28f23c3107cf9ab09edf4dbff6669e13f8e717499cd134469bac9d15fd550",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-35.jsonl",
+      "sha256": "8ae0c7f7f6da90a89bf0d53b220bb6c9526e67325927e19ec8a9e9c21b6de28e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-36.jsonl",
+      "sha256": "7496fb0ab05efbc7ff22f94ef88be57ff1061a8526af8ecf61119c7f7d27a780",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-37.jsonl",
+      "sha256": "b247f6f8505a3cb82c6e2a0067194b7d82fdacb44d58400248d27df9e46660eb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-38.jsonl",
+      "sha256": "a561d87096a46d70d0654d5efdc101328749ca839cb3cf8ca921e4576037e690",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-39.jsonl",
+      "sha256": "c293349db167b0dff5f462eb76b5af097a421a33e71697f0e0c984513f3e80e6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-40.jsonl",
+      "sha256": "f33ca5fb87ee36b40503c4472a9d946cf0df9af5ce262f48a5ededa98552c028",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-41.jsonl",
+      "sha256": "2a0df8bb3366d412a1c0646f219161c3b1538f4d3e7744eac94985e6d42111b8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-42.jsonl",
+      "sha256": "665c7715383a78d4afb470b73c748da276f947870e23466c2140bc8623273799",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-43.jsonl",
+      "sha256": "604f2f4e7b96556be45e374c414418bd85dd43e63dadc7045e8eac099ce40086",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-44.jsonl",
+      "sha256": "47db3095aa74e26dd5503ae4286f786daef9e591159429f0115e0ab5d4c1bdd8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-45.jsonl",
+      "sha256": "1f93079da5db9095f3465615bc59ac1a0b0e43ad2a40731cf57f91daa82c6d6a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-46.jsonl",
+      "sha256": "ec524b23766f4caeeacf1b48d378385d2d4f2a818410ead753e94ea9ece5d380",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-47.jsonl",
+      "sha256": "6fab39c4ea818abd23d95b4193b3634f630eac8f994c007cc32186f3fe8e827b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-48.jsonl",
+      "sha256": "acb6b9280feaca8456f78f1d1466fbd15ed3d7ff4d3ece9867c5728cb553ed3f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-49.jsonl",
+      "sha256": "d4f5e91246e5f1735c5bcafdbfa74e4f1fdfe6d74f4150814b69e6bb1b7b4168",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-50.jsonl",
+      "sha256": "0f2d520cac08d30288cae951a68631e7b280d2cc2218fa29c6665e9bedefa869",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-51.jsonl",
+      "sha256": "cb9c4212ac6963c181014cf9edc6a3f6de7d5c1c70c71cf658089059b56e5818",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-52.jsonl",
+      "sha256": "baf388f947167db435a92486580c1e529837a18e4f2514c068bb81d9e39f1e20",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-53.jsonl",
+      "sha256": "b2a74123372df7c282fd7a1def7a196cd7af2bade0a382e3e61a70ed60a13e22",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-54.jsonl",
+      "sha256": "e8cb5c94d8ed333fdf11334cc964d48a5e854231f435de7ec7983fde77cb9133",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-55.jsonl",
+      "sha256": "264161ff17200b7cc2d43ef34c6541466eedce596d4a262ad4fc6c5434586f34",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-56.jsonl",
+      "sha256": "d3848e2ab779b7f0d9aafb33cd65bf954c319c739c8e3704bc2dbc2f89d6cf20",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-57.jsonl",
+      "sha256": "35f7e14422a68c9e1378ae268b84885e6ed5f4cf3459a804ec3bb482b3c210d4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-58.jsonl",
+      "sha256": "f29246af5ff78843f72ba24322ee864d0b38dafbd27ec7ebd47c7ba2e42b7cf8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-59.jsonl",
+      "sha256": "82af32bdd9680a395029f7b33a8944405b37b5910d5f7675fc17905858860455",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-60.jsonl",
+      "sha256": "c30dfcc8ad6fb421b1c0cb7ce4b319a1c1cd1bb8cb110b68373e211993ab852f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-61.jsonl",
+      "sha256": "3e2aa5a6119d6a8f5e5829fe534db2308faee24f9676b5b73cbd4e2dbaac4d9b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-62.jsonl",
+      "sha256": "ac31fa4b4307116c6889a8bd78a57f1978995ce56f0b120f1bd4061283e86bfa",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/documents/shard-63.jsonl",
+      "sha256": "c671570da5a867a59f3361d65b1c62c14d4bbe44db7ab6ad4224c621833366e4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/manifest.json",
+      "sha256": "776065aa6d5ecf1978884719bfd1e3fe04949d1fd2951c2f6eef7f7583b6ca56",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/qrels.jsonl",
+      "sha256": "0664a6bd82d23072954147d4bc9aa4f1462837628621d249cd7083693b44747a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/questions.jsonl",
+      "sha256": "553434d6a7b79e9f039da03ef62e8479114d6360560f9b6f6cb1073d8513ce41",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/semantic-review-manifest.json",
+      "sha256": "83fc8249ace9b752a56ed67c4d88d81311190326be0155cbadce092a2ad389d6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-en/semantic-review.jsonl",
+      "sha256": "aa4c8386fc7157d8f414a47f0d816169b7612501b1918df581ea9fe3cca6d50a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/README.md",
+      "sha256": "dfdd0d18d20dc6f97cf717565e14401afea242129f6a2107a709e291a59d45a7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/approved-regressions.json",
+      "sha256": "9224edae8c665e7d999c28702006dcf59bab0a4b4ef8072542d043f45714e496",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/baseline.json",
+      "sha256": "eb85abc4d3483a0fe1604bfa137788e84188dd2304f1951762af3b11bb7d8e2d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-00.jsonl",
+      "sha256": "48a8ff72c6d8774fd30b3d8fe0f81decb9224afa2c4c7f009fa51571017e484f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-01.jsonl",
+      "sha256": "a43f6e1dc45b51bccc643dd48369e19ef30b7baa3c81956b878e3db7786593c0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-02.jsonl",
+      "sha256": "dfbec4807e8e310cf9623f3883c0f422424cd05a1d302d9788da998a4aebcf7f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-03.jsonl",
+      "sha256": "f2e53c7e9b143cfc7137dde4648ba7560194a8d8c05f9cb588ab0359f6b63a7a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-04.jsonl",
+      "sha256": "e44d857d83a845b934b331305a0daea3e07b526d3dcbf141b562444f594cd4bc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-05.jsonl",
+      "sha256": "c29bba545bc90830e9b6bbeea4275bea483fbde79f94dbde348dbc0cfa6b05af",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-06.jsonl",
+      "sha256": "417eaf4fa8596e95e9d7ccbdbadd75f2da984828f75245eb4dc11cd5726bdd5e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-07.jsonl",
+      "sha256": "e997652b0107276fe25aca063d2661a49789b8579392b75f6d640372a9e54b88",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-08.jsonl",
+      "sha256": "fa3ef5e30510cd15bfb4a777438e6f724578168215e61f038e50be5e7b8d1867",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-09.jsonl",
+      "sha256": "ff97c2d092dd80b744da3b7ef1c7fe439a1b1af0c6108c6430252596d5c4b3e4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-10.jsonl",
+      "sha256": "2a6daaeac718bf0c84798a2d7ab93db193edcd8d15569f2b127ca6d51b93f8a1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-11.jsonl",
+      "sha256": "e76ca02abe27d1542cd62bed9b0244492f2c801a91bd64ecb18c54ef4b47faf4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-12.jsonl",
+      "sha256": "2e875d7540029e98a9cf57a806f017363517f11ca7fe430b0925022d617c6b4a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-13.jsonl",
+      "sha256": "edaf99aabed62635963ee7b7ecc25c3b726c777cadd71b69cc9f1365f3003316",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-14.jsonl",
+      "sha256": "9156909e6aed7a4ab5442f9e89b76e79642862417f61f33f8fd48caefb0d9d97",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-15.jsonl",
+      "sha256": "8d31c194a2c42b12986ee33225ea2a38181cf23591a6da899a55b9bc1c122f92",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-16.jsonl",
+      "sha256": "7073211ac2b078303b8b04b64f1eb70b876e54d7d3eae7bb11e66a73ef2d108b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-17.jsonl",
+      "sha256": "26d5f70e626e2fa633f84891afe659923be2ffbcc4419e0e8a7c64b170bf614d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-18.jsonl",
+      "sha256": "fc9f6c416e3f9cd79c6308a300a46cff153bb81d3b3854a2db8d46cf84bf92e0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-19.jsonl",
+      "sha256": "4abfb1710459e8b5ece7816156c7dcd2c5e6a5071d09eeac7958439a4ec6211e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-20.jsonl",
+      "sha256": "c00461f74ffdb303f151fdd067d206d744b85569d06dae936f4ae901fc7d54ba",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-21.jsonl",
+      "sha256": "b91a7e24156da832e1605029a75db9d69f070cea55f372fa08fde933926f5f46",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-22.jsonl",
+      "sha256": "1c7bcfec05b2c675c8621abeafca11d5ace5903a7bfd5f8e9a676750c777799f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-23.jsonl",
+      "sha256": "dbfae1fbf4b032976672d979e200e45dfa983019de8fc3249bd0ebdcacf68e5e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-24.jsonl",
+      "sha256": "938506832c4cc689303b78d655f8a16bd057afe459a7675c92bfffca6d530d04",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-25.jsonl",
+      "sha256": "50a663cacf8a4284aae1f264855b0d447a89845c0ab86657387bd4474a2e7acd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-26.jsonl",
+      "sha256": "dd0dd2caae7d2203585ae3ef10bbf018f758dd0cdc8a9ed3d075c5f870261e80",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-27.jsonl",
+      "sha256": "cede1ef679658da11d0f5f41c8b8d82234f5e6819c8b49ead50d72085a970709",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-28.jsonl",
+      "sha256": "3778ca02e5110baf42e3ca5fc174144900dc8cd8d46c548e59b70bb5c7a1e75a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-29.jsonl",
+      "sha256": "ca81c180c4adedee94fe36dad117998a83d71eaff80bbb156fcd4a50838272c8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-30.jsonl",
+      "sha256": "318a9ce261a8d6f3f9004ab3a85e2a1aaac84d5063423eaab6ca846ce5ca56f7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-31.jsonl",
+      "sha256": "c1ba5bf5013428e58d4aaafc507870074ac5c158c88226aee232834b6bf0a592",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-32.jsonl",
+      "sha256": "3c28903dd3c54ded09d9ed4a9f8fe0fb09511897142deb49d4ad76f8d1bc124f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-33.jsonl",
+      "sha256": "24b2295c3ba905d5954d7be6113fb169a55dc90b07e36460df4a6fb96a40ec5e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-34.jsonl",
+      "sha256": "bdcaff1795f33c8af1fb7eceec6fd26413e0da992c995206762f441d6001ad03",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-35.jsonl",
+      "sha256": "5144c19fe279755212ae1d16bfb98b6ed915f8a0e64f62b3c809089a1639a129",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-36.jsonl",
+      "sha256": "f39d35e58481ba8534498b10c7245f95f2d92c9b90c3e9e96168884842c71d77",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-37.jsonl",
+      "sha256": "92d79a61de727c7353c082094ff84bb9043d0e816cd557c2dc264f4e32b43340",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-38.jsonl",
+      "sha256": "f19ba2a784edc92465e5e42dbd44283f0a32656c0e73665c7f3b69efb1a194a1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-39.jsonl",
+      "sha256": "21b1aa1dde3881169b3965faa2a319b6dbcbf7fb925d86b011d30d85ad570a8b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-40.jsonl",
+      "sha256": "112be21d7ad74bcced3e02a33efd86ab9aba8442ddff73b6a7a391786121b069",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-41.jsonl",
+      "sha256": "5f0d28c5636a5194b220471cd4da07635bd0fab5e6ac657cd1dd4096d09e0e21",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-42.jsonl",
+      "sha256": "f02453771c3d23a6b5dd1fb3b1ea8ab57d18fefbc8a06dd30b15960259486d39",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-43.jsonl",
+      "sha256": "37b746eca7a4c479d1d554206422e10275f512074bbd4265de9f860f099d8435",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-44.jsonl",
+      "sha256": "2c07e04b4f597fbcc307ba21431a3d26178be07755a1c8f103aae782b7618960",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-45.jsonl",
+      "sha256": "ed646fca7b0a75f90cdd742805c4149796fe68f8f4e0b8c177ab57164215b38e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-46.jsonl",
+      "sha256": "96e3b8174684b3bfa2b34520812a0d31423dcc844b058a2f591c0355a9406d4e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-47.jsonl",
+      "sha256": "2cdb7d43797ce1abffeac072e2f5658aa590d1f73ad6ad177c3af0612c1fc3a9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-48.jsonl",
+      "sha256": "70c77766d0bd8977f1a13d0a0f8ecbded4d4b5b95ba3fb6b2b2051aa3ab97e6c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-49.jsonl",
+      "sha256": "85ab459c5910b6af2fcb4f5e550231703cd1fc7b96a772f99cb08e5199ace787",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-50.jsonl",
+      "sha256": "010e94d9b3e07657741cda6c62083ec6609a3c11c9493f15244ca19e9e20d047",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-51.jsonl",
+      "sha256": "36a1b75191a050dac64c292f14a5cb3560dd54eb7650cfc955410a5bf6f5d136",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-52.jsonl",
+      "sha256": "cceaf5ae86928c2d67d1016d799190f1a3f4788ca3f35baf98139be2912d72ed",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-53.jsonl",
+      "sha256": "ba030dd8387ba20f7762f6a8dab68fd6004238380af807a410a76dbd71345e41",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-54.jsonl",
+      "sha256": "4ecd412afd114324d434eda7e5883674db426c11d1f7a94e1c481b188349ec0e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-55.jsonl",
+      "sha256": "4e8ebb5cc582995d86ca7019b54d652dba57154354ddadf86d8aa453473b1f9d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-56.jsonl",
+      "sha256": "87de0c0e69bd4deff1ef5a2d3a850bf68640d4d82178ebe409528c1609bac655",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-57.jsonl",
+      "sha256": "b885d2a57b418f2b235448d60607eaa76e0734376bdf9c0d6deac1930dba56fd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-58.jsonl",
+      "sha256": "76d04044273bc784d4048d828cc58c2bd109664f48ecb3cc1e76ce5db3ffe248",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-59.jsonl",
+      "sha256": "09fd6de5a3b5e89e4b4f49433d1e0135a9dfa6d1a8989077a9d4015774ce39d5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-60.jsonl",
+      "sha256": "f36207b8bff7d3dc314e3807f3dfc9a85a25c3eb988caadad6f42c8e2d178ece",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-61.jsonl",
+      "sha256": "636c6ea46f409fe43bd84047c8365192095569ba7f0885ff4ce80377186388b0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-62.jsonl",
+      "sha256": "057cce56298b23d105a2ea94e3760b924ec4ebd2968a3f0b78dee1ad26bb7fcd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/documents/shard-63.jsonl",
+      "sha256": "7e445f60572471d0cc4c7118b5086a3ea067ae35a3533227ee55f94d1996175d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/manifest.json",
+      "sha256": "4690287e08aea74f083984989846696263de6ee2f1b01819c09eb1a43c8323de",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/qrels.jsonl",
+      "sha256": "5a109932ef8355cc2dd98d6b110cb8cd89ed3233f2179facdcc8045de0af776e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/questions.jsonl",
+      "sha256": "cf70469d7864568d19edbe1304b69676904b534391dab90c2c6a4124715fbcf0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/semantic-review-manifest.json",
+      "sha256": "4213cca1d1255fb09f24a471dd11dd593b47b47e4350eed00a0ef69ccfc2e373",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-mixed/semantic-review.jsonl",
+      "sha256": "2565217dc87af7432785340c7d513606f4d1607c88f31fbdaa844ac19a6bb80c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/README.md",
+      "sha256": "b0afcc93c45ed5d4b3cefecbd1866b93b8e96ef0b4481641ae3d573980e40968",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/approved-regressions.json",
+      "sha256": "9224edae8c665e7d999c28702006dcf59bab0a4b4ef8072542d043f45714e496",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/baseline.json",
+      "sha256": "4db4d59d048f4b37fc802458d2ae1f2598700ff083e05cb6398adfefc5477bfd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-00.jsonl",
+      "sha256": "16c1a4736015352bbc22ce8ef0988577290feb3de69c5b9cf8ae925898144c4f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-01.jsonl",
+      "sha256": "0e88e6c35549ba15411c422de09cf6639ca2502bf8f44bcdd7f75112b5265c85",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-02.jsonl",
+      "sha256": "8d26f40d4ca4db7a48f54c03ca46b3a4c75a9877739615d487d10bae919257a0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-03.jsonl",
+      "sha256": "8e9f1134614fd1a531a1a2ff23823902549167a306a8d02ef67a70f41d07f458",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-04.jsonl",
+      "sha256": "705dd2a262827feba6741e1fc62d0e67e040e3a3b848163242e9599f03f96723",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-05.jsonl",
+      "sha256": "da24d4ee6b2a1a0f6eb58078ae3dd9542bc9f6b5b443633c0357fe554c4eaafb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-06.jsonl",
+      "sha256": "02a11fe024ac22c0948d5f93993ea64f8ee02776ddde81af39525ec409f51036",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-07.jsonl",
+      "sha256": "e961578eea3760fafe57796a72dd5c948dc9102530a1abad0973cbb3e14ba3db",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-08.jsonl",
+      "sha256": "ea70f5cbfe2d3ee2d5aeab12720b45aadab20947adf5814ea42c415e11183301",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-09.jsonl",
+      "sha256": "43313480a9f507d3cbdd53ef1054e7a88094fbfbdc204e4d15ad7bd7ba29f640",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-10.jsonl",
+      "sha256": "2339e1f9ba5356b55410a4ec4f18ce39b8f4373dc8ef34a8114d8ab6dc3a54d1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-11.jsonl",
+      "sha256": "fac43812e6321d787081c6ef7a6f55a24c6ccc97fe51ae462c3f1d66ad3cb9c8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-12.jsonl",
+      "sha256": "ce56678afb55fe5da3be150aa2c682564e6ffb4a701a6bcb116a7a5988ac6c79",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-13.jsonl",
+      "sha256": "8f9c80dbe6934ba452c132876170b8fa2d763ff0645f6e3db96603070d442b1f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-14.jsonl",
+      "sha256": "b741f42bd4004b26a03df5a177d153af21b52dbeda3c3fe31f40c843201de86f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-15.jsonl",
+      "sha256": "c8162618e4f1cd1348e7726924ba3163340a2c43b762db3d403ef136cd62fae4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-16.jsonl",
+      "sha256": "7de9a222e7dd07399ca716edb3cafc73af13dd77bfc6620446c07478139f2186",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-17.jsonl",
+      "sha256": "555bd63295744a175c5beb6a2340e995154615f87734ed1dae2d07cf5a925dd8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-18.jsonl",
+      "sha256": "39b3ec6e4bae3adb89108cdd24171d8cc26acef108b7d7eb207b08a5431d5fdc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-19.jsonl",
+      "sha256": "b27080df2f77d0b0fb4f98ffe993e5a0fd5547b5fac511a561ffb19a0c55e525",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-20.jsonl",
+      "sha256": "ee6f81f438dc43ca51b9a74935616ba5a2f62818103da82f7e2ec4f4f73b14c2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-21.jsonl",
+      "sha256": "f591b628761053c6022b14dd83f9da6df9616d6a270ee5743357e08f201790b0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-22.jsonl",
+      "sha256": "08c017cbabd8289ac64d85bf3835d2f26be6c3aa186de8b872378d4d1b4f381c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-23.jsonl",
+      "sha256": "c53369c8a92e019e6222445eadb81592a4a6caadc6a78fde1a6fd2c85f00dc7e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-24.jsonl",
+      "sha256": "324d7e4e22f1ab917b749fbf09cb393323ad97e9ce8b62a98988bc232f9d3fd3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-25.jsonl",
+      "sha256": "d8a3c7bcb40ef634292b02385109217429b68d556d94b41566d08b5ca0758bd9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-26.jsonl",
+      "sha256": "e583484f9a01ed2fddba6fca678118ca165417f30a837df4e551442bd8944cc2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-27.jsonl",
+      "sha256": "76e0a749b4c31c36c778daae51c6207ba2b9816f96dc2fa8cd06570f74c56388",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-28.jsonl",
+      "sha256": "813fd110dd6e03b92846c268536f6c7d09760bb1dd8921d13b5f194ecae204cc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-29.jsonl",
+      "sha256": "12ea6f7b8f576b4a523e1fb7914993a86af3e046e4312e367ebc8e2c3c15c131",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-30.jsonl",
+      "sha256": "6bfc9bf4d33fd54cb7a4e48b743336745f4ba3fa4775cfa5f6e5087f0c2b3c30",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-31.jsonl",
+      "sha256": "c7e3c0604bda2dac6d3b8e8d5083e6574e45c862190aea4c546a3b4a9c3f353a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-32.jsonl",
+      "sha256": "7a16529fdcae55b5e3272aa6f12d0320caff9b144fc2fae3e23e9b7dac45e60d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-33.jsonl",
+      "sha256": "1200df59c5967fabc404d17059bd52b746fd0eaf9a8c6bfe3d877c07c5340d1d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-34.jsonl",
+      "sha256": "080fe954684d78f6b655bfd028c330d7135562a03ad7f3e675d92d30bc3812ac",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-35.jsonl",
+      "sha256": "e11f6b749926167c67c4f1a6aeb48811b547876723642a4d4681684c6eb17f84",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-36.jsonl",
+      "sha256": "0f08cbc51622e19b47f01cf7232e7a46eb2f756aba37e05d79000bfb9575a85b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-37.jsonl",
+      "sha256": "3bac11fc6a07cd56c7051bdab692006edddb0c4af3a474e92f6209ed40d69246",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-38.jsonl",
+      "sha256": "e33b279e0c0874d55f013296b19b0ce80ad1fa9fe63e1c06c8a9b830c86a389c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-39.jsonl",
+      "sha256": "31655d71d5f4cab29fad75b673a058adf4abe639f7af46bc0b05b9ac3a26ae02",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-40.jsonl",
+      "sha256": "916bae89885f13b3285c1dec01d6e729d92bf43b7bc1e966b45021c3ea0bf1fb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-41.jsonl",
+      "sha256": "c82281311ee44255a1e0767396a6dd0a7e38648969a1be33995378f5135c516e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-42.jsonl",
+      "sha256": "383efe2768acc352aca0a44a6b1dcaa98094d0bfe1fcbb8dbdf3b7990dfa8001",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-43.jsonl",
+      "sha256": "093db56e858af04ed5ca94dae67e41927183276efaa1c7b75ca1a05b896890cc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-44.jsonl",
+      "sha256": "2ec23d29fda3cc683b3efec0587d1639e5d214c817a3810e46e06074527a88c0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-45.jsonl",
+      "sha256": "8d1387d12206cd8a14ad4a5769b38c92c0e102623d5076908a8c2d53f61be42e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-46.jsonl",
+      "sha256": "3a099607dfb64a1ee2216ef23402cd37f1709a5bcddc0dffb4935ef2927b2d8a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-47.jsonl",
+      "sha256": "214f8aea307e289368b8deeaad519bca4dbda591405c9a445b5ad9a85c017d52",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-48.jsonl",
+      "sha256": "a186b6174404b2908518ca47e695c51a2e7432b49ead74fb56b70cb9cce5878a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-49.jsonl",
+      "sha256": "5c712b352d8b0fc9b9f757252937e68def91e2ba70f02715abde0165197b5d6e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-50.jsonl",
+      "sha256": "79ed8ca46cd792ca55540d7d380f69fe614740c18787a94c6f50af107d17261e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-51.jsonl",
+      "sha256": "2d77a98978fac228503f771525606d2246a5ff1024b16327f5612f6781a19068",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-52.jsonl",
+      "sha256": "11e4edfca6ac145c00bbf83e30a8fddfb32b8b507e660851fc5f9cabf711a948",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-53.jsonl",
+      "sha256": "26bdaef2f670bf3ec971136917752b0ea426b5b04382f013ee9ef253b8bdffb8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-54.jsonl",
+      "sha256": "1804baca9491fc698fccd86a9cf206b4e23b050f71cac1687abf4da2cf93cb4b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-55.jsonl",
+      "sha256": "f3bb7af16cf4f42920b2c84b276ca4940abea4c9e48ec2bd9364b95fabfc205a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-56.jsonl",
+      "sha256": "a3ce0b76444f786499bac7e85aefb62ee0a58bfa89ea4310c2f115b656528776",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-57.jsonl",
+      "sha256": "119c457199e495ac94e574ee2ba54310ae3fe786b9c71ea8824e6ce865eeeb52",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-58.jsonl",
+      "sha256": "c29c3cfb2c9f801b1e9c97c47339d5b71dcf742415937eebde946c9f80190717",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-59.jsonl",
+      "sha256": "37d0fc767c4c901f5108af031996b8a91d3fc09a4490a62afdf3d809cab3a45d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-60.jsonl",
+      "sha256": "d506175ceb5f7dfe6d1a7cd8fa561fef1227beb1b140ff63fe7d1008b5c4e35f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-61.jsonl",
+      "sha256": "b0f580796bb82d8b81088c7da8d12afc7d4d62d52276147ad1c17a7fe0b445b6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-62.jsonl",
+      "sha256": "0ac7a450043c2c83adbc2909b61a3d23383db365bec1ead6cabaf1046d31036e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/documents/shard-63.jsonl",
+      "sha256": "8af47ad8a55d8e8cb77bce7ced4d4990aca81a6988b0bc5032e74d65767c93e2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/manifest.json",
+      "sha256": "d56b3f0602327bd02a5e073f9c676d084f59c988f0eaf2416a05bfd4addbfb2e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/qrels.jsonl",
+      "sha256": "1186d425bb8633daba889e616dbfcc7e3107a805c124fc72c51ea26840835e5f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/questions.jsonl",
+      "sha256": "df0e916cb7c477e824837268f5ab16bd2f5711068760cf825926862fc8cfeecf",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/semantic-review-manifest.json",
+      "sha256": "07dc7e7d20ee1b4974238994c9c36405642699d2ad35fb564810626c4baef267",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/benchmark-ru/semantic-review.jsonl",
+      "sha256": "c32e635c0b57f8219bf94e8a66ba558bb3b2644249fd010e9eec7dcf75bbd7dd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/metadata/v2.1-configurations.json",
+      "sha256": "f7a369475d2a507da733f2570f7bfc6c5cb22c087975038aa74181d0a4deafc0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/metadata/v2.1-matrix.json",
+      "sha256": "7a8933a3ac32b27a3643bde4141053966d961adac253c5b3e3cb21a73e177069",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/metadata/v2.1-split.json",
+      "sha256": "ae947971516f957cdef1585b35df7c2660c316c5a37662b058a6c2cc60470568",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0178-failure-analysis.json",
+      "sha256": "e1687821c22c29b3d91813f2f069ef7dcdd8ef4bb13f0638fe98cbaaf66d633c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0178-failure-analysis.md",
+      "sha256": "c7fd130367d05b8d6b57ebde1161b6ebe10d43729dda90792789f7c44d85710e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0185-aggregate.json",
+      "sha256": "6bbb87f9c5468be5c426d57f73e2b3b0b260a4598d2b991fd02b22e285cfbdcb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0185-aggregate.md",
+      "sha256": "32fddc7931c2849b4537aadc62f46afdabfd130c65f1037bc3967564a98413c2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0186-aggregate.json",
+      "sha256": "452f7cd65601139c3d53caad629cc81cec9b94de982fd7072791e7a9d74e5f89",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0186-aggregate.md",
+      "sha256": "45cf3251629d75c2ef3eb8494d24c18e982cefa4944f31886441e8c0c8c89df4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0186-failure-analysis.json",
+      "sha256": "86b9d04ac7858c2acb366667667a027c9e7820ab052311784ae4df024d25b4ba",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0186-failure-analysis.md",
+      "sha256": "b714a9a94b2445e06690464cfae0bf49f09d8e8e958b5a2669b890820800c617",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0187-aggregate.json",
+      "sha256": "b6358d0dc6c7bd91fa9dd489374bee85ab3f21f912c306eff25e181c49451253",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0187-aggregate.md",
+      "sha256": "b490d25459bef438bff7ab3c8a51e13980607b6748e0113f72e525a4877f2d3d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0187-query-averages.json",
+      "sha256": "bd3a27cba7d8c69ff16acf3c3e241ef5c37e3ba5110527f9aa78821adfc9c219",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0189-metadata-reconciliation.json",
+      "sha256": "5c480ae76f43028d5b84a95134b3ab0778408a72176e0806f30770cc0b5717c7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/0189-metadata-reconciliation.md",
+      "sha256": "2ca1f596038e07bfd2b741bd6dca54ee9f32b718e935cc45561838740da981f6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/benchmark-v2-summary.json",
+      "sha256": "011a459581734a0685e2834db1bea9a75b09b7624f0c37a6255f6339bfda3cdb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0209/diagnostic.json",
+      "sha256": "e8c857bdb25f2b7dd2d66dd597709f9ef1d911e1947eedcdef46dd1c932c33b3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0209/diagnostic.md",
+      "sha256": "9ff6ec70fc874136999b5ffcabceb9b27c88137b9b5d80c99372437cc8426ffa",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/benchmark-v21-confirmation.json",
+      "sha256": "c5b39281b2de999586bfd85be44551622542e0cfc2edf974080972c54b31b35d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-1/runs/preset-default.json",
+      "sha256": "df3edb92de5a1ff1eb2d68e0d2c59cdb818d38487e920ef057d4a7e93b6a2626",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-1/runs/preset-hybrid.json",
+      "sha256": "ad47310f806d6ef99b6ca157960b83a64367bafe67968decbba7ca4776403a1a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-1/runs/preset-lexical.json",
+      "sha256": "c068971622fd72d2545495d196f91ef454a36db485c7319c223817b54c4b2c7f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-2/runs/preset-default.json",
+      "sha256": "5c65482513f292e3a3fc7e45dcdc6fc5f80625032559b860a155b473f8a74a79",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-2/runs/preset-hybrid.json",
+      "sha256": "c8b4c32c3c8cd7f5ee9f162eb9494bd3b58e333ab4dcabaab6562608600bc598",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-2/runs/preset-lexical.json",
+      "sha256": "4ebb2741e290b799b727642338f1e7d053f6141a91552ac0cde52ad89d05b69a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-3/runs/preset-default.json",
+      "sha256": "e1bf4d6adcc8d3f1f5103bdda311f586bece81c9f2c9a32438e61fe814b8bdaf",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-3/runs/preset-hybrid.json",
+      "sha256": "857c41f8bf01f950138c874e66019cb674cd09b68cfc40d03b3b0e155d305c3d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/repetitions/repetition-3/runs/preset-lexical.json",
+      "sha256": "9eeff1bd292bf66bb62bd4fda17a2440a17644ca2c7f4da8c3a3a7b0cedb476b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/productization-0212/report.md",
+      "sha256": "d5a6c8e11673fd6131ae2553acd1750559ed9fd7408fc4dde21396f64c3a770b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/report.md",
+      "sha256": "c4d5fcc8c5213335b1de13295b76867c37967bdadd8d5e753b26958a621203f9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-analysis/benchmark-v21-analysis.json",
+      "sha256": "da057ffb96dbfa8764bbfbddc44fe3ac09e1fb08c65521d6f882a7090197b30e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-analysis/report.md",
+      "sha256": "c726169566bc0bf1a4b81c4f88a4f5c8b049f963fe63ba317f2bd2e961db052f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/benchmark-v21-confirmation.json",
+      "sha256": "f73154891265dc870fb766d3c304f4c1bb6450f5257b71c545e64eb12fa9d2ab",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-1/runs/default-dense.json",
+      "sha256": "8c18158de8d1c5dd45fc4ddc9b5eccc779c010acad5e8e1cd27fae4ff5fc3f41",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-1/runs/hybrid-legacy-control.json",
+      "sha256": "664044e09550ba2ff2832ee2fe553929facdc057ee8b34f8141458e7d33dd7d6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-2/runs/default-dense.json",
+      "sha256": "8f51490d147099f55ba796cffd8f422291e69ab9004061a2ed75e2dd332d217d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-2/runs/hybrid-legacy-control.json",
+      "sha256": "024eff0ba6179e1eb3ddbedf2d7d91e321c729c4e1021c7c7b207a65dcccaf61",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-3/runs/default-dense.json",
+      "sha256": "29372a19f07d20d9484a34cee1c2beb21e299a4a4232e798b3b42a036af22a7b",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/repetitions/repetition-3/runs/hybrid-legacy-control.json",
+      "sha256": "ce815e4e635c247d8b1e8c53b2ddb1a239a28764a24b5bd9bee65ddd13e0442c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/report.md",
+      "sha256": "ebe0eef069823be439d1be98aef1fbf3af3edfdcf691bfcd83d4d8cc057c4a18",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/benchmark-v21-dev-summary.json",
+      "sha256": "df8ffd2bdd46bfd90b25ec471a66be5fa52c7a8a0a77998ddca0955e86ceea5e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/controlled-fusion-selection.json",
+      "sha256": "61168f0c82dc44e52ae7f0e5ae3f01a921c51b963f206cae533f53f6a48f283a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/lexical-leg-selection.json",
+      "sha256": "078c5945f7e5a45798f4d30b61bc45ad62e4fcbac0c0d6b131c8cbdc807a6856",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/report.md",
+      "sha256": "c998840c092a4a6604bab76bc17216cc117f603161f4ef26c2aa162a93e1d758",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/reranker-isolation.json",
+      "sha256": "b447ae13fefd5a02f35a44ffecad5349fdddcfe3f73bb6998d638d2c54cec966",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/dense-reranker.json",
+      "sha256": "0a9c34a4d782c4c0ad5b66eef4192253d8c82ad0c8002a55f1de5e49c311c445",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/dense.json",
+      "sha256": "b1b8b8e238f9f98312aad1c58375ae992fefec6d5647d5cb2152192dcae37cbd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-dbsf-depth-25.json",
+      "sha256": "be1f270474977981907f2a197b9742669806803f585e6e924fe8c987d216b4d5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-dbsf-depth-50.json",
+      "sha256": "ded4b7c034dfbbbaa77031830cea64d39f024d7a9df94ec9c1a9721abc3276f0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-legacy.json",
+      "sha256": "52a71baba5df04c567aa20da2aab1dcd71cfbf2494a2f664a5ed478d7b0a3627",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-100-depth-25.json",
+      "sha256": "4287e95ddabf8ae277d716e4bf529ae0a76bc7bfe51269bd4dbf3d4a54e1f76c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-100-depth-50.json",
+      "sha256": "c221750651823241640df7ab3bd25fd7be0b743478620e8b50496f8143559cc7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-20-depth-25.json",
+      "sha256": "bfe4995f4f5525373014e6432cae3d3d168f94283c0a7f4c1fe80f2ac2c43e44",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-20-depth-50.json",
+      "sha256": "8fb737789695773fbcf7fd2f3055a24c1dd111b92a05a2ef93793a8c3dac51be",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-60-depth-25.json",
+      "sha256": "b0a6900c984e2a77b8a2ef05d22b5f70716678ca1cbb10216000daf7ced249ab",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-rrf-k-60-depth-50.json",
+      "sha256": "cba79439d4148b74847d8da79548642c68f48bf51129d69de6b6c821cd658416",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-selected-reranker.json",
+      "sha256": "662ad74f11f43f305e5b2a0f01b11e7dad365678f2b3e836dbb21bc701e0e196",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/fusion-selected.json",
+      "sha256": "274f2a61e5f2c32a33b459e6e167eda73ef0ef58e29e63e401e316c4fde88c8c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-0.9-b-0.5.json",
+      "sha256": "1b28bc27e8da419573e49e5a7aa1fc87a7a4c997841efc896f44161a20078470",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-0.9-b-0.75.json",
+      "sha256": "255bda585c2869e1b393a1e1baf3681c232d48c01b3119f1f8fa2c0949ad314f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-0.9-b-0.9.json",
+      "sha256": "74d90f13c88f6eb5452254c7d17bfd22352f5bada23b0ff52aa755cc92449d15",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.2-b-0.5.json",
+      "sha256": "0d4df1deeb3f98262bb31415cd5bab132daa944fc330e44d71c9e2f92593e29a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.2-b-0.75.json",
+      "sha256": "c5ec44d17a1a40166da8f924b06180ecb1fea3c6bab8ee381ec1c3d7b7476e1c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.2-b-0.9.json",
+      "sha256": "cd6504f7cf009a364d5db1b54c346c1f7ee79f9e5758033623c99b4dd3daf499",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.5-b-0.5.json",
+      "sha256": "4f2421007b542f3f95490426793c3f169656bdda9c8358eb701b2403defd49c1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.5-b-0.75.json",
+      "sha256": "8ba31b2fd994ae2510a388cea3f56d5e8fa0fd281ef7ed0715e95ae97c898aa4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25-k1-1.5-b-0.9.json",
+      "sha256": "bb63ff62dc4c5d59e2c511d5a6ae3f90ad29a7f7a05080511275da5f8dff6a40",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25f-balanced.json",
+      "sha256": "2b34b694314cafa375874c25145398d4ec29b37e8d92cb776c89fbf4497f49a3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25f-identifier-first.json",
+      "sha256": "cc2460717abc9c2a7c0a6b400a0113961c35ba6bd1671666491faabdfb692e59",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-bm25f-text-first.json",
+      "sha256": "74b43a87a2b2bd02e1b24161205afba66eaf8e8e57557cbbd27a4d77eb9af9ed",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-lstar-reranker.json",
+      "sha256": "2708995ff7e3f7f4db7a1fcea6b826d364ad5a67c1b3e247b838ed259266f2e1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-lstar.json",
+      "sha256": "23501f768ca41c15db7baccd49ae2acf0a08b72d039858489a872f4bcda62fa9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-pg-fts.json",
+      "sha256": "cffff7a2c4e6671e84fb43d9eed495e8234ca87fba5505ebd0c13eb370a7aa04",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-dev/runs/lexical-structured.json",
+      "sha256": "4f76c0377b6075c0ec249c74209f328add1233f084e9c48462fd1c655c1a0da8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/benchmark-v21-holdout-summary.json",
+      "sha256": "5b2b87d29710f29824b0b38535058ca066ebbe9cf87db7c8494b90f39c4dcd3e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/dense-reranker.json",
+      "sha256": "fe636d6f78d68290621fc573337ae4662e175ce1ecfb4865d7456505045618f6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/dense.json",
+      "sha256": "26c462b8864745f0eb4d0d54cd6a17202de1e6efa1cb1e23dc2ae88d72d179de",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/fusion-dbsf-depth-25.json",
+      "sha256": "2deaa549ea3011d65f94ead53e09bcd9d3cdc8b93c8b2b8e013440420f5aa3dd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/fusion-legacy.json",
+      "sha256": "2c09fb24473f22cb82dab6b7d74cacf8fb4d59dc57cbc01522e12941b743a4c3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/fusion-rrf-k-60-depth-25.json",
+      "sha256": "1a9e690b76f76c613dff33e72aeb8decbcb12a0bc3d512cb5b799265c953b23e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/fusion-selected-reranker.json",
+      "sha256": "3a37550aad1002ff2527869984c50a34006cc5b70e26ee349d9135a85faf2960",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/lexical-lstar-reranker.json",
+      "sha256": "56ce22d88616bcc644c6b04ba1aaa836abaee341768d3a1e3d12389ddfd05c0a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-1/runs/lexical-lstar.json",
+      "sha256": "3615fd5ad7dca8abb3b0e72fe233ef7477d62dec4d7c015fe0447bb393e25f7f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/dense-reranker.json",
+      "sha256": "6a06f203d39ad4954bee1f0194e44ab6552327017494fd278df538fb49773fe5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/dense.json",
+      "sha256": "912fd99020c157bad4b834e49e5795eff2b4441c5822175d127c7464e99d9738",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/fusion-dbsf-depth-25.json",
+      "sha256": "ac36bbae044b5e32a115c2db437a95788a25ceed68eb344e8947d56e22409ff6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/fusion-legacy.json",
+      "sha256": "a19dafa242bb8f45409e9365d582a617667c697414735173c0fdd2c6a3f778e2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/fusion-rrf-k-60-depth-25.json",
+      "sha256": "bb8e8ad666034c8cf51ce0677907788f06f77ee5c9113f3ae5ef09392ff1305a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/fusion-selected-reranker.json",
+      "sha256": "a4665445023fdbb2f3885149ff15d789943fe58973f90fb8cc4c22d244bb3987",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/lexical-lstar-reranker.json",
+      "sha256": "4a7de6dabff5f8e3940f46f0ed274c90a0dbfc3bec32bc92d4b6eae025d936c6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-2/runs/lexical-lstar.json",
+      "sha256": "b601570db606525f7a970c261c104b70dddb651adaaea22ef5c32a6a7a6accce",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/dense-reranker.json",
+      "sha256": "abf2aae12d48b90c170b874ea5f2fdaa4d9de7c6c9cd7f50ae1d93df9bdd49d6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/dense.json",
+      "sha256": "c57a0142cbf94ba171303135c4f805e3ac212749402a3232732fbdc0ee723c80",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/fusion-dbsf-depth-25.json",
+      "sha256": "df64cc5b36eaafda3f480128a1979c52023fe9faead5fd26398fc0604bcd4694",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/fusion-legacy.json",
+      "sha256": "e1b67197f2149aabc28e1e5c9f91c3cc2184ecdeb71b125f576bf780c9b24f4c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/fusion-rrf-k-60-depth-25.json",
+      "sha256": "e4a0195cf1d3f2c27c7bb7d5c6083acb6efa80b20302063ff2f47091988ffa4c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/fusion-selected-reranker.json",
+      "sha256": "e5688b6229d22b64e3d4b6df6d1ebbf803e709a74116fdca3aaa9678ad9f61ee",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/lexical-lstar-reranker.json",
+      "sha256": "335718fca2e493f48ea8054b4f64df883e92a60f529cd187c8945969b97329ec",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/repetitions/repetition-3/runs/lexical-lstar.json",
+      "sha256": "b2ff4b93548fd64fe2202f827762266f2e724938e7603fdc88815f106be80e77",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/report.md",
+      "sha256": "9c36d19c8259dffa95daefa5382e0a31b27dd682a76fce7f04410b538cdde9c8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/dense-reranker.json",
+      "sha256": "64dfb10143e475ce9689c838cb6865c43fa2c2488c77868185a0918837d8c4b3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/dense.json",
+      "sha256": "5ded903d72b004eeb73840e1f145d867347857e250a0056ac4c5d5bda92a9847",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/fusion-dbsf-depth-25.json",
+      "sha256": "cacc7b263f65372c4e1bf4dab82577d0a1e2040f96b3d20de4afc9534e6bb4c1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/fusion-legacy.json",
+      "sha256": "aecefb416710beac2f1b0f15dfe7661971aa747ea7220e8482f7905ab8f7e244",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/fusion-rrf-k-60-depth-25.json",
+      "sha256": "98dffe7710dbad29dd892a498376125a03ba2056e7510d0e9b88af014e599201",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/fusion-selected-reranker.json",
+      "sha256": "3d27527d7b6a1a8435669cf901b2cf5ca7dbff3dfad02e825019a5af8b14da4e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/lexical-lstar-reranker.json",
+      "sha256": "cca32c8451a80a2dfd72ac54cb0de4c349049453215d25661f36bf325947ff59",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/reports/v2.1-holdout/runs/lexical-lstar.json",
+      "sha256": "fb266713c94a4daefd2eaa38943c25f16ef06502c86e92a332bd5cc5633b0b67",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-1/benchmark-v2-summary.json",
+      "sha256": "011a459581734a0685e2834db1bea9a75b09b7624f0c37a6255f6339bfda3cdb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-1/per-query.jsonl",
+      "sha256": "979ba30fa5815041c2aee562f4d35c74a0f9d81aeeb213d7bac1a64ba9a53eb6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-1/report.md",
+      "sha256": "c4d5fcc8c5213335b1de13295b76867c37967bdadd8d5e753b26958a621203f9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-2/benchmark-v2-summary.json",
+      "sha256": "1673c44a5f96ae9a05f71d5ad8027fa83b28d23b0c59f313ab215e852037a84a",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-2/per-query.jsonl",
+      "sha256": "531a44a36ff9789f0586196311559818f983c2bb68fc4401ecfc0397fce53f23",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-2/report.md",
+      "sha256": "3aef60e6587a2770ba8452f028ef5db240eacc074c880cbdeb38f404f222a2a7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-3/benchmark-v2-summary.json",
+      "sha256": "b9c6cc6e86205ef967a119980af2f9b8201c663fcc073583bfb5f5cfc1f0c9fa",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-3/per-query.jsonl",
+      "sha256": "58435d25ca5a1c526bea2327ace8f96d47e215acd0a3442255aeeb69703fabcf",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0185-repetition-3/report.md",
+      "sha256": "21ad6d45b82f26a3fd1dac12523f263dde0e08269c7982e1c0184b7ef4c06d13",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/benchmark-v2-summary.json",
+      "sha256": "28b4d84feb97df1f22e79c58dc7058ce63b5b53517d3814767d020ce33926830",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/per-query.jsonl",
+      "sha256": "e7811cabdc379f1b5ba4a9ff1663be11576e48a29763b632cbf4b2a458f992ee",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-en/benchmark-v2-summary.json",
+      "sha256": "bcbe93cc675f7b88c1529725159ff6ef2de304ae3b3c25541226c66b837205a3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-en/en-dense.json",
+      "sha256": "d507c5acc2270919bb25dafd27008138af61ce395010092f8199564a8bec1efa",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-en/en-hybrid-reranker.json",
+      "sha256": "2c2ce80d14be6361d407a89d3edf16e55565534584ac378e495e04cc37fd7f5e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-en/en-hybrid.json",
+      "sha256": "d23bec798f9f355ad308fb14f8b2372babd1e9b581cf11da2ef1aa739400db7f",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-en/report.md",
+      "sha256": "b285315e087ef593be7c51ad6e1aa9c46deb6fdd25680635e6436b452f1aaae2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-mixed/benchmark-v2-summary.json",
+      "sha256": "1aee38687f75228f6b5ac71b07519f921364b0da5815a410173e6b396e364e9d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-mixed/mixed-dense.json",
+      "sha256": "4e5f0cc899d573f114a6e5686e1b24f260cecf373d2004829d8b14eb972e60b0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-mixed/mixed-hybrid-reranker.json",
+      "sha256": "fe932ccfc2fcaa4499b0b40bcc30f1308396862588010c4d7bff9901aceeaff1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-mixed/mixed-hybrid.json",
+      "sha256": "725a16c99147a019aba532a079cbca5ae430677fc6b8af11cc5fed0c45b52f68",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-mixed/report.md",
+      "sha256": "90553eb12b5abc015dd234625ddc5f74182b36e9dad7b01003231312153abae4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-ru/benchmark-v2-summary.json",
+      "sha256": "5ce4e99741e4d880d48ac2f2ad6c5cacad83c8e18885e1accd4f5c63f7105673",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-ru/report.md",
+      "sha256": "36fa32bc0f1d062abd52665c77b0df9f3f35137ef65dcb42fe0376e44afcbce6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-ru/ru-dense.json",
+      "sha256": "4314094db35bc1357903800372aa01674abe31e3df29c583d02131ce758faaef",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-ru/ru-hybrid-reranker.json",
+      "sha256": "16cfd483ca68b867454f71c152f0560548df53557248cc52dedbf8c138a87519",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/raw-ru/ru-hybrid.json",
+      "sha256": "3c3c2cb672b88a32f166c4df4ea6914f0211089ae887b8c0b2d8bcd5c6587678",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-1/report.md",
+      "sha256": "fbe2e140f52bad39739b14dafe57c5ed6b5646476a88af53f7e635793ebd0877",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/benchmark-v2-summary.json",
+      "sha256": "1bdfceda82c060576b15956dea6eecdf95c36754e477f0ddb1b0292568d3e848",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/per-query.jsonl",
+      "sha256": "84b87620eb2752a4866a0a1ecd0b79c8b4cafaccfd86b81f55d520d5389729cd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-en/benchmark-v2-summary.json",
+      "sha256": "d1351651f0e8fe17e62a6df4082fda6c7cc88a71c6173424123541f7061365ba",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-en/en-dense.json",
+      "sha256": "6536479d4f329ca62c11c868e16dd72343c75ebb22f64fb399e26dfa26d30f96",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-en/en-hybrid-reranker.json",
+      "sha256": "ee25344457a101af42bcf822ce1ab0650d4437b027e12d38151022e5240da698",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-en/en-hybrid.json",
+      "sha256": "02e64b1887bf123937daf3bce9cf2dc67b628291b6bbc13131e048c6d62fbde6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-en/report.md",
+      "sha256": "3572ed859892fd03b18feac620a98f5e16dc6054eafc7da84f7942ea7e2afbfe",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-mixed/benchmark-v2-summary.json",
+      "sha256": "4904ad4585b19077e193c849efb03dee143e23c5ac7c884222c072cd249874e5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-mixed/mixed-dense.json",
+      "sha256": "60e0a9af16eb60e648ef05e4fefcccee9e8e230e9d9dbe8d3773b57fb055a548",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-mixed/mixed-hybrid-reranker.json",
+      "sha256": "0de5cebe42a9d09e7dedc5ff8463506980a7596da01a8379a59ac4b074b504d3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-mixed/mixed-hybrid.json",
+      "sha256": "711cc5ddbcf2745b5f5b2d4f4034a7c28fcc5dce7cc0ddc2dfbed4bdce3059b6",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-mixed/report.md",
+      "sha256": "f2145c8857b3b0c1b5eab1e26ff32891804da44ddeedd3daf7a531017874c9e5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-ru/benchmark-v2-summary.json",
+      "sha256": "64c8aa76c94ae94761d216fb883dba690269a26eb16b233ae03e55f38c536d18",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-ru/report.md",
+      "sha256": "dfa6b5bc28130dedf28458679a9266dc84e71615c97338d4cdcc5620806ba971",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-ru/ru-dense.json",
+      "sha256": "0b8f09722f0d1ad6a4c6b6cc685b693727b0b299b295cd5007a61877259262a4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-ru/ru-hybrid-reranker.json",
+      "sha256": "4c69a1f1b1a3e616d9e8f9e4ccd9a4e105ed7081f00b3bb24a4c5562d237dd97",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/raw-ru/ru-hybrid.json",
+      "sha256": "e819a45dab010fc24ac3f3549d420af87fd73417ae1eeb5c422d88c4f2bd5bd5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-2/report.md",
+      "sha256": "7d902ca629bbbb2a2ac617d7c558958fbd898c101ff62af240158ea42c4f3aab",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/benchmark-v2-summary.json",
+      "sha256": "3ceaa08a5e3976f2e7db0b28fffd9ae189bb7144587392c7bc8aafc59ffad6d5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/per-query.jsonl",
+      "sha256": "1ff2b7c1dfa157767732571d959c5ffde571e89e5835b71edd37bec4a0af655d",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-en/benchmark-v2-summary.json",
+      "sha256": "c3d663190d47271861cc51da2acf839f2d4492ccbb36ffcdfd16be7897654938",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-en/en-dense.json",
+      "sha256": "29fc765ec64f83a1a97f3fd2430bef8ece7f69aaa60ae9048453047dc77af3b8",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-en/en-hybrid-reranker.json",
+      "sha256": "0aed9513642055e892016d55938878eafe3312d09da0ae64bda73376831ec3a1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-en/en-hybrid.json",
+      "sha256": "1002f366f70ce37ddf829d102e1c324eaeab5871b8a1617f0000722b58b8ca1e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-en/report.md",
+      "sha256": "6281c80b5b55fd3429a745ac112e4c8c80e88ad21db411352107465f3a3baeb4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-mixed/benchmark-v2-summary.json",
+      "sha256": "2fb18690acf7407a8fd4e00e83bb3d3f9ae587268cc16b60399e996938b28992",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-mixed/mixed-dense.json",
+      "sha256": "4ae46666cec210c77919ab4852c317e5e13b2ff580449d93373f9ca8050961a7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-mixed/mixed-hybrid-reranker.json",
+      "sha256": "4167d9031a4797d0ce73e724ec0a77d244e52841827202a7d7217ffba88a6511",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-mixed/mixed-hybrid.json",
+      "sha256": "e7f88a4e125ed896f0bbb0b75591608372c55bf3fe890bb748c4691934c65bf4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-mixed/report.md",
+      "sha256": "9e19ad31405dbcbbed1311cd23b6e677983e5dee5034597d75f0aa333027c953",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-ru/benchmark-v2-summary.json",
+      "sha256": "6de321ede7110f6554844c3fffe3203404ecbbc130d58f3c3b235e368beb5f66",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-ru/report.md",
+      "sha256": "c9b5a3e1030172e393da9e4d327c639937d174758c8da3f9f450083c60422104",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-ru/ru-dense.json",
+      "sha256": "14c90b158a83e0dcb9871b9450fd1c4d1a1b496476a2249f0f79540be1379a69",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-ru/ru-hybrid-reranker.json",
+      "sha256": "f569a1e3303e004553e5a475884720783d81eb2b2b8b1a8e7a601b914364c197",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/raw-ru/ru-hybrid.json",
+      "sha256": "d766410137a5fbac7084e3a0c4620c023768b21b4731920bb35e967acefcb151",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/benchmark-v2/runs/0186/isolated-repetition-3/report.md",
+      "sha256": "21379cc2e546a65b48a1b768590b4f3e384f30bd22533e4a1d8a47695def85bc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/approved-regressions.json",
+      "sha256": "9df72b100449252fb1a6a2eaa5293f8028e1b579fad11f5a223bde7b6e79c4bb",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/baseline.json",
+      "sha256": "8c474eb47aa3848d384d68e467ce70e9c8611347867bd086226f6e914c9332c0",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/code/search_pipeline.ts",
+      "sha256": "90480a80b79fe5ce950da9771f86f55efde0a5231644a4726cd91a5370577665",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/benchmark-notes.md",
+      "sha256": "b0e4be56e83bae92ad945c1956748fd977724ab8dfa483dddfb6cc95e570c104",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/exact-terms.md",
+      "sha256": "4be747a64b81f999b7af627dc15c295e05109d59d4778cb21850b00affa132e4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/metadata-filters.md",
+      "sha256": "acf4f0c347d3716c2d46037441f9e5357d658330376f1cd344969537c9d1d817",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/obsidian-memory.md",
+      "sha256": "456503c644da2192c6e079a610685f971360a5fe8ee7a1f0ae2ae4efb88f82be",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/rag-overview.md",
+      "sha256": "92d41775e4839768b0c550101b70225bbcfd9b47194f5051867228bb8d871276",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/russian-notes.md",
+      "sha256": "9b5abc16b5e01565bfbe296c9ad0a0d0ba6b7113dc511c5c14a5ebf5d8261a98",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/source-refresh-policy.md",
+      "sha256": "37699610e822428573da0d0fc116e6216a7a804568cf79ccb4783cce518af222",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/structure-chunking.md",
+      "sha256": "3684ba27e2793b6e00c5bac3fd64a8bfeb74644c3c36b363f43b19b72990d6dd",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/docs/upload-processing.md",
+      "sha256": "f748974067e1a06bc25f36e828d54a30bdaec0595688de998da259c65a654f44",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/memory/session-summary.json",
+      "sha256": "1e3c4eafff42bd02ec00163584bda1b9730e9e9960926fec97fc33d300d53bcc",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/documents/url/crawler-page.html",
+      "sha256": "b9316aa1a7ad3b949982c52858a022c9f78d3bfb608f77ab1fd71b079cd99658",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/manifest.json",
+      "sha256": "af84a462388cf8aebe2ff1af543389e238c5af0c035060d30d2d42e20da94df4",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-smoke-mini/questions.jsonl",
+      "sha256": "b0395da09e69349b68deb2fe49fe1f2de697b48f5e07421f1f262d619bfeb777",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/README.md",
+      "sha256": "c1c694b4dd1513dc167786610a5d847442312f45657e59c98bc9781f174d9f81",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/approved-regressions.json",
+      "sha256": "28981f651b3ad999b63da95525f6afc3204e1a482e9e40f1bb22dc326bf6c8e3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/baseline.json",
+      "sha256": "de3de6c8ea95d74e86409bf529c9873c0a7082041eec24f7d0af5682f313c010",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-01-fundamentals.md",
+      "sha256": "a04180cab2cd10e2e505ed14c17ab728875bd64b6bbf26830516f699c9cf7551",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-02-lexical.md",
+      "sha256": "8b3016aedb87a689a3172fce9544769c16956c21ee21497c766d5a690a0dd4d7",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-03-hybrid.md",
+      "sha256": "2a68c48c4eff01eca6ea914f85407e8d4b51f73f5d1f64b38f0449cce04e8d62",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-04-reranking.md",
+      "sha256": "7be761931aafe35db63fc42c88787deeae9540ec8a62b2e3f330cd3446c72779",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-05-evaluation.md",
+      "sha256": "de5caf8d1852ba8706d63a3c254ef613cb0aaa12bbd7f4e358ca25994cce981e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/book/chapter-06-operations.md",
+      "sha256": "6122dddd569ed544202e3f1949a0463aff65d679bfe26e3fa910080c4647f438",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/api-design.md",
+      "sha256": "b76db67ff87eed71675830561d448b45018832ad4197c46f50e30493ee21f0b9",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/backup-policy.md",
+      "sha256": "ee5d96c2e21c7f063a7dc8b91412d3026ff5b48eddd2ece6a7981269905b367e",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/chunking-guide.md",
+      "sha256": "4045565f2d970a63bfff022c20f1f857781b7a0b1cdf65509b51e58cd3092c95",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/data-retention.md",
+      "sha256": "a1559f71c6625772657db1be627cbde4945a91a8b017bc1a8d54b6236ca31905",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/deployment-guide.md",
+      "sha256": "2eec814c242671a0e90d4360f1677e91da602fef7fb9ed34240e1703a41ef697",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/ops-runbook.md",
+      "sha256": "fecea3d8f17275d585d1980cafc9a874c39848ebd9b1aa3989d2885fe7f2e33c",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/security-notes.md",
+      "sha256": "654e9be597764789de7a22b509f53963cb8a1af9db4b1129c029ba50db0485d5",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/docs/troubleshooting-search.md",
+      "sha256": "bda899b1b6f32899c4984b62d31087ccb63b544f785b75fc73656cfec03a4aa2",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/vault/architecture-notes.md",
+      "sha256": "66c7834fac326fa46389f71605557779a0f104a8e0721ca0ead004520c9ead73",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/vault/incident-2026-08-14.md",
+      "sha256": "ef202ff4ad857b1802b3ec6716bd7263c1e4ffc2943e7e65ddece4ff1322c594",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/vault/meeting-2026-09-02-roadmap.md",
+      "sha256": "12c195657760f7e6650d1d26c1419763c5c0f2aecab895bac97b4b55c36e0321",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/vault/onboarding-notes.md",
+      "sha256": "d9f0a43e77cfce6b1c952f6f402ff92ab79482b5368cafec85bfcc03ca607433",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/documents/vault/project-meridian-decisions.md",
+      "sha256": "9dc47f4ac78ccd8c40e2af9d94ad30aa93a1691546ae8b6e281e084879f225f3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/manifest.json",
+      "sha256": "a5733a5adb818b85ea348414d2f9ca1dd8883d2c01f5aff9110ca16f181bc8f1",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/questions.jsonl",
+      "sha256": "84bf5590deb92271536939ff2c2211447ac95738e09a1f085efb4ef68c952be3",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/reports/2026-10-06-bge-small-en-v1.5-384d.md",
+      "sha256": "d09d6db24d4912c3bdddb067ce1e6dcddb38804860b9a0afd075be530f7f2204",
+      "executable": false
+    },
+    {
+      "path": "fixtures/eval/cf-static-knowledge-golden/reports/2026-10-06-qwen3-embedding-0.6b-1024d.md",
+      "sha256": "0ad3617e1d89959250221a4360723df93575f952705e67527b91260b4c87be17",
+      "executable": false
+    },
+    {
+      "path": "guide/architecture.md",
+      "sha256": "782ece4d2f89e052a74ffa53676265b97635089b7c898a64bc949b0d9f6008a3",
+      "executable": false
+    },
+    {
+      "path": "guide/benchmarks.md",
+      "sha256": "c2bac475e304acfd9e947b010ad1104b4378078cd12ba1b7cc6949f3bbd2c14b",
+      "executable": false
+    },
+    {
+      "path": "guide/deployment.md",
+      "sha256": "751fb8774cab667582260209d4246cf97686f97e6e96e2c48588f88e7c126b18",
+      "executable": false
+    },
+    {
+      "path": "guide/fixtures.md",
+      "sha256": "2422d14bd5ae57c706897ad3870b0f45f4bd326ebb5288eab9854abed57e6c21",
+      "executable": false
+    },
+    {
+      "path": "guide/interfaces.md",
+      "sha256": "1da5b256da23d84c26de04f3432f875470b354b0708c9f7a6f1b43752ed0e5f4",
+      "executable": false
+    },
+    {
+      "path": "guide/presentation.md",
+      "sha256": "51dfa0518dc40c2a16b7637bdc47281bd8afc6d6310f2273dd1f6e9a287c1ac7",
+      "executable": false
+    },
+    {
+      "path": "package.json",
+      "sha256": "d8fa189e23cb5a94cb9671a2ddf9c131b1b0f72853551e78d8d743ed188ee4d5",
+      "executable": false
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "5003ff62b2c218ad98d0782007c679ea3486e2228237fde95a925e476e103e55",
+      "executable": false
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "59d8c363d3edb29e184d75ac9292ac98505e841bb3865ab3ae6858f8937a3e3f",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260511170000_initial/migration.sql",
+      "sha256": "ae9ea7178e440ac9b854d4950b677a8ad329936b044906f91fa29cb0baf3031b",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260512133000_add_source_metadata/migration.sql",
+      "sha256": "d24e4b24871dc1b07478104e8ab23b35232b4af564708e943c7a091f453cb0bf",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260512162000_add_knowledge_base_slug/migration.sql",
+      "sha256": "7d9b5eb339197c7f8566371b0d8f4cf95197071a278c83615e0fabcece2df034",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260524141000_add_workspace_foundation_to_knowledge_base/migration.sql",
+      "sha256": "0c6fa578f15596d533354e2c5435344d4f223cbc72ab8a1a70f5a35c90eab115",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260524145000_add_retrieval_profiles/migration.sql",
+      "sha256": "aef6f650c64c1ae0aa2220172bbc81d81f67005466239e1c717d2ae49086a331",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260524152000_add_memory_entries/migration.sql",
+      "sha256": "f8f5d541caea43d13e0dbc2f2be542b46139f8d250578b8b3c98f73c6b905706",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260524170000_add_chunk_hash_and_materialization_mode/migration.sql",
+      "sha256": "07d8efa5d7ab82ea491b81645bdb0dfa26d59d15f32e18347f3695a123e539af",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260715120000_add_obsidian_vault_source_type/migration.sql",
+      "sha256": "0166dfcda1245c421526f7ac69ae5e37ff3753309bf0245951146ca41c2b1156",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260715182000_add_index_resource_lifecycle/migration.sql",
+      "sha256": "f81a1f8ccd81e17d2777858b79c8b16ce9006db59b5477237473b26c3b761a11",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718120000_add_serving_revision_foundation/migration.sql",
+      "sha256": "0fbd664de02f490c1cc22c8b60deb628e4fe466af6952b7f1860883c2706d5af",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718133000_add_vector_backend_registry/migration.sql",
+      "sha256": "91981c99ab3c852be2c5c7cf7c49b0ba467b3945a1ac94bb9d27d54a9431888c",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718140000_add_workspace_vector_placement/migration.sql",
+      "sha256": "666befabcb28a47f8ab58a1baa750dec039dfe5273b6c17b030f9932f1c1d715",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718150000_add_vector_materialization_operations/migration.sql",
+      "sha256": "da39b190f87c0b42e442fc656486f4776d1fa376298fbc214c547885c352a474",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718160000_split_index_resource_measurements/migration.sql",
+      "sha256": "c59f7183ec07912d6a7e9fb5e46a505c337c7135575bd83219a0b894cf61ccb9",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260718211000_add_lexical_storage_indexes/migration.sql",
+      "sha256": "e717abaf8163dee1dc1d59dffdf022ee3af7686f4896b8c89b0a1be3dcb691ce",
+      "executable": false
+    },
+    {
+      "path": "prisma/migrations/20260719103000_add_vector_operation_strategy_and_progress/migration.sql",
+      "sha256": "9e291f79f5142bfa57c03450ad274baa33d1f800a84af4ebe660274f54024025",
+      "executable": false
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "sha256": "877189de32a466e660119555a14baff5c8980836ff8742efb667bcab778515b1",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/assert-eval-baseline.mjs",
+      "sha256": "2584b94fb3fe9a26ebca1cff8ddc2d4e2ab15792f77f25b9ac6bf476982dc2ef",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/contract.mjs",
+      "sha256": "d999511a793ce264eb2d3aa3da1d78570263133a2e87cf886135625a632156ef",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/identity-regressions.mjs",
+      "sha256": "a2c83380d079d365ee7998482d19d672124c86a44d0703d8d217ba28e711b917",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/index.mjs",
+      "sha256": "0e1a85077f837c50e193d479f06d8d47be9d99a580cbdaf9d426a38a95cc515f",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/v21-analysis.mjs",
+      "sha256": "09aaa80dcbcd1d46d61ae4921d5e0d05107d294347cdca8158001de6cacd910a",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/v21-dev.mjs",
+      "sha256": "d2cc3505de14ee5dea176cf02b4f976c6304c1f927b93f2cf3ce247b835534dc",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/v21-holdout.mjs",
+      "sha256": "3ffb03a865ac730a6eb846de607921c2e4024effce48f3095788be314c968d3f",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/v21-matrix.mjs",
+      "sha256": "3f64d3814724ab578ff8e2ccc3f014ba705d870601a2d27e4f07ef9a4941a700",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/benchmark-v2/v21-split.mjs",
+      "sha256": "e65cdccb2486e8d9d62e802840ca2cd49dc5398667fc1e1b1216b7894b88e1f0",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/import-standard-benchmark.mjs",
+      "sha256": "070322accd018a988145e7e7a953d9a75b27ce25538adb96ff3f91a41994df93",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/lib/eval-pack-documents.mjs",
+      "sha256": "063657cbb3a52eaaac7dd64a216273b498e6f46c4fa2f95ab73018d028271ac8",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/lib/eval-pack-documents.test.mjs",
+      "sha256": "9fb3ce6cd3c8d52f52d1650c826ae4ee59130d43bcb1c3b4ca777e815afae7a0",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/run-static-knowledge-golden.mjs",
+      "sha256": "bef6a365aa7eeabe4017eeee9bdf19a2d3dbd6fe7df343344df8353b8feaf51f",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/validate-benchmark-v2-contract.mjs",
+      "sha256": "819a82110fe7d3f4d7dc5263b1cf3bc70ff59b96ec00a8943eb66d1a39268fe5",
+      "executable": false
+    },
+    {
+      "path": "scripts/benchmarks/validate-eval-pack.mjs",
+      "sha256": "353fc29d12ceed79d48f60a57ed6b76927563052d6bb187fbefaef4167fa496f",
+      "executable": false
+    },
+    {
+      "path": "scripts/demo-bootstrap.mjs",
+      "sha256": "7c4bfe16972709af6bf842ad97688b3e956d3d3ada0b79b06a8e1cc76d73db18",
+      "executable": false
+    },
+    {
+      "path": "scripts/demo-bootstrap.sh",
+      "sha256": "c58333b01764a226dd42f822d44315b812c0cf92db8604e0a4769bb5eedeb56a",
+      "executable": true
+    },
+    {
+      "path": "scripts/deploy/check-runtime-image.sh",
+      "sha256": "a418e45e562a8d5fb6b18a7a4e64d2dcf2a75893e654e62783f83305ab55ae1b",
+      "executable": true
+    },
+    {
+      "path": "scripts/dev-api.sh",
+      "sha256": "fc34026206c24e26d3dc19f36c50b6040cd27676fc2e9f9cbec215ebf7c2fb3d",
+      "executable": false
+    },
+    {
+      "path": "scripts/dev-common.sh",
+      "sha256": "45491b30f9b39217bd01c80ff39d2a611e72f7873cbb9e3c3c1571c24d3ce65d",
+      "executable": false
+    },
+    {
+      "path": "scripts/dev-cpu.sh",
+      "sha256": "9a74accc6ddbe33eb074e181d5e340f37b1e5a00aee640190879961f274f0cb6",
+      "executable": false
+    },
+    {
+      "path": "scripts/dev-external.sh",
+      "sha256": "90d255f6cfbc92251b3326ff50166710b2ce0ee1be23da2caafe94b6b05d4ade",
+      "executable": false
+    },
+    {
+      "path": "scripts/dev-heavy.sh",
+      "sha256": "9dcf55079750e61c44cf1ae1f812ff31a723ad5abfe484319f3df05798e1b3e9",
+      "executable": true
+    },
+    {
+      "path": "scripts/dev-mcp-http.sh",
+      "sha256": "2771c31e37ccdd4399c03ba88cd0792da520270925eba5d4b647d679e0085813",
+      "executable": false
+    },
+    {
+      "path": "scripts/dev-stack.sh",
+      "sha256": "3b7fd3d72f61cb4ce0550f503b74519d0228e4c09c80a69c6cd315b9a56a7ca5",
+      "executable": false
+    },
+    {
+      "path": "scripts/generate-presentation.mjs",
+      "sha256": "3dc48eaf5195ac94a7860527b8c75331871a27dc05d031a748ef3cf56fcf6ac8",
+      "executable": false
+    },
+    {
+      "path": "scripts/render-diagrams.mjs",
+      "sha256": "7840c92b6de6c7b8fbaaa670a9329ce319fa2fb1843358f73820b979b7116e38",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/core.sh",
+      "sha256": "a0837da1886e3b232cc40d1008c45d2da5c0f08af77ac8f3c9636732fcdf3326",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/documents.sh",
+      "sha256": "27492494a1a8d0428a90fb45713e46e3ceb00d664796bb878d1d9db092b30c52",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/eval.sh",
+      "sha256": "83a71c4438055bc917cc359376d4e8846e1fbf7288ac0702cbd40a0289e5a30e",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/export.sh",
+      "sha256": "5f8def675b7be435e8c95208cce5cfba0d00d8b9ed755aa0477c6f72d23156c8",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/git.sh",
+      "sha256": "5baf60868d342d8002a8b210963a17f7cbccd59ed20df5c145fefc76dfdbb030",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/indexing.sh",
+      "sha256": "eae3c62a948f3bcc397c4d55310802e866f713925f8f19e3decec0bb5bab502d",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/mcp.sh",
+      "sha256": "47b62bbea282ff484f446c6c1c5c873975de237e360e76e30cf20e0bf7ce2358",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/memory.sh",
+      "sha256": "f9a2e436b81d66625dbc1c3227fda1a5420e7b3fa8d6f6fc1665498967f053b5",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/multi-source-topology.sh",
+      "sha256": "85ed2658eb9cf7611748fc077a8c64f422e20ac5ef0b6bc0ddf91f2c758a0629",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/pre-llm-reliability.sh",
+      "sha256": "33b504a1b6065f116c1f29cbf9a9897b435796f58986aeefb23f8f4adc8059f4",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/providers.sh",
+      "sha256": "a1d013c237107b8db3b0a142b90e5bb7733e3643d0edde6575d381f9d4ba2125",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/refresh.sh",
+      "sha256": "c3e5913b4a61360ca1792f08ccf9e2ef13c6b64e660ccc6b63fc8e8d2efd9d41",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/reranker.sh",
+      "sha256": "1badff3d680079cbe7e1db379ab03bc075191eb6fba0143d9f4a072b2fe007a5",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/resources.sh",
+      "sha256": "ea684270a22e9bfad2ae05df8d9c7cc198b033f0d94f39f977b071f0f7e7c8e6",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/restore.sh",
+      "sha256": "36ed6daa098544dcfa0d650523d5d15202490340da9eb23e81087b0c3096444a",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/retrieval.sh",
+      "sha256": "c453ff836c5f89c0e9a5c0369b3a09d7a5b214fb29d4855e9832d1ca95b9f4a9",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/truth-refresh.sh",
+      "sha256": "684aa6264cc10f73183c80defa4c2b1262409a036480bfd987900fa2d930daf7",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/cases/url.sh",
+      "sha256": "48f13490ecefd92f5bb3c81daa6afd87bcf09f57b834e05ca37730cac0eb8cfb",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/lib/common.sh",
+      "sha256": "d1dbb3df70cab8d50399b0c1167f237b18783f43324e6e75489306e958857f02",
+      "executable": false
+    },
+    {
+      "path": "scripts/smoke/live.sh",
+      "sha256": "496390537de4a3253918c380509ff266fd98f03a72e16091ce67c1e379ff6bee",
+      "executable": false
+    },
+    {
+      "path": "scripts/validate-integration-configs.mjs",
+      "sha256": "b36ee6c055148698751c227765d3e2a5cfcb8124db6fcbbcd3d477f3ee9ae09d",
+      "executable": false
+    },
+    {
+      "path": "test-fixtures/sample-docs/README.md",
+      "sha256": "5067cbe1f6e7b76414250989183fe937f5134e37a2f64c5b2e0e1f59195ffc05",
+      "executable": false
+    },
+    {
+      "path": "test-fixtures/sample-docs/sample.ts",
+      "sha256": "4a9a501fea1eeb7e5471d07943dbe8432c7856a26ca3156b87fdf7ba9576145e",
+      "executable": false
+    }
+  ],
+  "provenanceRedactions": {
+    "fixtures/eval/benchmark-v2/reports/productization-0212/benchmark-v21-confirmation.json": "efe5664d060eb69c853f1d81d2a60ae764fe61f3055a212284f7d786201ee46e",
+    "fixtures/eval/benchmark-v2/reports/v2.1-confirmation/benchmark-v21-confirmation.json": "320db773fe067fcdf30252cd9d18b0e586642b88016ba5467c48aebe4ea90d45"
+  },
+  "checks": [
+    {
+      "command": "pnpm install --frozen-lockfile",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm prisma:generate",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm typecheck",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm build",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm test",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm exec node scripts/generate-presentation.mjs --check",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm eval:validate-fixtures",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm benchmark:v2 -- --validate",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm exec node --test scripts/benchmarks/lib/eval-pack-documents.test.mjs",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm exec node scripts/validate-integration-configs.mjs",
+      "result": "pass"
+    },
+    {
+      "command": "pnpm demo",
+      "result": "pass"
+    }
+  ],
+  "publicCommit": null
+}

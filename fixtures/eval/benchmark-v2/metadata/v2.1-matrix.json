@@ -1,0 +1,50 @@
+{
+  "formatVersion": "infowarden-benchmark-v21-matrix.v1",
+  "splitPath": "fixtures/eval/benchmark-v2/metadata/v2.1-split.json",
+  "splitChecksumSha256": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3",
+  "matrixChecksumSha256": "1f0b604b3a1cd950619fe4d583d9110c27bb4d7cd6787556f0d5589482a8205b",
+  "qualityRun": false,
+  "repetitions": {
+    "dev": 1,
+    "holdout": 3
+  },
+  "stages": [
+    {
+      "id": "lexical-leg-selection",
+      "split": "DEV",
+      "purpose": "select L* from independent no-model lexical baselines",
+      "configurationIds": [
+        "lexical-pg-fts",
+        "lexical-structured",
+        "lexical-bm25",
+        "lexical-bm25f"
+      ]
+    },
+    {
+      "id": "controlled-fusion",
+      "split": "DEV_THEN_HOLDOUT",
+      "purpose": "compare fusion strategies with the same DEV-selected lexical leg",
+      "lexicalLeg": "L_STAR_FROM_DEV",
+      "configurationIds": [
+        "fusion-legacy",
+        "fusion-rrf",
+        "fusion-dbsf"
+      ]
+    },
+    {
+      "id": "reranker-isolation",
+      "split": "DEV_THEN_HOLDOUT",
+      "purpose": "measure reranker contribution with candidate and fusion inputs held constant",
+      "pairedConfigurationIds": [
+        ["dense", "dense-reranker"],
+        ["lexical-lstar", "lexical-lstar-reranker"],
+        ["fusion-selected", "fusion-selected-reranker"]
+      ]
+    }
+  ],
+  "selectionRules": {
+    "lexicalLeg": "quality, Hit@10/candidate-recall, p50 latency, resource cost, and operational complexity; eligible candidates must be within 0.02 of best Hit@10 and candidate recall, then highest MRR wins; differences below 0.02 MRR use lower latency/cost",
+    "parameters": "select only from the frozen grids in v2.1-configurations.json on DEV",
+    "holdout": "no tuning or winner changes; use selected configuration hashes unchanged"
+  }
+}

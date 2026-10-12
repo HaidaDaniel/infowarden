@@ -1,0 +1,1380 @@
+{
+  "formatVersion": "infowarden-benchmark-v2-aggregate.v2",
+  "task": "0187",
+  "sourceTask": "0186",
+  "benchmarkRevision": "a547a0c0f2edea3f457ef1294eec8461aa7fd449",
+  "repetitions": 3,
+  "sourceEvidence": {
+    "perQueryFiles": [
+      {
+        "repetitionId": 1,
+        "path": "runs/0186/isolated-repetition-1/per-query.jsonl",
+        "sha256": "e7811cabdc379f1b5ba4a9ff1663be11576e48a29763b632cbf4b2a458f992ee",
+        "recordCount": 1560
+      },
+      {
+        "repetitionId": 2,
+        "path": "runs/0186/isolated-repetition-2/per-query.jsonl",
+        "sha256": "84b87620eb2752a4866a0a1ecd0b79c8b4cafaccfd86b81f55d520d5389729cd",
+        "recordCount": 1560
+      },
+      {
+        "repetitionId": 3,
+        "path": "runs/0186/isolated-repetition-3/per-query.jsonl",
+        "sha256": "1ff2b7c1dfa157767732571d959c5ffde571e89e5835b71edd37bec4a0af655d",
+        "recordCount": 1560
+      }
+    ],
+    "reportFiles": [
+      {
+        "repetitionId": 1,
+        "partition": "EN",
+        "path": "runs/0186/isolated-repetition-1/raw-en/benchmark-v2-summary.json",
+        "sha256": "bcbe93cc675f7b88c1529725159ff6ef2de304ae3b3c25541226c66b837205a3",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-43-28-759Z-en-dense",
+          "benchmark-v2-2026-10-09T18-43-28-759Z-en-hybrid",
+          "benchmark-v2-2026-10-09T18-43-28-759Z-en-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 1,
+        "partition": "RU",
+        "path": "runs/0186/isolated-repetition-1/raw-ru/benchmark-v2-summary.json",
+        "sha256": "5ce4e99741e4d880d48ac2f2ad6c5cacad83c8e18885e1accd4f5c63f7105673",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-44-52-932Z-ru-dense",
+          "benchmark-v2-2026-10-09T18-44-52-932Z-ru-hybrid",
+          "benchmark-v2-2026-10-09T18-44-52-932Z-ru-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 1,
+        "partition": "MIXED",
+        "path": "runs/0186/isolated-repetition-1/raw-mixed/benchmark-v2-summary.json",
+        "sha256": "1aee38687f75228f6b5ac71b07519f921364b0da5815a410173e6b396e364e9d",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-46-07-839Z-mixed-dense",
+          "benchmark-v2-2026-10-09T18-46-07-839Z-mixed-hybrid",
+          "benchmark-v2-2026-10-09T18-46-07-839Z-mixed-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 2,
+        "partition": "EN",
+        "path": "runs/0186/isolated-repetition-2/raw-en/benchmark-v2-summary.json",
+        "sha256": "d1351651f0e8fe17e62a6df4082fda6c7cc88a71c6173424123541f7061365ba",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-49-58-615Z-en-dense",
+          "benchmark-v2-2026-10-09T18-49-58-615Z-en-hybrid",
+          "benchmark-v2-2026-10-09T18-49-58-615Z-en-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 2,
+        "partition": "RU",
+        "path": "runs/0186/isolated-repetition-2/raw-ru/benchmark-v2-summary.json",
+        "sha256": "64c8aa76c94ae94761d216fb883dba690269a26eb16b233ae03e55f38c536d18",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-51-22-726Z-ru-dense",
+          "benchmark-v2-2026-10-09T18-51-22-726Z-ru-hybrid",
+          "benchmark-v2-2026-10-09T18-51-22-726Z-ru-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 2,
+        "partition": "MIXED",
+        "path": "runs/0186/isolated-repetition-2/raw-mixed/benchmark-v2-summary.json",
+        "sha256": "4904ad4585b19077e193c849efb03dee143e23c5ac7c884222c072cd249874e5",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-52-37-499Z-mixed-dense",
+          "benchmark-v2-2026-10-09T18-52-37-499Z-mixed-hybrid",
+          "benchmark-v2-2026-10-09T18-52-37-499Z-mixed-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 3,
+        "partition": "EN",
+        "path": "runs/0186/isolated-repetition-3/raw-en/benchmark-v2-summary.json",
+        "sha256": "c3d663190d47271861cc51da2acf839f2d4492ccbb36ffcdfd16be7897654938",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-56-25-515Z-en-dense",
+          "benchmark-v2-2026-10-09T18-56-25-515Z-en-hybrid",
+          "benchmark-v2-2026-10-09T18-56-25-515Z-en-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 3,
+        "partition": "RU",
+        "path": "runs/0186/isolated-repetition-3/raw-ru/benchmark-v2-summary.json",
+        "sha256": "6de321ede7110f6554844c3fffe3203404ecbbc130d58f3c3b235e368beb5f66",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-57-48-973Z-ru-dense",
+          "benchmark-v2-2026-10-09T18-57-48-973Z-ru-hybrid",
+          "benchmark-v2-2026-10-09T18-57-48-973Z-ru-hybrid-reranker"
+        ]
+      },
+      {
+        "repetitionId": 3,
+        "partition": "MIXED",
+        "path": "runs/0186/isolated-repetition-3/raw-mixed/benchmark-v2-summary.json",
+        "sha256": "2fb18690acf7407a8fd4e00e83bb3d3f9ae587268cc16b60399e996938b28992",
+        "runIds": [
+          "benchmark-v2-2026-10-09T18-59-03-721Z-mixed-dense",
+          "benchmark-v2-2026-10-09T18-59-03-721Z-mixed-hybrid",
+          "benchmark-v2-2026-10-09T18-59-03-721Z-mixed-hybrid-reranker"
+        ]
+      }
+    ],
+    "recordCount": 4680,
+    "sourceRuntimeSha": "a547a0c0f2edea3f457ef1294eec8461aa7fd449",
+    "queryAverageArtifact": {
+      "path": "reports/0187-query-averages.json",
+      "sha256": "bd3a27cba7d8c69ff16acf3c3e241ef5c37e3ba5110527f9aa78821adfc9c219",
+      "recordCount": 1560,
+      "serialization": "UTF-8 JSON array sorted by partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending; compact JSON.stringify with fixed field order"
+    }
+  },
+  "statisticalBinding": {
+    "queryLevelAveraging": true,
+    "repetitionIds": [
+      1,
+      2,
+      3
+    ],
+    "pairedBootstrapUnit": "query_id",
+    "resamples": 10000,
+    "seedRule": "partition is lower-case; mode keys are sorted lexicographically and joined with |; input is 0174|benchmarkRevision|partition|sortedModePair|metric; seed is unsigned32(parseInt(first8Hex(SHA-256(input)),16))",
+    "prng": "LCG uint32: state=(1664525*state+1013904223) mod 2^32; draw=state; sample index=draw mod queryCount",
+    "resampling": "for each of 10000 draws sample queryCount indices with replacement, average left-right differences, sort estimates",
+    "percentile": "CI bounds use sorted[min(n-1,ceil(p*n)-1)] at p=.025 and .975",
+    "differenceDirection": "left mode metric minus right mode metric",
+    "bootstrapInputOrder": "canonical query-average artifact order: partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+  },
+  "partitions": {
+    "EN": {
+      "dense": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.7083333333333334,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7083333333333334,
+              0.7083333333333334,
+              0.7083333333333334
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8416666666666667,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8416666666666667,
+              0.8416666666666667,
+              0.8416666666666667
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9499999999999998,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.7973809523809526,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7973809523809525,
+              0.7973809523809525,
+              0.7973809523809525
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8425944777437574,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8425944777437574,
+              0.8425944777437574,
+              0.8425944777437574
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 30.497016999999914,
+          "p95": 38.16074200000003
+        },
+        "sourceQueryAveragesSha256": "857ad4760f7b9141a3d1f031e90b626c3d4c8f5fd4b03de8f1020e3b9f12f94e"
+      },
+      "hybrid": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6833333333333332,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.6833333333333333,
+              0.6833333333333333,
+              0.6833333333333333
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8249999999999998,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.825,
+              0.825,
+              0.825
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9499999999999998,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.95,
+              0.95,
+              0.95
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.778075396825397,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.778075396825397,
+              0.778075396825397,
+              0.778075396825397
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8278434932740094,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8278434932740094,
+              0.8278434932740094,
+              0.8278434932740094
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 214.52460200000132,
+          "p95": 243.85477099999844
+        },
+        "sourceQueryAveragesSha256": "a6a282aacb03b9d87c51b84a1968e6940814606264be7f873b6393f6f296986d"
+      },
+      "hybrid-reranker": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.7333333333333333,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7333333333333333,
+              0.7333333333333333,
+              0.7333333333333333
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.875,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.9333333333333332,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9333333333333333,
+              0.9333333333333333,
+              0.9333333333333333
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9833333333333333,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9833333333333333,
+              0.9833333333333333,
+              0.9833333333333333
+            ]
+          },
+          "mrr": {
+            "mean": 0.8141269841269843,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8141269841269843,
+              0.8141269841269843,
+              0.8141269841269843
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.8552521166455364,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8552521166455364,
+              0.8552521166455364,
+              0.8552521166455364
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 405.62365999999747,
+          "p95": 484.411626000001
+        },
+        "sourceQueryAveragesSha256": "468d3751825e77f24d725300ecd863f7ca33a9e8017bae2e29874f0f4aac47a6"
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.01930555555555556,
+          "ci95": [
+            0.0059722222222222225,
+            0.035555555555555556
+          ],
+          "seed": 2986465069,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 2479371091,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.016746031746031738,
+          "ci95": [
+            -0.053591269841269835,
+            0.019107142857142864
+          ],
+          "seed": 446038532,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.016666666666666666,
+          "ci95": [
+            -0.03333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 559621758,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.0360515873015873,
+          "ci95": [
+            -0.07577380952380953,
+            0.0019444444444444505
+          ],
+          "seed": 1880323146,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": 0.016666666666666666,
+          "ci95": [
+            -0.03333333333333333,
+            0.06666666666666667
+          ],
+          "seed": 2486147406,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        }
+      ]
+    },
+    "RU": {
+      "dense": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5833333333333334,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.5833333333333334,
+              0.5833333333333334,
+              0.5833333333333334
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.75,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.75,
+              0.75,
+              0.75
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.875,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.6965079365079366,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.6965079365079366,
+              0.6965079365079366,
+              0.6965079365079366
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7594548407540622,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7594548407540622,
+              0.7594548407540622,
+              0.7594548407540622
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.008333333333333333,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.0008333333333333334,
+              0.0008333333333333334,
+              0.0008333333333333334
+            ],
+            "mean": 0.0008333333333333334,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 32.47961600000008,
+          "p95": 42.89731699999993
+        },
+        "sourceQueryAveragesSha256": "f8d364af970a4cbfa4ede02b97969f73d6df285d5f504dd6a5725a89a540c4c8"
+      },
+      "hybrid": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.575,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.575,
+              0.575,
+              0.575
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7416666666666667,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7416666666666667,
+              0.7416666666666667,
+              0.7416666666666667
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.875,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.875,
+              0.875,
+              0.875
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.68984126984127,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.68984126984127,
+              0.68984126984127,
+              0.68984126984127
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7543452808143499,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.75434528081435,
+              0.75434528081435,
+              0.75434528081435
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.008333333333333333,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.0008375209380234506,
+              0.0008375209380234506,
+              0.0008375209380234506
+            ],
+            "mean": 0.0008375209380234506,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 96.21493700000065,
+          "p95": 128.20736099999885
+        },
+        "sourceQueryAveragesSha256": "26b42a305458572b6850e07e2fb47ac869350c4ccb4fd0d7d67991570d93a234"
+      },
+      "hybrid-reranker": {
+        "queryCount": 120,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6416666666666667,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.6416666666666667,
+              0.6416666666666667,
+              0.6416666666666667
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8083333333333332,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8083333333333333,
+              0.8083333333333333,
+              0.8083333333333333
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8833333333333333,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8833333333333333,
+              0.8833333333333333,
+              0.8833333333333333
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9583333333333334,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9583333333333334,
+              0.9583333333333334,
+              0.9583333333333334
+            ]
+          },
+          "mrr": {
+            "mean": 0.7436044973544972,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7436044973544973,
+              0.7436044973544973,
+              0.7436044973544973
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7955172741096955,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7955172741096954,
+              0.7955172741096954,
+              0.7955172741096954
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.008333333333333333,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.0008375209380234506,
+              0.0008375209380234506,
+              0.0008375209380234506
+            ],
+            "mean": 0.0008375209380234506,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 402.3714800000016,
+          "p95": 575.7917069999967
+        },
+        "sourceQueryAveragesSha256": "c54dbef639fa4e4881cd757fcfcbd8fbc97ea95ce56f7651815bac89ee9d8521"
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0.006666666666666667,
+          "ci95": [
+            0,
+            0.01611111111111111
+          ],
+          "seed": 3692824761,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 120,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 683329284,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.04709656084656085,
+          "ci95": [
+            -0.09223214285714289,
+            -0.004917328042328043
+          ],
+          "seed": 4250060777,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.008333333333333333,
+          "ci95": [
+            -0.058333333333333334,
+            0.041666666666666664
+          ],
+          "seed": 2961926995,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.053763227513227506,
+          "ci95": [
+            -0.09919312169312168,
+            -0.010535714285714289
+          ],
+          "seed": 2590015576,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 120,
+          "meanDifference": -0.008333333333333333,
+          "ci95": [
+            -0.058333333333333334,
+            0.03333333333333333
+          ],
+          "seed": 3017942169,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        }
+      ]
+    },
+    "MIXED": {
+      "dense": {
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5714285714285714,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.5714285714285714,
+              0.5714285714285714,
+              0.5714285714285714
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7928571428571428,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7928571428571428,
+              0.7928571428571428,
+              0.7928571428571428
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8785714285714286,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8785714285714286,
+              0.8785714285714286,
+              0.8785714285714286
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.7012599206349206,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7012599206349206,
+              0.7012599206349206,
+              0.7012599206349206
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7603019721645948,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7603019721645948,
+              0.7603019721645948,
+              0.7603019721645948
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.0035714285714285713,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.00035714285714285714,
+              0.00035714285714285714,
+              0.00035714285714285714
+            ],
+            "mean": 0.00035714285714285714,
+            "std": 0,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 33.07450700000027,
+          "p95": 41.708033999999316
+        },
+        "sourceQueryAveragesSha256": "b4a9642989ced8112a96c08bd689f37c5e1677319dab07532c1b3127d40d3a70"
+      },
+      "hybrid": {
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.5571428571428572,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.5571428571428572,
+              0.5571428571428572,
+              0.5571428571428572
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.7821428571428571,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7821428571428571,
+              0.7821428571428571,
+              0.7821428571428571
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8785714285714286,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8785714285714286,
+              0.8785714285714286,
+              0.8785714285714286
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.6913194444444443,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.6913194444444443,
+              0.6913194444444443,
+              0.6913194444444443
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7527255228003366,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7527255228003364,
+              0.7527255228003364,
+              0.7527255228003364
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.0035714285714285713,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.000363901018922853,
+              0.000363901018922853,
+              0.000363901018922853
+            ],
+            "mean": 0.00036390101892285295,
+            "std": 5.421010862427522e-20,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 213.89514800000325,
+          "p95": 367.2864180000033
+        },
+        "sourceQueryAveragesSha256": "d5d2f561942cd23bb5f98340f50340eb48fe8a8e40e4b4dc8471c33851665c5b"
+      },
+      "hybrid-reranker": {
+        "queryCount": 280,
+        "repetitions": 3,
+        "quality": {
+          "hit_at_1": {
+            "mean": 0.6071428571428571,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.6071428571428571,
+              0.6071428571428571,
+              0.6071428571428571
+            ]
+          },
+          "hit_at_3": {
+            "mean": 0.8214285714285715,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8214285714285714,
+              0.8214285714285714,
+              0.8214285714285714
+            ]
+          },
+          "hit_at_5": {
+            "mean": 0.8964285714285715,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.8964285714285715,
+              0.8964285714285715,
+              0.8964285714285715
+            ]
+          },
+          "hit_at_10": {
+            "mean": 0.9428571428571427,
+            "std": 1.1102230246251565e-16,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.9428571428571428,
+              0.9428571428571428,
+              0.9428571428571428
+            ]
+          },
+          "mrr": {
+            "mean": 0.730344387755102,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.730344387755102,
+              0.730344387755102,
+              0.730344387755102
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.7827536369045057,
+            "std": 0,
+            "queryLevelAveraging": true,
+            "runLevelValues": [
+              0.7827536369045057,
+              0.7827536369045057,
+              0.7827536369045057
+            ]
+          },
+          "empty": {
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_count": {
+            "mean": 0.0035714285714285713,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "empty_rate": {
+            "runLevelValues": [
+              0,
+              0,
+              0
+            ],
+            "mean": 0,
+            "std": 0,
+            "queryLevelAveraging": true
+          },
+          "duplicate_rate": {
+            "runLevelValues": [
+              0.000363901018922853,
+              0.000363901018922853,
+              0.000363901018922853
+            ],
+            "mean": 0.00036390101892285295,
+            "std": 5.421010862427522e-20,
+            "queryLevelAveraging": true
+          }
+        },
+        "latencyMs": {
+          "p50": 501.71459399999003,
+          "p95": 655.5262339999899
+        },
+        "sourceQueryAveragesSha256": "edfd681733d13b401f5ef302bdb09f3b1e1f52f6db72716966c195a46830cae4"
+      },
+      "pairedBootstrap": [
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0.00994047619047619,
+          "ci95": [
+            0.003333333333333333,
+            0.018095238095238095
+          ],
+          "seed": 1282410206,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid",
+          "queryCount": 280,
+          "meanDifference": 0,
+          "ci95": [
+            0,
+            0
+          ],
+          "seed": 1067777069,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.029084467120181402,
+          "ci95": [
+            -0.05556831065759637,
+            -0.0023724489795918405
+          ],
+          "seed": 2806951084,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "dense",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.017857142857142856,
+          "ci95": [
+            -0.04642857142857143,
+            0.010714285714285714
+          ],
+          "seed": 925274175,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "mrr",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.03902494331065758,
+          "ci95": [
+            -0.06680980725623582,
+            -0.012032312925170065
+          ],
+          "seed": 2252265261,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        },
+        {
+          "metric": "hit_at_5",
+          "left": "hybrid",
+          "right": "hybrid-reranker",
+          "queryCount": 280,
+          "meanDifference": -0.017857142857142856,
+          "ci95": [
+            -0.04642857142857143,
+            0.010714285714285714
+          ],
+          "seed": 2145044568,
+          "resamples": 10000,
+          "queryLevelAveragedAcrossRepetitions": true,
+          "canonicalQueryAverageOrder": "partition, mode order [dense, hybrid-reranker, hybrid], query_id ascending"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Provider-side batching counters are represented by the logical request formula recorded in 0186; no new provider calls were made.",
+    "This report corrects uncertainty binding only; it does not alter frozen retrieval results."
+  ],
+  "frozenChecksumsByPartition": {
+    "EN": {
+      "manifestSha256": "776065aa6d5ecf1978884719bfd1e3fe04949d1fd2951c2f6eef7f7583b6ca56",
+      "questionsSha256": "553434d6a7b79e9f039da03ef62e8479114d6360560f9b6f6cb1073d8513ce41",
+      "qrelsSha256": "0664a6bd82d23072954147d4bc9aa4f1462837628621d249cd7083693b44747a",
+      "semanticReviewSha256": "aa4c8386fc7157d8f414a47f0d816169b7612501b1918df581ea9fe3cca6d50a",
+      "qrelRevision": "benchmark-v2-en-canonical-qrels-v2",
+      "workspaceId": "3c9b8049-e303-41ad-9c33-763304989a22",
+      "indexBuildId": "62c16d49-c446-48e9-b19e-a4ef8e563581"
+    },
+    "RU": {
+      "manifestSha256": "d56b3f0602327bd02a5e073f9c676d084f59c988f0eaf2416a05bfd4addbfb2e",
+      "questionsSha256": "df0e916cb7c477e824837268f5ab16bd2f5711068760cf825926862fc8cfeecf",
+      "qrelsSha256": "1186d425bb8633daba889e616dbfcc7e3107a805c124fc72c51ea26840835e5f",
+      "semanticReviewSha256": "c32e635c0b57f8219bf94e8a66ba558bb3b2644249fd010e9eec7dcf75bbd7dd",
+      "qrelRevision": "benchmark-v2-ru-canonical-qrels-v2",
+      "workspaceId": "87f038da-2011-4c95-bb81-009bbfb6f6a3",
+      "indexBuildId": "b4b73c33-834a-4ec6-baf1-6389c2ad5ae1"
+    },
+    "MIXED": {
+      "manifestSha256": "4690287e08aea74f083984989846696263de6ee2f1b01819c09eb1a43c8323de",
+      "questionsSha256": "cf70469d7864568d19edbe1304b69676904b534391dab90c2c6a4124715fbcf0",
+      "qrelsSha256": "5a109932ef8355cc2dd98d6b110cb8cd89ed3233f2179facdcc8045de0af776e",
+      "semanticReviewSha256": "2565217dc87af7432785340c7d513606f4d1607c88f31fbdaa844ac19a6bb80c",
+      "qrelRevision": "benchmark-v2-mixed-canonical-qrels-v2",
+      "workspaceId": "e7552836-0e6d-4550-924b-563084ea5843",
+      "indexBuildId": "efdd5d16-0f6c-4fa5-b3db-d70c95519aac"
+    }
+  }
+}

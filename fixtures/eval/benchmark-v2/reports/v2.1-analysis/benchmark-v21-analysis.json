@@ -1,0 +1,3559 @@
+{
+  "formatVersion": "infowarden-benchmark-v21-analysis.v1",
+  "qualityRun": true,
+  "source": {
+    "holdoutSummarySha256": "5b2b87d29710f29824b0b38535058ca066ebbe9cf87db7c8494b90f39c4dcd3e",
+    "splitChecksumSha256": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3",
+    "matrixChecksumSha256": "1f0b604b3a1cd950619fe4d583d9110c27bb4d7cd6787556f0d5589482a8205b",
+    "configurationChecksumSha256": "605a94923f5120003b8a93b37825d84113a367a05b29ce5e8c70725e87cb6c5a",
+    "runChecksums": {
+      "dense": "5ded903d72b004eeb73840e1f145d867347857e250a0056ac4c5d5bda92a9847",
+      "dense-reranker": "64dfb10143e475ce9689c838cb6865c43fa2c2488c77868185a0918837d8c4b3",
+      "lexical-lstar": "fb266713c94a4daefd2eaa38943c25f16ef06502c86e92a332bd5cc5633b0b67",
+      "lexical-lstar-reranker": "cca32c8451a80a2dfd72ac54cb0de4c349049453215d25661f36bf325947ff59",
+      "fusion-legacy": "aecefb416710beac2f1b0f15dfe7661971aa747ea7220e8482f7905ab8f7e244",
+      "fusion-rrf-k-60-depth-25": "98dffe7710dbad29dd892a498376125a03ba2056e7510d0e9b88af014e599201",
+      "fusion-dbsf-depth-25": "cacc7b263f65372c4e1bf4dab82577d0a1e2040f96b3d20de4afc9534e6bb4c1",
+      "fusion-selected-reranker": "3d27527d7b6a1a8435669cf901b2cf5ca7dbff3dfad02e825019a5af8b14da4e"
+    },
+    "historicalV2PerQueryRead": false
+  },
+  "methodology": {
+    "bootstrapSeed": "infowarden-retrieval-v2.1-analysis-2026-10",
+    "bootstrapRepetitions": 2000,
+    "unit": "query mean across three operational repetitions",
+    "meaningfulDelta": "frozen v2.1 selection rules; no new threshold or tuning"
+  },
+  "runtime": {
+    "apiUrl": "http://localhost:3000",
+    "node": "v24.21.0",
+    "environment": "local-dev-external",
+    "provider": "local-90-qwen3-embedding-0.6b",
+    "embeddingModel": "qwen3-embedding-0.6b",
+    "rerankerModel": "qwen3-reranker-0.6b",
+    "embeddingDimension": 1024,
+    "embeddingBaseUrl": "http://192.168.0.90:8001/v1",
+    "rerankerBaseUrl": "http://192.168.0.90:8002",
+    "modelVerification": {
+      "embedding": {
+        "url": "http://192.168.0.90:8001/v1/models",
+        "expectedModel": "qwen3-embedding-0.6b",
+        "advertisedModels": [
+          "qwen3-embedding-0.6b"
+        ]
+      },
+      "reranker": {
+        "url": "http://192.168.0.90:8002/v1/models",
+        "expectedModel": "qwen3-reranker-0.6b",
+        "advertisedModels": [
+          "qwen3-reranker-0.6b"
+        ]
+      }
+    }
+  },
+  "partitions": {
+    "EN": 48,
+    "RU": 48,
+    "MIXED": 112
+  },
+  "modes": {
+    "dense": {
+      "configuration": {
+        "id": "dense",
+        "metadata": {
+          "candidateStrategy": "dense",
+          "denseTopK": 50
+        },
+        "parameterHash": "399f7f619a99c82dc1ba4f26e1a5ee392d3995d16f6dbb02681230a14990f484"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0015384615384615385,
+        "latencyP50Ms": 197.37724999999045,
+        "latencyP95Ms": 248.29081700008828,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.5817307692307693,
+            "ci95": {
+              "low": 0.5144230769230769,
+              "high": 0.6442307692307693
+            }
+          },
+          "hit_at_3": {
+            "value": 0.7740384615384616,
+            "ci95": {
+              "low": 0.7115384615384616,
+              "high": 0.8269230769230769
+            }
+          },
+          "hit_at_5": {
+            "value": 0.8701923076923077,
+            "ci95": {
+              "low": 0.8221153846153846,
+              "high": 0.9134615384615384
+            }
+          },
+          "hit_at_10": {
+            "value": 0.9375,
+            "ci95": {
+              "low": 0.9038461538461539,
+              "high": 0.9711538461538461
+            }
+          },
+          "mrr": {
+            "value": 0.7047494263963927,
+            "ci95": {
+              "low": 0.6541424232222961,
+              "high": 0.755263837381005
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.7592076100350067,
+            "ci95": {
+              "low": 0.7155349750256754,
+              "high": 0.8012947074021495
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0020833333333333333,
+          "latencyP50Ms": 182.61885299999267,
+          "latencyP95Ms": 236.62333599990234,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.6875,
+              "ci95": {
+                "low": 0.5625,
+                "high": 0.8125
+              }
+            },
+            "hit_at_3": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.7083333333333334,
+                "high": 0.9166666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8958333333333334,
+              "ci95": {
+                "low": 0.8125,
+                "high": 0.9791666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9791666666666666,
+              "ci95": {
+                "low": 0.9375,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.7825526224982746,
+              "ci95": {
+                "low": 0.6846488957902,
+                "high": 0.873611111111111
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.8291607977693193,
+              "ci95": {
+                "low": 0.7512105583801257,
+                "high": 0.9067405671417212
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0004166666666666667,
+          "latencyP50Ms": 205.08845300000394,
+          "latencyP95Ms": 272.0394559999986,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5625,
+              "ci95": {
+                "low": 0.4375,
+                "high": 0.7083333333333334
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7291666666666666,
+              "ci95": {
+                "low": 0.6041666666666666,
+                "high": 0.8541666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8958333333333334,
+              "ci95": {
+                "low": 0.8125,
+                "high": 0.9791666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9375,
+              "ci95": {
+                "low": 0.875,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.6826949466655347,
+              "ci95": {
+                "low": 0.5820209270576917,
+                "high": 0.7883808321308322
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7419647239485497,
+              "ci95": {
+                "low": 0.6483620132349932,
+                "high": 0.8299512547157587
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0017857142857142857,
+          "latencyP50Ms": 198.92031699998188,
+          "latencyP95Ms": 242.77455199998803,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5446428571428571,
+              "ci95": {
+                "low": 0.45535714285714285,
+                "high": 0.6428571428571429
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7767857142857143,
+              "ci95": {
+                "low": 0.6964285714285714,
+                "high": 0.8482142857142857
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8482142857142857,
+              "ci95": {
+                "low": 0.7767857142857143,
+                "high": 0.9107142857142857
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9196428571428571,
+              "ci95": {
+                "low": 0.8660714285714286,
+                "high": 0.9642857142857143
+              }
+            },
+            "mrr": {
+              "value": 0.6808571193802395,
+              "ci95": {
+                "low": 0.6139922614302639,
+                "high": 0.7484721805388823
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7366174807573552,
+              "ci95": {
+                "low": 0.6728177572782851,
+                "high": 0.792433074150266
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "dense-reranker": {
+      "configuration": {
+        "id": "dense-reranker",
+        "metadata": {
+          "candidateStrategy": "dense",
+          "denseTopK": 50,
+          "reranker": {
+            "enabled": true
+          }
+        },
+        "parameterHash": "1218bf3e1c3eec6f0c7ebc71203b0d76b3dfdbc6fb8fbe185552a6685057f3ff"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0015384615384615385,
+        "latencyP50Ms": 2500.1169219999574,
+        "latencyP95Ms": 3018.7930620000698,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.625,
+            "ci95": {
+              "low": 0.5576923076923077,
+              "high": 0.6923076923076923
+            }
+          },
+          "hit_at_3": {
+            "value": 0.7980769230769231,
+            "ci95": {
+              "low": 0.7451923076923077,
+              "high": 0.8509615384615384
+            }
+          },
+          "hit_at_5": {
+            "value": 0.8365384615384616,
+            "ci95": {
+              "low": 0.7836538461538461,
+              "high": 0.8846153846153846
+            }
+          },
+          "hit_at_10": {
+            "value": 0.8894230769230769,
+            "ci95": {
+              "low": 0.8461538461538461,
+              "high": 0.9278846153846154
+            }
+          },
+          "mrr": {
+            "value": 0.7244480227923605,
+            "ci95": {
+              "low": 0.6713122879766019,
+              "high": 0.7755051191303477
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.76174379572255,
+            "ci95": {
+              "low": 0.7130931915517604,
+              "high": 0.8088634539006917
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0020833333333333333,
+          "latencyP50Ms": 2019.6016839999938,
+          "latencyP95Ms": 2212.868967999937,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.7291666666666666,
+              "ci95": {
+                "low": 0.6041666666666666,
+                "high": 0.8541666666666666
+              }
+            },
+            "hit_at_3": {
+              "value": 0.8541666666666666,
+              "ci95": {
+                "low": 0.75,
+                "high": 0.9375
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8958333333333334,
+              "ci95": {
+                "low": 0.8125,
+                "high": 0.9791666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9166666666666666,
+              "ci95": {
+                "low": 0.8333333333333334,
+                "high": 0.9791666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.8003605904536756,
+              "ci95": {
+                "low": 0.7034461893504448,
+                "high": 0.8907210401891253
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.8270303243062872,
+              "ci95": {
+                "low": 0.7333621857463836,
+                "high": 0.909348173216197
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0004166666666666667,
+          "latencyP50Ms": 2685.907563000015,
+          "latencyP95Ms": 3226.002438000054,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.6041666666666666,
+              "ci95": {
+                "low": 0.4583333333333333,
+                "high": 0.7291666666666666
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7708333333333334,
+              "ci95": {
+                "low": 0.6458333333333334,
+                "high": 0.875
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8333333333333334,
+              "ci95": {
+                "low": 0.7291666666666666,
+                "high": 0.9375
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9166666666666666,
+              "ci95": {
+                "low": 0.8333333333333334,
+                "high": 0.9791666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.7091891411300523,
+              "ci95": {
+                "low": 0.5990809179899143,
+                "high": 0.8113425925925926
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7567788532620708,
+              "ci95": {
+                "low": 0.6601392382636688,
+                "high": 0.8448947071869136
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0017857142857142857,
+          "latencyP50Ms": 2529.319727999973,
+          "latencyP95Ms": 2836.9725719999988,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5892857142857143,
+              "ci95": {
+                "low": 0.5,
+                "high": 0.6875
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7857142857142857,
+              "ci95": {
+                "low": 0.7053571428571429,
+                "high": 0.8571428571428571
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.7410714285714286,
+                "high": 0.8839285714285714
+              }
+            },
+            "hit_at_10": {
+              "value": 0.8660714285714286,
+              "ci95": {
+                "low": 0.8035714285714286,
+                "high": 0.9285714285714286
+              }
+            },
+            "mrr": {
+              "value": 0.6984535859356436,
+              "ci95": {
+                "low": 0.6259913772821382,
+                "high": 0.7651660291916504
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7358916873840123,
+              "ci95": {
+                "low": 0.6669731678189276,
+                "high": 0.8052187692107287
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "lexical-lstar": {
+      "configuration": {
+        "id": "lexical-lstar",
+        "metadata": {
+          "candidateStrategy": "lexical",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75
+        },
+        "parameterHash": "5b6b2d7a010b6bcb3fa055a4da1e6af539c005e9e31157d0e8b2e837e384bc2f"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.00010039152695512498,
+        "latencyP50Ms": 1039.6874570000218,
+        "latencyP95Ms": 2178.2842039999086,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.20192307692307693,
+            "ci95": {
+              "low": 0.14903846153846154,
+              "high": 0.25961538461538464
+            }
+          },
+          "hit_at_3": {
+            "value": 0.3557692307692308,
+            "ci95": {
+              "low": 0.28846153846153844,
+              "high": 0.4230769230769231
+            }
+          },
+          "hit_at_5": {
+            "value": 0.46153846153846156,
+            "ci95": {
+              "low": 0.3942307692307692,
+              "high": 0.5288461538461539
+            }
+          },
+          "hit_at_10": {
+            "value": 0.7115384615384616,
+            "ci95": {
+              "low": 0.6490384615384616,
+              "high": 0.7788461538461539
+            }
+          },
+          "mrr": {
+            "value": 0.3328026463242812,
+            "ci95": {
+              "low": 0.28370084776334814,
+              "high": 0.38437293046668075
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.41686528968942643,
+            "ci95": {
+              "low": 0.37004245373829386,
+              "high": 0.4657717552345177
+            }
+          },
+          "candidate_recall": {
+            "value": 0.7980769230769231,
+            "ci95": {
+              "low": 0.7451923076923077,
+              "high": 0.8509615384615384
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 709.0611770000542,
+          "latencyP95Ms": 1090.645356999943,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.14583333333333334,
+              "ci95": {
+                "low": 0.0625,
+                "high": 0.25
+              }
+            },
+            "hit_at_3": {
+              "value": 0.3125,
+              "ci95": {
+                "low": 0.1875,
+                "high": 0.4375
+              }
+            },
+            "hit_at_5": {
+              "value": 0.4583333333333333,
+              "ci95": {
+                "low": 0.3125,
+                "high": 0.6041666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.7083333333333334,
+                "high": 0.9166666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.30503298550173547,
+              "ci95": {
+                "low": 0.2221369705744706,
+                "high": 0.3992897727272726
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.41560642575772394,
+              "ci95": {
+                "low": 0.3309513346616038,
+                "high": 0.5068118208571973
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9375,
+              "ci95": {
+                "low": 0.8541666666666666,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 882.4831619999604,
+          "latencyP95Ms": 1419.9944820000092,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.25,
+              "ci95": {
+                "low": 0.125,
+                "high": 0.375
+              }
+            },
+            "hit_at_3": {
+              "value": 0.3958333333333333,
+              "ci95": {
+                "low": 0.25,
+                "high": 0.5416666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.5208333333333334,
+              "ci95": {
+                "low": 0.375,
+                "high": 0.6666666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.7083333333333334,
+              "ci95": {
+                "low": 0.5833333333333334,
+                "high": 0.8333333333333334
+              }
+            },
+            "mrr": {
+              "value": 0.3657903439153439,
+              "ci95": {
+                "low": 0.2602017195767194,
+                "high": 0.48007605820105814
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.4433802058715293,
+              "ci95": {
+                "low": 0.34557019420038865,
+                "high": 0.5518127720779303
+              }
+            },
+            "candidate_recall": {
+              "value": 0.7708333333333334,
+              "ci95": {
+                "low": 0.6458333333333334,
+                "high": 0.8958333333333334
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.00018726591760299626,
+          "latencyP50Ms": 1352.4790759999887,
+          "latencyP95Ms": 2308.6575479999883,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.20535714285714285,
+              "ci95": {
+                "low": 0.13392857142857142,
+                "high": 0.2857142857142857
+              }
+            },
+            "hit_at_3": {
+              "value": 0.35714285714285715,
+              "ci95": {
+                "low": 0.26785714285714285,
+                "high": 0.44642857142857145
+              }
+            },
+            "hit_at_5": {
+              "value": 0.4375,
+              "ci95": {
+                "low": 0.3482142857142857,
+                "high": 0.5267857142857143
+              }
+            },
+            "hit_at_10": {
+              "value": 0.6696428571428571,
+              "ci95": {
+                "low": 0.5803571428571429,
+                "high": 0.75
+              }
+            },
+            "mrr": {
+              "value": 0.33056634485205916,
+              "ci95": {
+                "low": 0.26032927684713386,
+                "high": 0.4025056654520941
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.40604126729639856,
+              "ci95": {
+                "low": 0.3365593858438993,
+                "high": 0.47776806669674243
+              }
+            },
+            "candidate_recall": {
+              "value": 0.75,
+              "ci95": {
+                "low": 0.6696428571428571,
+                "high": 0.8303571428571429
+              }
+            }
+          }
+        }
+      }
+    },
+    "lexical-lstar-reranker": {
+      "configuration": {
+        "id": "lexical-lstar-reranker",
+        "metadata": {
+          "candidateStrategy": "lexical",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75,
+          "reranker": {
+            "enabled": true
+          }
+        },
+        "parameterHash": "57cfc3997cccc10c7717eb38c4803e1a9705120b59eae8339cedf7308562e494"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.00010039152695512498,
+        "latencyP50Ms": 2504.026628999971,
+        "latencyP95Ms": 3299.9622230000095,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.028846153846153848,
+            "ci95": {
+              "low": 0.009615384615384616,
+              "high": 0.052884615384615384
+            }
+          },
+          "hit_at_3": {
+            "value": 0.04326923076923077,
+            "ci95": {
+              "low": 0.019230769230769232,
+              "high": 0.07211538461538461
+            }
+          },
+          "hit_at_5": {
+            "value": 0.04807692307692308,
+            "ci95": {
+              "low": 0.02403846153846154,
+              "high": 0.08173076923076923
+            }
+          },
+          "hit_at_10": {
+            "value": 0.08173076923076923,
+            "ci95": {
+              "low": 0.04807692307692308,
+              "high": 0.1201923076923077
+            }
+          },
+          "mrr": {
+            "value": 0.05992254614905001,
+            "ci95": {
+              "low": 0.03904414892965376,
+              "high": 0.08668520590581973
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.049990717666973036,
+            "ci95": {
+              "low": 0.02490227406680667,
+              "high": 0.07730326058293996
+            }
+          },
+          "candidate_recall": {
+            "value": 0.7980769230769231,
+            "ci95": {
+              "low": 0.7403846153846154,
+              "high": 0.8509615384615384
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 2130.942039000045,
+          "latencyP95Ms": 2478.115096000023,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.041666666666666664,
+              "ci95": {
+                "low": 0,
+                "high": 0.10416666666666667
+              }
+            },
+            "hit_at_3": {
+              "value": 0.0625,
+              "ci95": {
+                "low": 0,
+                "high": 0.125
+              }
+            },
+            "hit_at_5": {
+              "value": 0.08333333333333333,
+              "ci95": {
+                "low": 0.020833333333333332,
+                "high": 0.16666666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.10416666666666667,
+              "ci95": {
+                "low": 0.020833333333333332,
+                "high": 0.1875
+              }
+            },
+            "mrr": {
+              "value": 0.08113763632041544,
+              "ci95": {
+                "low": 0.03091634620146037,
+                "high": 0.14862632625264977
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.07120444789068485,
+              "ci95": {
+                "low": 0.016393411357946152,
+                "high": 0.13952041903442772
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9375,
+              "ci95": {
+                "low": 0.8541666666666666,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 2911.9042810000246,
+          "latencyP95Ms": 3430.2268840000033,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.041666666666666664,
+              "ci95": {
+                "low": 0,
+                "high": 0.10416666666666667
+              }
+            },
+            "hit_at_3": {
+              "value": 0.041666666666666664,
+              "ci95": {
+                "low": 0,
+                "high": 0.10416666666666667
+              }
+            },
+            "hit_at_5": {
+              "value": 0.041666666666666664,
+              "ci95": {
+                "low": 0,
+                "high": 0.10416666666666667
+              }
+            },
+            "hit_at_10": {
+              "value": 0.10416666666666667,
+              "ci95": {
+                "low": 0.020833333333333332,
+                "high": 0.1875
+              }
+            },
+            "mrr": {
+              "value": 0.06790606783361877,
+              "ci95": {
+                "low": 0.023868303016190976,
+                "high": 0.1300483440916415
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.06065547887435644,
+              "ci95": {
+                "low": 0.012044367763245328,
+                "high": 0.1240777394371782
+              }
+            },
+            "candidate_recall": {
+              "value": 0.7708333333333334,
+              "ci95": {
+                "low": 0.6458333333333334,
+                "high": 0.875
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.00018726591760299626,
+          "latencyP50Ms": 2526.463439999963,
+          "latencyP95Ms": 3008.1931530000293,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.017857142857142856,
+              "ci95": {
+                "low": 0,
+                "high": 0.044642857142857144
+              }
+            },
+            "hit_at_3": {
+              "value": 0.03571428571428571,
+              "ci95": {
+                "low": 0.008928571428571428,
+                "high": 0.07142857142857142
+              }
+            },
+            "hit_at_5": {
+              "value": 0.03571428571428571,
+              "ci95": {
+                "low": 0.008928571428571428,
+                "high": 0.07142857142857142
+              }
+            },
+            "hit_at_10": {
+              "value": 0.0625,
+              "ci95": {
+                "low": 0.026785714285714284,
+                "high": 0.11607142857142858
+              }
+            },
+            "mrr": {
+              "value": 0.047408855353649984,
+              "ci95": {
+                "low": 0.024862948625710975,
+                "high": 0.07527268508359156
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.03632850705364649,
+              "ci95": {
+                "low": 0.010097587085459441,
+                "high": 0.0698331735225353
+              }
+            },
+            "candidate_recall": {
+              "value": 0.75,
+              "ci95": {
+                "low": 0.6696428571428571,
+                "high": 0.8303571428571429
+              }
+            }
+          }
+        }
+      }
+    },
+    "fusion-legacy": {
+      "configuration": {
+        "id": "fusion-legacy",
+        "metadata": {
+          "candidateStrategy": "hybrid",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75,
+          "hybridSearch": true,
+          "fusionStrategy": "legacy-weighted-rank",
+          "denseTopK": 50
+        },
+        "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0014423076923076924,
+        "latencyP50Ms": 1124.6699299998581,
+        "latencyP95Ms": 2335.267885999987,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.5817307692307693,
+            "ci95": {
+              "low": 0.5144230769230769,
+              "high": 0.6490384615384616
+            }
+          },
+          "hit_at_3": {
+            "value": 0.7355769230769231,
+            "ci95": {
+              "low": 0.6730769230769231,
+              "high": 0.7932692307692307
+            }
+          },
+          "hit_at_5": {
+            "value": 0.8221153846153846,
+            "ci95": {
+              "low": 0.7740384615384616,
+              "high": 0.875
+            }
+          },
+          "hit_at_10": {
+            "value": 0.9423076923076923,
+            "ci95": {
+              "low": 0.9086538461538461,
+              "high": 0.9711538461538461
+            }
+          },
+          "mrr": {
+            "value": 0.6896356995121754,
+            "ci95": {
+              "low": 0.6390069356151703,
+              "high": 0.7414521756862472
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.7477367274021994,
+            "ci95": {
+              "low": 0.704292226026907,
+              "high": 0.7934395706358907
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0020833333333333333,
+          "latencyP50Ms": 762.5728370000143,
+          "latencyP95Ms": 1241.1702440001536,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.6875,
+              "ci95": {
+                "low": 0.5416666666666666,
+                "high": 0.8125
+              }
+            },
+            "hit_at_3": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.6875,
+                "high": 0.9166666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.875,
+              "ci95": {
+                "low": 0.7708333333333334,
+                "high": 0.9583333333333334
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9791666666666666,
+              "ci95": {
+                "low": 0.9375,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.7737378747795415,
+              "ci95": {
+                "low": 0.674702380952381,
+                "high": 0.8682539682539683
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.8221539461420634,
+              "ci95": {
+                "low": 0.737599555165607,
+                "high": 0.8975897577903402
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0008333333333333334,
+          "latencyP50Ms": 925.7331900000572,
+          "latencyP95Ms": 1452.336484999978,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5625,
+              "ci95": {
+                "low": 0.4166666666666667,
+                "high": 0.7083333333333334
+              }
+            },
+            "hit_at_3": {
+              "value": 0.6458333333333334,
+              "ci95": {
+                "low": 0.5,
+                "high": 0.7708333333333334
+              }
+            },
+            "hit_at_5": {
+              "value": 0.7916666666666666,
+              "ci95": {
+                "low": 0.6666666666666666,
+                "high": 0.8958333333333334
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9375,
+              "ci95": {
+                "low": 0.8541666666666666,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.6629532589550972,
+              "ci95": {
+                "low": 0.5460916279390543,
+                "high": 0.7659666518122402
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7243153231579292,
+              "ci95": {
+                "low": 0.6244059789010504,
+                "high": 0.8161125912349023
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0014285714285714286,
+          "latencyP50Ms": 1485.0872310000705,
+          "latencyP95Ms": 2485.2688339999877,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5446428571428571,
+              "ci95": {
+                "low": 0.45535714285714285,
+                "high": 0.6339285714285714
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7410714285714286,
+              "ci95": {
+                "low": 0.6607142857142857,
+                "high": 0.8214285714285714
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.7321428571428571,
+                "high": 0.8839285714285714
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9285714285714286,
+              "ci95": {
+                "low": 0.8839285714285714,
+                "high": 0.9732142857142857
+              }
+            },
+            "mrr": {
+              "value": 0.6650272417791954,
+              "ci95": {
+                "low": 0.5946980391376082,
+                "high": 0.7349464594662699
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7258813783326598,
+              "ci95": {
+                "low": 0.6622041465219697,
+                "high": 0.7869701281180909
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "fusion-rrf-k-60-depth-25": {
+      "configuration": {
+        "id": "fusion-rrf-k-60-depth-25",
+        "metadata": {
+          "candidateStrategy": "hybrid",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75,
+          "hybridSearch": true,
+          "fusionStrategy": "rrf",
+          "denseTopK": 50,
+          "rrfK": 60,
+          "candidateDepth": 25
+        },
+        "parameterHash": "ce44784394703e41c261bd11c402d4b0e35fc449625bdcae494540923f5b360b"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0009256402344955261,
+        "latencyP50Ms": 1057.1354179999325,
+        "latencyP95Ms": 2219.972963999957,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.3269230769230769,
+            "ci95": {
+              "low": 0.2644230769230769,
+              "high": 0.3894230769230769
+            }
+          },
+          "hit_at_3": {
+            "value": 0.5288461538461539,
+            "ci95": {
+              "low": 0.46153846153846156,
+              "high": 0.5961538461538461
+            }
+          },
+          "hit_at_5": {
+            "value": 0.7355769230769231,
+            "ci95": {
+              "low": 0.6730769230769231,
+              "high": 0.7932692307692307
+            }
+          },
+          "hit_at_10": {
+            "value": 0.9182692307692307,
+            "ci95": {
+              "low": 0.8798076923076923,
+              "high": 0.9519230769230769
+            }
+          },
+          "mrr": {
+            "value": 0.48854249604734257,
+            "ci95": {
+              "low": 0.4374997920899752,
+              "high": 0.5413091682622932
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.5868170269102805,
+            "ci95": {
+              "low": 0.543672858615643,
+              "high": 0.6303203918821898
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0010386013501817552,
+          "latencyP50Ms": 701.1694660000503,
+          "latencyP95Ms": 1066.090222000028,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.2708333333333333,
+              "ci95": {
+                "low": 0.14583333333333334,
+                "high": 0.3958333333333333
+              }
+            },
+            "hit_at_3": {
+              "value": 0.5625,
+              "ci95": {
+                "low": 0.4166666666666667,
+                "high": 0.7083333333333334
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8333333333333334,
+              "ci95": {
+                "low": 0.7291666666666666,
+                "high": 0.9375
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9583333333333334,
+              "ci95": {
+                "low": 0.8958333333333334,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.4791882885632885,
+              "ci95": {
+                "low": 0.3864417989417988,
+                "high": 0.5796461640211639
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.5924602800740817,
+              "ci95": {
+                "low": 0.5120466385046162,
+                "high": 0.6733951595418719
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 920.2070459999959,
+          "latencyP95Ms": 1540.4071410000324,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.3541666666666667,
+              "ci95": {
+                "low": 0.22916666666666666,
+                "high": 0.4791666666666667
+              }
+            },
+            "hit_at_3": {
+              "value": 0.5833333333333334,
+              "ci95": {
+                "low": 0.4375,
+                "high": 0.7291666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.7291666666666666,
+              "ci95": {
+                "low": 0.6041666666666666,
+                "high": 0.8541666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9166666666666666,
+              "ci95": {
+                "low": 0.8333333333333334,
+                "high": 0.9791666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.5081381523569022,
+              "ci95": {
+                "low": 0.4002074314574314,
+                "high": 0.6140689634439633
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.6002426141057541,
+              "ci95": {
+                "low": 0.5107717625336047,
+                "high": 0.6901761041669364
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0012687671812222456,
+          "latencyP50Ms": 1462.1664289999753,
+          "latencyP95Ms": 2424.8824749999912,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.3392857142857143,
+              "ci95": {
+                "low": 0.25,
+                "high": 0.42857142857142855
+              }
+            },
+            "hit_at_3": {
+              "value": 0.49107142857142855,
+              "ci95": {
+                "low": 0.4017857142857143,
+                "high": 0.5803571428571429
+              }
+            },
+            "hit_at_5": {
+              "value": 0.6964285714285714,
+              "ci95": {
+                "low": 0.6071428571428571,
+                "high": 0.7767857142857143
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9017857142857143,
+              "ci95": {
+                "low": 0.8392857142857143,
+                "high": 0.9553571428571429
+              }
+            },
+            "mrr": {
+              "value": 0.48415330369355447,
+              "ci95": {
+                "low": 0.41230472196774043,
+                "high": 0.5557489075904257
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.5786446667563067,
+              "ci95": {
+                "low": 0.5157815338977753,
+                "high": 0.6444503908732384
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "fusion-dbsf-depth-25": {
+      "configuration": {
+        "id": "fusion-dbsf-depth-25",
+        "metadata": {
+          "candidateStrategy": "hybrid",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75,
+          "hybridSearch": true,
+          "fusionStrategy": "dbsf",
+          "denseTopK": 50,
+          "candidateDepth": 25
+        },
+        "parameterHash": "a9092d1c4f4a5849fc7e8f01d5ba2b3129cd3a805869d983f0b2e52471d59444"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0009257116408238834,
+        "latencyP50Ms": 1082.8580889999866,
+        "latencyP95Ms": 2315.4774190000026,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.3798076923076923,
+            "ci95": {
+              "low": 0.3125,
+              "high": 0.44711538461538464
+            }
+          },
+          "hit_at_3": {
+            "value": 0.6153846153846154,
+            "ci95": {
+              "low": 0.5480769230769231,
+              "high": 0.6778846153846154
+            }
+          },
+          "hit_at_5": {
+            "value": 0.7644230769230769,
+            "ci95": {
+              "low": 0.7019230769230769,
+              "high": 0.8221153846153846
+            }
+          },
+          "hit_at_10": {
+            "value": 0.9230769230769231,
+            "ci95": {
+              "low": 0.8846153846153846,
+              "high": 0.9567307692307693
+            }
+          },
+          "mrr": {
+            "value": 0.5424550014789861,
+            "ci95": {
+              "low": 0.4907978587906099,
+              "high": 0.5948900954852487
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.6308125844620915,
+            "ci95": {
+              "low": 0.5868258809324605,
+              "high": 0.6733420195249831
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0010386013501817552,
+          "latencyP50Ms": 688.8091060000006,
+          "latencyP95Ms": 1033.566576000012,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.3541666666666667,
+              "ci95": {
+                "low": 0.22916666666666666,
+                "high": 0.4791666666666667
+              }
+            },
+            "hit_at_3": {
+              "value": 0.6458333333333334,
+              "ci95": {
+                "low": 0.5,
+                "high": 0.7708333333333334
+              }
+            },
+            "hit_at_5": {
+              "value": 0.7916666666666666,
+              "ci95": {
+                "low": 0.6666666666666666,
+                "high": 0.8958333333333334
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9791666666666666,
+              "ci95": {
+                "low": 0.9375,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.5556929181929181,
+              "ci95": {
+                "low": 0.4528426434676434,
+                "high": 0.6627480158730158
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.6572066064990302,
+              "ci95": {
+                "low": 0.5785005668589969,
+                "high": 0.7348259875124287
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0,
+          "latencyP50Ms": 913.8801540000131,
+          "latencyP95Ms": 1463.7832770000678,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.3333333333333333,
+              "ci95": {
+                "low": 0.20833333333333334,
+                "high": 0.4791666666666667
+              }
+            },
+            "hit_at_3": {
+              "value": 0.5833333333333334,
+              "ci95": {
+                "low": 0.4375,
+                "high": 0.7291666666666666
+              }
+            },
+            "hit_at_5": {
+              "value": 0.7916666666666666,
+              "ci95": {
+                "low": 0.6666666666666666,
+                "high": 0.8958333333333334
+              }
+            },
+            "hit_at_10": {
+              "value": 0.8958333333333334,
+              "ci95": {
+                "low": 0.7916666666666666,
+                "high": 0.9791666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.5055353959765723,
+              "ci95": {
+                "low": 0.4018536202359731,
+                "high": 0.6106355042016807
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.5941959911088864,
+              "ci95": {
+                "low": 0.5004613080512398,
+                "high": 0.6842039417375173
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0012689460697920339,
+          "latencyP50Ms": 1411.34212200006,
+          "latencyP95Ms": 2497.2463860000134,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.4107142857142857,
+              "ci95": {
+                "low": 0.3125,
+                "high": 0.5
+              }
+            },
+            "hit_at_3": {
+              "value": 0.6160714285714286,
+              "ci95": {
+                "low": 0.5178571428571429,
+                "high": 0.7053571428571429
+              }
+            },
+            "hit_at_5": {
+              "value": 0.7410714285714286,
+              "ci95": {
+                "low": 0.6607142857142857,
+                "high": 0.8214285714285714
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9107142857142857,
+              "ci95": {
+                "low": 0.8571428571428571,
+                "high": 0.9553571428571429
+              }
+            },
+            "mrr": {
+              "value": 0.5526042966740502,
+              "ci95": {
+                "low": 0.485679552141223,
+                "high": 0.6256442219629742
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.6351936864547786,
+              "ci95": {
+                "low": 0.5701249166476515,
+                "high": 0.6960824948318692
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "fusion-selected-reranker": {
+      "configuration": {
+        "id": "fusion-selected-reranker",
+        "metadata": {
+          "candidateStrategy": "hybrid",
+          "lexicalEnabled": true,
+          "lexicalStrategy": "bm25",
+          "lexicalTopK": 50,
+          "bm25K1": 1.5,
+          "bm25B": 0.75,
+          "hybridSearch": true,
+          "fusionStrategy": "legacy-weighted-rank",
+          "denseTopK": 50,
+          "reranker": {
+            "enabled": true
+          }
+        },
+        "parameterHash": "cc1782645a11f35cfe8336ce6f3c7c2ddaafcff7518f22532369f09d88510b45"
+      },
+      "overall": {
+        "queryCount": 208,
+        "repetitionCount": 3,
+        "failedQueryCount": 0,
+        "emptyRate": 0,
+        "duplicateRate": 0.0014423076923076924,
+        "latencyP50Ms": 2536.826310000033,
+        "latencyP95Ms": 3140.5754489999963,
+        "metrics": {
+          "hit_at_1": {
+            "value": 0.6298076923076923,
+            "ci95": {
+              "low": 0.5673076923076923,
+              "high": 0.6971153846153846
+            }
+          },
+          "hit_at_3": {
+            "value": 0.8125,
+            "ci95": {
+              "low": 0.7596153846153846,
+              "high": 0.8653846153846154
+            }
+          },
+          "hit_at_5": {
+            "value": 0.8605769230769231,
+            "ci95": {
+              "low": 0.8173076923076923,
+              "high": 0.9038461538461539
+            }
+          },
+          "hit_at_10": {
+            "value": 0.9182692307692307,
+            "ci95": {
+              "low": 0.8798076923076923,
+              "high": 0.9519230769230769
+            }
+          },
+          "mrr": {
+            "value": 0.7356744502109807,
+            "ci95": {
+              "low": 0.6848951822322487,
+              "high": 0.7835101260483016
+            }
+          },
+          "ndcg_at_10": {
+            "value": 0.7781293585345689,
+            "ci95": {
+              "low": 0.7337055580708564,
+              "high": 0.8214951639330371
+            }
+          },
+          "candidate_recall": {
+            "value": 0.9951923076923077,
+            "ci95": {
+              "low": 0.9855769230769231,
+              "high": 1
+            }
+          }
+        }
+      },
+      "byPartition": {
+        "EN": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0020833333333333333,
+          "latencyP50Ms": 2054.6344180000015,
+          "latencyP95Ms": 2286.256934000179,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.7291666666666666,
+              "ci95": {
+                "low": 0.6041666666666666,
+                "high": 0.8541666666666666
+              }
+            },
+            "hit_at_3": {
+              "value": 0.8541666666666666,
+              "ci95": {
+                "low": 0.75,
+                "high": 0.9375
+              }
+            },
+            "hit_at_5": {
+              "value": 0.9166666666666666,
+              "ci95": {
+                "low": 0.8333333333333334,
+                "high": 0.9791666666666666
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9375,
+              "ci95": {
+                "low": 0.8541666666666666,
+                "high": 1
+              }
+            },
+            "mrr": {
+              "value": 0.8047549672549672,
+              "ci95": {
+                "low": 0.7024822399822401,
+                "high": 0.8953258547008547
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.836002752599483,
+              "ci95": {
+                "low": 0.7453945872363829,
+                "high": 0.9156953879242682
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "RU": {
+          "queryCount": 48,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0008333333333333334,
+          "latencyP50Ms": 2794.212271000026,
+          "latencyP95Ms": 3273.4747760000173,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.6041666666666666,
+              "ci95": {
+                "low": 0.4583333333333333,
+                "high": 0.75
+              }
+            },
+            "hit_at_3": {
+              "value": 0.7708333333333334,
+              "ci95": {
+                "low": 0.6458333333333334,
+                "high": 0.8958333333333334
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8333333333333334,
+              "ci95": {
+                "low": 0.7291666666666666,
+                "high": 0.9375
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9166666666666666,
+              "ci95": {
+                "low": 0.8333333333333334,
+                "high": 0.9791666666666666
+              }
+            },
+            "mrr": {
+              "value": 0.710343176851329,
+              "ci95": {
+                "low": 0.6026620697137001,
+                "high": 0.8134800384800385
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7573277529597128,
+              "ci95": {
+                "low": 0.6597927506628168,
+                "high": 0.8485108233078439
+              }
+            },
+            "candidate_recall": {
+              "value": 1,
+              "ci95": {
+                "low": 1,
+                "high": 1
+              }
+            }
+          }
+        },
+        "MIXED": {
+          "queryCount": 112,
+          "repetitionCount": 3,
+          "failedQueryCount": 0,
+          "emptyRate": 0,
+          "duplicateRate": 0.0014285714285714286,
+          "latencyP50Ms": 2579.0661720000207,
+          "latencyP95Ms": 3056.6963130000513,
+          "metrics": {
+            "hit_at_1": {
+              "value": 0.5982142857142857,
+              "ci95": {
+                "low": 0.5,
+                "high": 0.6875
+              }
+            },
+            "hit_at_3": {
+              "value": 0.8125,
+              "ci95": {
+                "low": 0.7410714285714286,
+                "high": 0.8839285714285714
+              }
+            },
+            "hit_at_5": {
+              "value": 0.8482142857142857,
+              "ci95": {
+                "low": 0.7767857142857143,
+                "high": 0.9107142857142857
+              }
+            },
+            "hit_at_10": {
+              "value": 0.9107142857142857,
+              "ci95": {
+                "low": 0.8571428571428571,
+                "high": 0.9553571428571429
+              }
+            },
+            "mrr": {
+              "value": 0.7169247743462664,
+              "ci95": {
+                "low": 0.6527970680650274,
+                "high": 0.7824210259595599
+              }
+            },
+            "ndcg_at_10": {
+              "value": 0.7622414491816885,
+              "ci95": {
+                "low": 0.6991644071466049,
+                "high": 0.8223766719324214
+              }
+            },
+            "candidate_recall": {
+              "value": 0.9910714285714286,
+              "ci95": {
+                "low": 0.9732142857142857,
+                "high": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "candidateOverlap": {
+    "dense": {
+      "relevantDenseOnly": 207,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 0,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 48,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 48,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 111,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 1
+        }
+      }
+    },
+    "dense-reranker": {
+      "relevantDenseOnly": 207,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 0,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 48,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 48,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 111,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 0,
+          "relevantNeither": 1
+        }
+      }
+    },
+    "lexical-lstar": {
+      "relevantDenseOnly": 0,
+      "relevantLexicalOnly": 166,
+      "relevantBoth": 0,
+      "relevantNeither": 42,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 45,
+          "relevantBoth": 0,
+          "relevantNeither": 3
+        },
+        "RU": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 37,
+          "relevantBoth": 0,
+          "relevantNeither": 11
+        },
+        "MIXED": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 84,
+          "relevantBoth": 0,
+          "relevantNeither": 28
+        }
+      }
+    },
+    "lexical-lstar-reranker": {
+      "relevantDenseOnly": 0,
+      "relevantLexicalOnly": 166,
+      "relevantBoth": 0,
+      "relevantNeither": 42,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 45,
+          "relevantBoth": 0,
+          "relevantNeither": 3
+        },
+        "RU": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 37,
+          "relevantBoth": 0,
+          "relevantNeither": 11
+        },
+        "MIXED": {
+          "relevantDenseOnly": 0,
+          "relevantLexicalOnly": 84,
+          "relevantBoth": 0,
+          "relevantNeither": 28
+        }
+      }
+    },
+    "fusion-legacy": {
+      "relevantDenseOnly": 41,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 166,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 3,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 45,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 11,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 37,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 27,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 84,
+          "relevantNeither": 1
+        }
+      }
+    },
+    "fusion-rrf-k-60-depth-25": {
+      "relevantDenseOnly": 41,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 166,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 3,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 45,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 11,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 37,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 27,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 84,
+          "relevantNeither": 1
+        }
+      }
+    },
+    "fusion-dbsf-depth-25": {
+      "relevantDenseOnly": 41,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 166,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 3,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 45,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 11,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 37,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 27,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 84,
+          "relevantNeither": 1
+        }
+      }
+    },
+    "fusion-selected-reranker": {
+      "relevantDenseOnly": 41,
+      "relevantLexicalOnly": 0,
+      "relevantBoth": 166,
+      "relevantNeither": 1,
+      "byPartition": {
+        "EN": {
+          "relevantDenseOnly": 3,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 45,
+          "relevantNeither": 0
+        },
+        "RU": {
+          "relevantDenseOnly": 11,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 37,
+          "relevantNeither": 0
+        },
+        "MIXED": {
+          "relevantDenseOnly": 27,
+          "relevantLexicalOnly": 0,
+          "relevantBoth": 84,
+          "relevantNeither": 1
+        }
+      }
+    }
+  },
+  "failureTaxonomyMethod": "inferred from frozen semantic primary_bucket and candidate-recall fields; categories are diagnostic labels, not causal proof",
+  "failureTaxonomy": {
+    "dense": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 9,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 0,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 4,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 0
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 1,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 3,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 5,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 4,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        }
+      }
+    },
+    "dense-reranker": {
+      "overall": {
+        "exact-term miss": 1,
+        "semantic miss": 14,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 1,
+        "cross-language miss": 3,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 16,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 6
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 3,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 3,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 3,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 3,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 2
+        },
+        "MIXED": {
+          "exact-term miss": 1,
+          "semantic miss": 8,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 2,
+          "Russian morphology/inflection": 1,
+          "cross-language miss": 3,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 10,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 4
+        }
+      }
+    },
+    "lexical-lstar": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 36,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 5,
+        "cross-language miss": 15,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 42,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 0
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 8,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 3,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 11,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 2,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 11,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 17,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 2,
+          "Russian morphology/inflection": 3,
+          "cross-language miss": 15,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 28,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        }
+      }
+    },
+    "lexical-lstar-reranker": {
+      "overall": {
+        "exact-term miss": 16,
+        "semantic miss": 126,
+        "hard-negative confusion": 8,
+        "entity/identifier confusion": 14,
+        "Russian morphology/inflection": 11,
+        "cross-language miss": 16,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 42,
+        "reranker regression": 143,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 12
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 4,
+          "semantic miss": 36,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 3,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 3,
+          "reranker regression": 39,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 5
+        },
+        "RU": {
+          "exact-term miss": 4,
+          "semantic miss": 30,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 4,
+          "Russian morphology/inflection": 5,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 11,
+          "reranker regression": 31,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 2
+        },
+        "MIXED": {
+          "exact-term miss": 8,
+          "semantic miss": 60,
+          "hard-negative confusion": 8,
+          "entity/identifier confusion": 7,
+          "Russian morphology/inflection": 6,
+          "cross-language miss": 16,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 28,
+          "reranker regression": 73,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 5
+        }
+      }
+    },
+    "fusion-legacy": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 8,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 0,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 4,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 0
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 1,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 3,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 4,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 4,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        }
+      }
+    },
+    "fusion-rrf-k-60-depth-25": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 12,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 0,
+        "Russian morphology/inflection": 1,
+        "cross-language miss": 4,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 6,
+        "reranker promotion success": 0
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 2,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 1,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 4,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 1,
+          "reranker promotion success": 0
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 6,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 1,
+          "cross-language miss": 4,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 4,
+          "reranker promotion success": 0
+        }
+      }
+    },
+    "fusion-dbsf-depth-25": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 12,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 0,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 4,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 0,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 4,
+        "reranker promotion success": 0
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 1,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 5,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 2,
+          "reranker promotion success": 0
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 6,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 0,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 4,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 0,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 2,
+          "reranker promotion success": 0
+        }
+      }
+    },
+    "fusion-selected-reranker": {
+      "overall": {
+        "exact-term miss": 0,
+        "semantic miss": 9,
+        "hard-negative confusion": 0,
+        "entity/identifier confusion": 4,
+        "Russian morphology/inflection": 0,
+        "cross-language miss": 4,
+        "chunk-boundary issue": 0,
+        "candidate-generation miss": 1,
+        "reranker regression": 9,
+        "duplicate result": 0,
+        "empty result": 0,
+        "dataset/qrel ambiguity": 0,
+        "lexical tokenization miss": 0,
+        "BM25 length-normalization issue": 0,
+        "field-weighting issue": 0,
+        "dense semantic miss": 0,
+        "dense exact-identifier miss": 0,
+        "fusion suppression": 0,
+        "reranker promotion success": 4
+      },
+      "byPartition": {
+        "EN": {
+          "exact-term miss": 0,
+          "semantic miss": 2,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 2,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 0
+        },
+        "RU": {
+          "exact-term miss": 0,
+          "semantic miss": 3,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 1,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 0,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 0,
+          "reranker regression": 3,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 2
+        },
+        "MIXED": {
+          "exact-term miss": 0,
+          "semantic miss": 4,
+          "hard-negative confusion": 0,
+          "entity/identifier confusion": 2,
+          "Russian morphology/inflection": 0,
+          "cross-language miss": 4,
+          "chunk-boundary issue": 0,
+          "candidate-generation miss": 1,
+          "reranker regression": 4,
+          "duplicate result": 0,
+          "empty result": 0,
+          "dataset/qrel ambiguity": 0,
+          "lexical tokenization miss": 0,
+          "BM25 length-normalization issue": 0,
+          "field-weighting issue": 0,
+          "dense semantic miss": 0,
+          "dense exact-identifier miss": 0,
+          "fusion suppression": 0,
+          "reranker promotion success": 2
+        }
+      }
+    }
+  },
+  "resources": {
+    "indexByPartition": {
+      "EN": {
+        "documents": 839,
+        "holdoutQueries": 48,
+        "indexBuildDurationMs": 40128,
+        "storageProfile": "balanced",
+        "observedChunks": 842,
+        "observedStorage": {
+          "kind": "observed",
+          "chunks": 842,
+          "capturedAt": "2026-10-10T11:08:29.623Z",
+          "measuredAt": "2026-10-10T11:08:29.623Z",
+          "collectionName": "kb-064702b7-df89-4138-a634-88c3f07faaf5",
+          "rawVectorBytes": 3448832,
+          "storageProfile": "balanced",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "vectorsUpserted": 842,
+          "embeddingDimension": 1024,
+          "qdrantDiskBytesLow": 5518131,
+          "qdrantDiskBytesHigh": 8277197
+        }
+      },
+      "RU": {
+        "documents": 834,
+        "holdoutQueries": 48,
+        "indexBuildDurationMs": 86176,
+        "storageProfile": "balanced",
+        "observedChunks": 842,
+        "observedStorage": {
+          "kind": "observed",
+          "chunks": 842,
+          "capturedAt": "2026-10-10T11:09:54.696Z",
+          "measuredAt": "2026-10-10T11:09:54.696Z",
+          "collectionName": "kb-96dcc0ed-dc22-433a-9427-6acb248442f2",
+          "rawVectorBytes": 3448832,
+          "storageProfile": "balanced",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "vectorsUpserted": 842,
+          "embeddingDimension": 1024,
+          "qdrantDiskBytesLow": 5518131,
+          "qdrantDiskBytesHigh": 8277197
+        }
+      },
+      "MIXED": {
+        "documents": 1573,
+        "holdoutQueries": 112,
+        "indexBuildDurationMs": 80167,
+        "storageProfile": "balanced",
+        "observedChunks": 1584,
+        "observedStorage": {
+          "kind": "observed",
+          "chunks": 1584,
+          "capturedAt": "2026-10-10T11:11:15.029Z",
+          "measuredAt": "2026-10-10T11:11:15.029Z",
+          "collectionName": "kb-0e9e090f-10fa-47df-89fe-58dc76bd0874",
+          "rawVectorBytes": 6488064,
+          "storageProfile": "balanced",
+          "vectorBackendId": "157ded91-8c9d-4dc7-a451-d9ad5e021041",
+          "vectorsUpserted": 1584,
+          "embeddingDimension": 1024,
+          "qdrantDiskBytesLow": 10380902,
+          "qdrantDiskBytesHigh": 15571354
+        }
+      }
+    },
+    "perMode": {
+      "dense": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": false,
+          "cost": 2,
+          "complexity": 0
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 0,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 197.37724999999045,
+        "queryP95Ms": 248.29081700008828
+      },
+      "dense-reranker": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": true,
+          "cost": 4,
+          "complexity": 0
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 624,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 2500.1169219999574,
+        "queryP95Ms": 3018.7930620000698
+      },
+      "lexical-lstar": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": false,
+          "denseIndexRequired": false,
+          "rerankerRequired": false,
+          "cost": 1,
+          "complexity": 3
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 0,
+          "rerankerCallsExpected": 0,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 1039.6874570000218,
+        "queryP95Ms": 2178.2842039999086
+      },
+      "lexical-lstar-reranker": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": false,
+          "denseIndexRequired": false,
+          "rerankerRequired": true,
+          "cost": 3,
+          "complexity": 3
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 0,
+          "rerankerCallsExpected": 624,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 2504.026628999971,
+        "queryP95Ms": 3299.9622230000095
+      },
+      "fusion-legacy": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": false,
+          "cost": 2,
+          "complexity": 4
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 0,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 1124.6699299998581,
+        "queryP95Ms": 2335.267885999987
+      },
+      "fusion-rrf-k-60-depth-25": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": false,
+          "cost": 2,
+          "complexity": 5
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 0,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 1057.1354179999325,
+        "queryP95Ms": 2219.972963999957
+      },
+      "fusion-dbsf-depth-25": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": false,
+          "cost": 2,
+          "complexity": 6
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 0,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 1082.8580889999866,
+        "queryP95Ms": 2315.4774190000026
+      },
+      "fusion-selected-reranker": {
+        "resourceProfile": {
+          "queryEmbeddingRequired": true,
+          "denseIndexRequired": true,
+          "rerankerRequired": true,
+          "cost": 4,
+          "complexity": 4
+        },
+        "providerCallAccounting": {
+          "queryEmbeddingCallsExpected": 624,
+          "rerankerCallsExpected": 624,
+          "indexingEmbeddingCallsExpected": 3268,
+          "accountingBasis": "derived from frozen mode semantics and observed indexed chunk counts; API exposes no provider counter"
+        },
+        "queryP50Ms": 2536.826310000033,
+        "queryP95Ms": 3140.5754489999963
+      }
+    },
+    "providerCallMeasurement": "expected semantic accounting only; API exposes no direct provider counter or retry telemetry"
+  },
+  "pairedComparisons": {
+    "dense-vs-lexical": {
+      "baseline": "lexical-lstar",
+      "candidate": "dense",
+      "mrr": {
+        "value": 0.37194678007211157,
+        "ci95": {
+          "low": 0.32169045545299074,
+          "high": 0.4221682577215111
+        }
+      },
+      "hitAt5": {
+        "value": 0.40865384615384615,
+        "ci95": {
+          "low": 0.33653846153846156,
+          "high": 0.47596153846153844
+        }
+      },
+      "hitAt10": {
+        "value": 0.22596153846153846,
+        "ci95": {
+          "low": 0.16346153846153846,
+          "high": 0.28846153846153844
+        }
+      },
+      "meaningfulDeltaReached": true,
+      "mrrMeaningful": true,
+      "hitAt5Meaningful": true,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": true,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": false,
+      "qualityWinnerUnderFrozenRule": true
+    },
+    "dense-vs-legacy": {
+      "baseline": "fusion-legacy",
+      "candidate": "dense",
+      "mrr": {
+        "value": 0.01511372688421714,
+        "ci95": {
+          "low": 0.009436262723948652,
+          "high": 0.021718574991254493
+        }
+      },
+      "hitAt5": {
+        "value": 0.04807692307692308,
+        "ci95": {
+          "low": 0.02403846153846154,
+          "high": 0.08173076923076923
+        }
+      },
+      "hitAt10": {
+        "value": -0.004807692307692308,
+        "ci95": {
+          "low": -0.019230769230769232,
+          "high": 0.009615384615384616
+        }
+      },
+      "meaningfulDeltaReached": true,
+      "mrrMeaningful": false,
+      "hitAt5Meaningful": true,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": true,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": false,
+      "qualityWinnerUnderFrozenRule": true
+    },
+    "legacy-vs-rrf": {
+      "baseline": "fusion-rrf-k-60-depth-25",
+      "candidate": "fusion-legacy",
+      "mrr": {
+        "value": 0.201093203464833,
+        "ci95": {
+          "low": 0.1588079293426351,
+          "high": 0.24602594312968093
+        }
+      },
+      "hitAt5": {
+        "value": 0.08653846153846154,
+        "ci95": {
+          "low": 0.04326923076923077,
+          "high": 0.1346153846153846
+        }
+      },
+      "hitAt10": {
+        "value": 0.02403846153846154,
+        "ci95": {
+          "low": 0,
+          "high": 0.052884615384615384
+        }
+      },
+      "meaningfulDeltaReached": true,
+      "mrrMeaningful": true,
+      "hitAt5Meaningful": true,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": true,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": false,
+      "qualityWinnerUnderFrozenRule": true
+    },
+    "legacy-vs-dbsf": {
+      "baseline": "fusion-dbsf-depth-25",
+      "candidate": "fusion-legacy",
+      "mrr": {
+        "value": 0.1471806980331894,
+        "ci95": {
+          "low": 0.1075848387164635,
+          "high": 0.18718482384529464
+        }
+      },
+      "hitAt5": {
+        "value": 0.057692307692307696,
+        "ci95": {
+          "low": 0.02403846153846154,
+          "high": 0.09134615384615384
+        }
+      },
+      "hitAt10": {
+        "value": 0.019230769230769232,
+        "ci95": {
+          "low": 0.004807692307692308,
+          "high": 0.038461538461538464
+        }
+      },
+      "meaningfulDeltaReached": true,
+      "mrrMeaningful": true,
+      "hitAt5Meaningful": true,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": true,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": false,
+      "qualityWinnerUnderFrozenRule": true
+    },
+    "dense-reranker-vs-dense": {
+      "baseline": "dense",
+      "candidate": "dense-reranker",
+      "mrr": {
+        "value": 0.01969859639596799,
+        "ci95": {
+          "low": -0.010234328584219212,
+          "high": 0.05230856661811372
+        }
+      },
+      "hitAt5": {
+        "value": -0.03365384615384615,
+        "ci95": {
+          "low": -0.07692307692307693,
+          "high": 0.009615384615384616
+        }
+      },
+      "hitAt10": {
+        "value": -0.04807692307692308,
+        "ci95": {
+          "low": -0.09134615384615384,
+          "high": -0.004807692307692308
+        }
+      },
+      "meaningfulDeltaReached": false,
+      "mrrMeaningful": false,
+      "hitAt5Meaningful": false,
+      "mrrIntervalExcludesZero": false,
+      "hitAt5IntervalExcludesZero": false,
+      "pairedIntervalExcludesZero": false,
+      "materialHitAt10Regression": true,
+      "qualityWinnerUnderFrozenRule": false
+    },
+    "lexical-reranker-vs-lexical": {
+      "baseline": "lexical-lstar",
+      "candidate": "lexical-lstar-reranker",
+      "mrr": {
+        "value": -0.27288010017523073,
+        "ci95": {
+          "low": -0.3281664626533862,
+          "high": -0.21979528969348028
+        }
+      },
+      "hitAt5": {
+        "value": -0.41346153846153844,
+        "ci95": {
+          "low": -0.49038461538461536,
+          "high": -0.3317307692307692
+        }
+      },
+      "hitAt10": {
+        "value": -0.6298076923076923,
+        "ci95": {
+          "low": -0.7067307692307693,
+          "high": -0.5528846153846154
+        }
+      },
+      "meaningfulDeltaReached": false,
+      "mrrMeaningful": false,
+      "hitAt5Meaningful": false,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": true,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": true,
+      "qualityWinnerUnderFrozenRule": false
+    },
+    "fusion-reranker-vs-legacy": {
+      "baseline": "fusion-legacy",
+      "candidate": "fusion-selected-reranker",
+      "mrr": {
+        "value": 0.04603875069880543,
+        "ci95": {
+          "low": 0.016189324628213216,
+          "high": 0.07725405424916229
+        }
+      },
+      "hitAt5": {
+        "value": 0.038461538461538464,
+        "ci95": {
+          "low": 0,
+          "high": 0.07692307692307693
+        }
+      },
+      "hitAt10": {
+        "value": -0.02403846153846154,
+        "ci95": {
+          "low": -0.057692307692307696,
+          "high": 0.009615384615384616
+        }
+      },
+      "meaningfulDeltaReached": true,
+      "mrrMeaningful": true,
+      "hitAt5Meaningful": true,
+      "mrrIntervalExcludesZero": true,
+      "hitAt5IntervalExcludesZero": false,
+      "pairedIntervalExcludesZero": true,
+      "materialHitAt10Regression": true,
+      "qualityWinnerUnderFrozenRule": false
+    }
+  },
+  "decision": {
+    "selectedLexicalLegFromDev": "lexical-bm25-k1-1.5-b-0.75",
+    "controlledFusionLexicalLeg": "lexical-bm25-k1-1.5-b-0.75",
+    "answers": {
+      "denseVsLexical": "dense materially outperforms the no-model lexical baseline on MRR, Hit@10, and latency-adjusted quality; lexical remains a lower-resource fallback.",
+      "strongestLexical": "lexical-bm25-k1-1.5-b-0.75 was selected on DEV; HOLDOUT does not retune lexical parameters.",
+      "uniqueLexicalRecall": "no incremental relevant candidate was contributed by the selected lexical leg in controlled hybrid HOLDOUT; lexical-only still retrieved relevant candidates that dense did not, but with materially lower ranking quality.",
+      "fusion": "legacy-weighted-rank remains stronger than the selected RRF and DBSF controls on HOLDOUT; no fusion replacement is justified (0.4885 RRF MRR, 0.5425 DBSF MRR versus 0.6896 legacy MRR).",
+      "reranker": "reranking improves MRR for dense and selected fusion but lowers Hit@10 and adds substantial latency; lexical reranking is not attractive in this evidence.",
+      "lowResource": "lexical-only avoids query embeddings but has materially lower quality and remains a fallback rather than the default.",
+      "default": "recommend dense as the v0.1 default under the frozen paired-delta rule and lower latency; keep hybrid-legacy as a compatibility and explicit profile option, with reranking opt-in."
+    },
+    "frozenRule": {
+      "meaningfulMrrDelta": 0.02,
+      "meaningfulHitAt5Delta": 0.02,
+      "pairedInterval": "95% bootstrap interval for per-query candidate-minus-baseline deltas must exclude zero",
+      "materialHitAt10Regression": 0.02,
+      "denseVsLegacyQualityWinner": true,
+      "denseRerankerQualityWinner": false,
+      "fusionRerankerQualityWinner": false,
+      "denseDefaultRecommendation": true,
+      "ruleAppliedToRecommendation": true
+    },
+    "evidence": {
+      "denseMrr": {
+        "value": 0.7047494263963927,
+        "ci95": {
+          "low": 0.6541424232222961,
+          "high": 0.755263837381005
+        }
+      },
+      "lexicalMrr": {
+        "value": 0.3328026463242812,
+        "ci95": {
+          "low": 0.28370084776334814,
+          "high": 0.38437293046668075
+        }
+      },
+      "legacyMrr": {
+        "value": 0.6896356995121754,
+        "ci95": {
+          "low": 0.6390069356151703,
+          "high": 0.7414521756862472
+        }
+      },
+      "rrfMrr": {
+        "value": 0.48854249604734257,
+        "ci95": {
+          "low": 0.4374997920899752,
+          "high": 0.5413091682622932
+        }
+      },
+      "dbsfMrr": {
+        "value": 0.5424550014789861,
+        "ci95": {
+          "low": 0.4907978587906099,
+          "high": 0.5948900954852487
+        }
+      },
+      "selectedFusionRerankerMrr": {
+        "value": 0.7356744502109807,
+        "ci95": {
+          "low": 0.6848951822322487,
+          "high": 0.7835101260483016
+        }
+      },
+      "lexicalOnlyRelevantCandidates": 166,
+      "controlledHybridLexicalOnlyRelevantCandidates": 0,
+      "controlledFusion": [
+        "fusion-legacy",
+        "fusion-rrf-k-60-depth-25",
+        "fusion-dbsf-depth-25"
+      ],
+      "holdoutChecksum": "34b11d2ab26eb26086a88fc13685704e9ca46dbf93ad0eaf02ae7be9c37862b3"
+    },
+    "legacyOutcome": "KEEP BUT NON-DEFAULT",
+    "runtimeChanged": false
+  }
+}

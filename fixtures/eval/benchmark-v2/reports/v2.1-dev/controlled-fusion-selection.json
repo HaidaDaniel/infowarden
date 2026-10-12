@@ -1,0 +1,583 @@
+{
+  "bestHit10": 0.9647435897435898,
+  "bestRecall": 1,
+  "eligible": [
+    {
+      "id": "fusion-legacy",
+      "baseId": "fusion-legacy",
+      "profileKey": "v21-dev-fusion-legacy",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6217948717948718,
+        "hit_at_3": 0.7756410256410257,
+        "hit_at_5": 0.8717948717948718,
+        "hit_at_10": 0.9647435897435898,
+        "mrr": 0.7239956386438362,
+        "ndcg_at_10": 0.7801503974714635,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0016666666666666668,
+        "latency_p50_ms": 1177.8220989999827,
+        "latency_p95_ms": 2590.3551449999213,
+        "latencyMs": {
+          "p50": 1177.8220989999827,
+          "p95": 2590.3551449999213
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 4
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-25",
+      "baseId": "fusion-dbsf",
+      "profileKey": "v21-dev-fusion-dbsf-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 25
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.41025641025641024,
+        "hit_at_3": 0.6987179487179487,
+        "hit_at_5": 0.8365384615384616,
+        "hit_at_10": 0.9551282051282052,
+        "mrr": 0.5868598079487877,
+        "ndcg_at_10": 0.6741405760235989,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0010075957215935514,
+        "latency_p50_ms": 1163.6935640000738,
+        "latency_p95_ms": 2439.0825109998696,
+        "latencyMs": {
+          "p50": 1163.6935640000738,
+          "p95": 2439.0825109998696
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "a9092d1c4f4a5849fc7e8f01d5ba2b3129cd3a805869d983f0b2e52471d59444",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-50",
+      "baseId": "fusion-dbsf",
+      "profileKey": "v21-dev-fusion-dbsf-50",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3685897435897436,
+        "hit_at_3": 0.6474358974358975,
+        "hit_at_5": 0.8173076923076923,
+        "hit_at_10": 0.9487179487179487,
+        "mrr": 0.5507634886460682,
+        "ndcg_at_10": 0.6443276898261578,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0014102564102564104,
+        "latency_p50_ms": 1134.7201060000807,
+        "latency_p95_ms": 2334.574488000013,
+        "latencyMs": {
+          "p50": 1134.7201060000807,
+          "p95": 2334.574488000013
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "db29700e1365087bfe2f116cbbde37351b320be7a379de9d3ac32f151152492a",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      }
+    }
+  ],
+  "selection": {
+    "id": "fusion-legacy",
+    "baseId": "fusion-legacy",
+    "profileKey": "v21-dev-fusion-legacy",
+    "metadata": {
+      "candidateStrategy": "hybrid",
+      "lexicalEnabled": true,
+      "lexicalStrategy": "bm25",
+      "lexicalTopK": 50,
+      "bm25K1": 1.5,
+      "bm25B": 0.75,
+      "hybridSearch": true,
+      "fusionStrategy": "legacy-weighted-rank",
+      "denseTopK": 50
+    },
+    "summary": {
+      "questionCount": 312,
+      "failed_query_count": 0,
+      "hit_at_1": 0.6217948717948718,
+      "hit_at_3": 0.7756410256410257,
+      "hit_at_5": 0.8717948717948718,
+      "hit_at_10": 0.9647435897435898,
+      "mrr": 0.7239956386438362,
+      "ndcg_at_10": 0.7801503974714635,
+      "empty_rate": 0,
+      "duplicate_rate": 0.0016666666666666668,
+      "latency_p50_ms": 1177.8220989999827,
+      "latency_p95_ms": 2590.3551449999213,
+      "latencyMs": {
+        "p50": 1177.8220989999827,
+        "p95": 2590.3551449999213
+      },
+      "candidate_recall": 1
+    },
+    "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+    "resourceProfile": {
+      "queryEmbeddingRequired": true,
+      "denseIndexRequired": true,
+      "rerankerRequired": false,
+      "cost": 2,
+      "complexity": 4
+    }
+  },
+  "attempted": [
+    {
+      "id": "fusion-legacy",
+      "baseId": "fusion-legacy",
+      "profileKey": "v21-dev-fusion-legacy",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6217948717948718,
+        "hit_at_3": 0.7756410256410257,
+        "hit_at_5": 0.8717948717948718,
+        "hit_at_10": 0.9647435897435898,
+        "mrr": 0.7239956386438362,
+        "ndcg_at_10": 0.7801503974714635,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0016666666666666668,
+        "latency_p50_ms": 1177.8220989999827,
+        "latency_p95_ms": 2590.3551449999213,
+        "latencyMs": {
+          "p50": 1177.8220989999827,
+          "p95": 2590.3551449999213
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 4
+      }
+    },
+    {
+      "id": "fusion-rrf-k-20-depth-25",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-20-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 20,
+        "candidateDepth": 25
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6185897435897436,
+        "hit_at_5": 0.782051282051282,
+        "hit_at_10": 0.9326923076923077,
+        "mrr": 0.5409520042796442,
+        "ndcg_at_10": 0.6311457580669021,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0010076738237345942,
+        "latency_p50_ms": 1129.2514189999783,
+        "latency_p95_ms": 2222.918376000016,
+        "latencyMs": {
+          "p50": 1129.2514189999783,
+          "p95": 2222.918376000016
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "93c2cdb6b4798a379e96507a3891689687f80f226fe8aeeec04cd481731220f5",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-rrf-k-20-depth-50",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-20-50",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 20,
+        "candidateDepth": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6217948717948718,
+        "hit_at_5": 0.7660256410256411,
+        "hit_at_10": 0.9198717948717948,
+        "mrr": 0.5386603378941585,
+        "ndcg_at_10": 0.6258576494559999,
+        "empty_rate": 0,
+        "duplicate_rate": 0.001346153846153846,
+        "latency_p50_ms": 1130.600087000057,
+        "latency_p95_ms": 2267.3748380001634,
+        "latencyMs": {
+          "p50": 1130.600087000057,
+          "p95": 2267.3748380001634
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "8d52412a075b1efaaf465f070d01e87c62925c4b5ff2935a34e5b16ddfcf9333",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-rrf-k-60-depth-25",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-60-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 60,
+        "candidateDepth": 25
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6217948717948718,
+        "hit_at_5": 0.782051282051282,
+        "hit_at_10": 0.9326923076923077,
+        "mrr": 0.5409596355372753,
+        "ndcg_at_10": 0.6311268293598277,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0010074395536267824,
+        "latency_p50_ms": 1106.1009809998795,
+        "latency_p95_ms": 2231.308486999944,
+        "latencyMs": {
+          "p50": 1106.1009809998795,
+          "p95": 2231.308486999944
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "ce44784394703e41c261bd11c402d4b0e35fc449625bdcae494540923f5b360b",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-rrf-k-60-depth-50",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-60-50",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 60,
+        "candidateDepth": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6217948717948718,
+        "hit_at_5": 0.7532051282051282,
+        "hit_at_10": 0.8878205128205128,
+        "mrr": 0.5344487814306261,
+        "ndcg_at_10": 0.6134543687027532,
+        "empty_rate": 0,
+        "duplicate_rate": 0.001346153846153846,
+        "latency_p50_ms": 1109.7775439999532,
+        "latency_p95_ms": 2367.8873370001093,
+        "latencyMs": {
+          "p50": 1109.7775439999532,
+          "p95": 2367.8873370001093
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "76e60039d82832da0641fe5b0f277a5046987807f39adf000720e7d7f7a67116",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-rrf-k-100-depth-25",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-100-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 100,
+        "candidateDepth": 25
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6217948717948718,
+        "hit_at_5": 0.782051282051282,
+        "hit_at_10": 0.9326923076923077,
+        "mrr": 0.5408349916626315,
+        "ndcg_at_10": 0.6310247185217098,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0010075957215935514,
+        "latency_p50_ms": 1230.2090459999163,
+        "latency_p95_ms": 2402.29716200009,
+        "latencyMs": {
+          "p50": 1230.2090459999163,
+          "p95": 2402.29716200009
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "ea2be15f90d211dc8a5328bccfe17ec8f4a47baf00e0b614e418fb81f1081ee2",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-rrf-k-100-depth-50",
+      "baseId": "fusion-rrf",
+      "profileKey": "v21-dev-fusion-rrf-100-50",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "rrf",
+        "denseTopK": 50,
+        "rrfK": 100,
+        "candidateDepth": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3717948717948718,
+        "hit_at_3": 0.6217948717948718,
+        "hit_at_5": 0.7532051282051282,
+        "hit_at_10": 0.8846153846153846,
+        "mrr": 0.5343937867544678,
+        "ndcg_at_10": 0.6124706081807484,
+        "empty_rate": 0,
+        "duplicate_rate": 0.001346153846153846,
+        "latency_p50_ms": 1206.349234999856,
+        "latency_p95_ms": 2771.4732359999325,
+        "latencyMs": {
+          "p50": 1206.349234999856,
+          "p95": 2771.4732359999325
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "e4beaaa65b2305bbd7e4cef1841de7f5fa5591ecf2619a19d7964cb8ce61ba9a",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 5
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-25",
+      "baseId": "fusion-dbsf",
+      "profileKey": "v21-dev-fusion-dbsf-25",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 25
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.41025641025641024,
+        "hit_at_3": 0.6987179487179487,
+        "hit_at_5": 0.8365384615384616,
+        "hit_at_10": 0.9551282051282052,
+        "mrr": 0.5868598079487877,
+        "ndcg_at_10": 0.6741405760235989,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0010075957215935514,
+        "latency_p50_ms": 1163.6935640000738,
+        "latency_p95_ms": 2439.0825109998696,
+        "latencyMs": {
+          "p50": 1163.6935640000738,
+          "p95": 2439.0825109998696
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "a9092d1c4f4a5849fc7e8f01d5ba2b3129cd3a805869d983f0b2e52471d59444",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      }
+    },
+    {
+      "id": "fusion-dbsf-depth-50",
+      "baseId": "fusion-dbsf",
+      "profileKey": "v21-dev-fusion-dbsf-50",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "dbsf",
+        "denseTopK": 50,
+        "candidateDepth": 50
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.3685897435897436,
+        "hit_at_3": 0.6474358974358975,
+        "hit_at_5": 0.8173076923076923,
+        "hit_at_10": 0.9487179487179487,
+        "mrr": 0.5507634886460682,
+        "ndcg_at_10": 0.6443276898261578,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0014102564102564104,
+        "latency_p50_ms": 1134.7201060000807,
+        "latency_p95_ms": 2334.574488000013,
+        "latencyMs": {
+          "p50": 1134.7201060000807,
+          "p95": 2334.574488000013
+        },
+        "candidate_recall": 1
+      },
+      "parameterHash": "db29700e1365087bfe2f116cbbde37351b320be7a379de9d3ac32f151152492a",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 6
+      }
+    }
+  ]
+}

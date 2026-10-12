@@ -1,0 +1,660 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SourceType {
+  local_folder
+  git_repo
+  upload
+  url
+  obsidian_vault
+}
+
+enum SourceStatus {
+  active
+  syncing
+  failed
+  disabled
+}
+
+enum DocumentStatus {
+  active
+  deleted
+  ignored
+  failed
+}
+
+enum IndexVersionStatus {
+  building
+  active
+  failed
+  archived
+}
+
+enum SourceRevisionStatus {
+  building
+  ready
+  failed
+  superseded
+}
+
+enum WorkspaceServingRevisionStatus {
+  building
+  ready
+  active
+  failed
+  archived
+  reconciliation_required
+}
+
+enum WorkspaceServingState {
+  uninitialized
+  active
+  reconciliation_required
+  failed
+}
+
+enum IndexBuildStatus {
+  building
+  validating
+  ready
+  active
+  failed
+  archived
+}
+
+enum VectorBackendState {
+  enabled
+  draining
+  disabled
+  offline
+}
+
+enum WorkspaceVectorPlacementMode {
+  pinned
+  capacity_assisted
+}
+
+enum WorkspaceVectorPlacementState {
+  unloaded
+  loading
+  loaded
+  partially_loaded
+  degraded
+  failed
+  migrating
+}
+
+enum VectorMaterializationOperationKind {
+  full_rebuild
+  backend_move
+}
+
+enum VectorMaterializationStrategy {
+  compatible_copy
+  canonical_reembed
+}
+
+enum VectorMaterializationOperationState {
+  planned
+  building
+  validating
+  ready_for_cutover
+  cutover_complete
+  rollback_complete
+  cleanup_pending
+  cleanup_complete
+  failed
+  cancelled
+}
+
+enum IndexingJobType {
+  scan_source
+  build_dataset
+  build_index
+  validate_dataset
+  evaluate_index
+}
+
+enum JobStatus {
+  queued
+  running
+  succeeded
+  failed
+  cancelled
+}
+
+enum ValidationLevel {
+  deterministic
+  retrieval
+  llm_judge
+}
+
+enum ValidationStatus {
+  passed
+  warning
+  failed
+}
+
+enum ProviderType {
+  embedding
+  reranker
+  llm
+}
+
+enum WorkspaceKind {
+  general
+  codebase
+  docs
+  agent_memory
+  ops_context
+  personal_work_history
+  benchmarks
+  contracts
+  datasets
+  custom
+}
+
+enum MemoryEntryType {
+  decision
+  session_summary
+  runbook
+  infra_note
+  deployment_note
+  benchmark_result
+  incident_note
+  fact
+}
+
+model KnowledgeBase {
+  id                              String                           @id @default(uuid())
+  name                            String
+  slug                            String                           @unique
+  description                     String?
+  workspaceKind                   WorkspaceKind                    @default(general)
+  defaultIndexProfile             String                           @default("default")
+  defaultRetrievalProfile         String                           @default("default")
+  activeIndexVersionId            String?
+  activeServingRevisionId         String?                          @unique
+  servingRevisionState            WorkspaceServingState            @default(uninitialized)
+  createdAt                       DateTime                         @default(now())
+  updatedAt                       DateTime                         @updatedAt
+  sources                         Source[]
+  indexVersions                   IndexVersion[]
+  validationReports               ValidationReport[]
+  indexingJobs                    IndexingJob[]
+  evalRuns                        EvalRun[]
+  evalQuestions                   EvalQuestion[]
+  datasetVersions                 DatasetVersion[]
+  sourceRevisions                 SourceRevision[]
+  servingRevisions                WorkspaceServingRevision[]       @relation("WorkspaceServingRevisions")
+  activeServingRevision           WorkspaceServingRevision?        @relation("ActiveWorkspaceServingRevision", fields: [activeServingRevisionId], references: [id], onDelete: SetNull)
+  indexBuilds                     IndexBuild[]
+  vectorPlacement                 WorkspaceVectorPlacement?
+  vectorMaterializationOperations VectorMaterializationOperation[]
+  retrievalProfiles               RetrievalProfile[]
+  memoryEntries                   MemoryEntry[]
+}
+
+model VectorMaterializationOperation {
+  id                    String                              @id @default(uuid())
+  knowledgeBaseId       String
+  kind                  VectorMaterializationOperationKind
+  state                 VectorMaterializationOperationState @default(planned)
+  strategy              VectorMaterializationStrategy       @default(canonical_reembed)
+  idempotencyKey        String
+  buildJobId            String?
+  sourceVectorBackendId String?
+  targetVectorBackendId String
+  sourceCollectionName  String?
+  targetCollectionName  String
+  servingRevisionId     String?
+  sourceIndexBuildId    String?
+  targetIndexBuildId    String?
+  progressCheckpoint    Json                                @default("{}")
+  validationSummary     Json                                @default("{}")
+  errorSummary          Json                                @default("{}")
+  attemptCount          Int                                 @default(0)
+  rollbackUntil         DateTime?
+  cleanupAfter          DateTime?
+  createdAt             DateTime                            @default(now())
+  updatedAt             DateTime                            @updatedAt
+  knowledgeBase         KnowledgeBase                       @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  @@unique([knowledgeBaseId, idempotencyKey])
+  @@index([knowledgeBaseId, state, createdAt])
+  @@index([targetVectorBackendId, state])
+  @@index([knowledgeBaseId, kind, state, updatedAt])
+}
+
+model RetrievalProfile {
+  id              String        @id @default(uuid())
+  knowledgeBaseId String
+  key             String
+  name            String
+  intent          String        @default("general_search")
+  denseTopK       Int           @default(10)
+  scoreThreshold  Float?
+  neighborBefore  Int           @default(0)
+  neighborAfter   Int           @default(0)
+  tokenBudget     Int?
+  grouping        String        @default("document")
+  recencyBoost    Boolean       @default(false)
+  metadata        Json          @default("{}")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  knowledgeBase   KnowledgeBase @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  @@unique([knowledgeBaseId, key])
+  @@index([knowledgeBaseId, intent])
+}
+
+model MemoryEntry {
+  id              String          @id @default(uuid())
+  knowledgeBaseId String
+  entryType       MemoryEntryType
+  title           String?
+  body            String
+  summary         String?
+  tags            String[]
+  authoredBy      String?
+  sessionId       String?
+  sourceRefs      String[]
+  occurredAt      DateTime?
+  metadata        Json            @default("{}")
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  knowledgeBase   KnowledgeBase   @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+}
+
+model Source {
+  id              String           @id @default(uuid())
+  knowledgeBaseId String
+  type            SourceType
+  uri             String
+  includeRules    String[]
+  excludeRules    String[]
+  metadata        Json             @default("{}")
+  status          SourceStatus     @default(active)
+  lastSyncedAt    DateTime?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  knowledgeBase   KnowledgeBase    @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  snapshots       SourceSnapshot[]
+  documents       Document[]
+  indexingJobs    IndexingJob[]
+  revisions       SourceRevision[]
+
+  @@index([knowledgeBaseId, status, type])
+  @@index([knowledgeBaseId, updatedAt])
+}
+
+model SourceSnapshot {
+  id               String            @id @default(uuid())
+  sourceId         String
+  knowledgeBaseId  String
+  snapshotType     String
+  ref              String?
+  fileCount        Int               @default(0)
+  contentBytes     Int               @default(0)
+  metadata         Json              @default("{}")
+  createdAt        DateTime          @default(now())
+  source           Source            @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  documentVersions DocumentVersion[]
+  datasetVersions  DatasetVersion[]
+  sourceRevision   SourceRevision?
+
+  @@index([knowledgeBaseId, snapshotType, createdAt])
+  @@index([sourceId, createdAt])
+}
+
+model SourceRevision {
+  id                String                          @id @default(uuid())
+  sourceId          String
+  knowledgeBaseId   String
+  sourceSnapshotId  String                          @unique
+  contentHash       String
+  parserVersion     String
+  documentCount     Int                             @default(0)
+  status            SourceRevisionStatus            @default(building)
+  validationSummary Json                            @default("{}")
+  metadata          Json                            @default("{}")
+  createdAt         DateTime                        @default(now())
+  updatedAt         DateTime                        @updatedAt
+  source            Source                          @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  knowledgeBase     KnowledgeBase                   @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  sourceSnapshot    SourceSnapshot                  @relation(fields: [sourceSnapshotId], references: [id], onDelete: Cascade)
+  manifestEntries   WorkspaceServingManifestEntry[]
+  indexBuilds       IndexBuild[]
+
+  @@index([sourceId, status, createdAt])
+  @@index([knowledgeBaseId, status])
+}
+
+model WorkspaceServingRevision {
+  id                       String                          @id @default(uuid())
+  knowledgeBaseId          String
+  manifestHash             String
+  embeddingProfileSnapshot Json
+  chunkingProfileSnapshot  Json
+  payloadSchemaVersion     String
+  status                   WorkspaceServingRevisionStatus  @default(building)
+  metadata                 Json                            @default("{}")
+  activatedAt              DateTime?
+  createdAt                DateTime                        @default(now())
+  updatedAt                DateTime                        @updatedAt
+  knowledgeBase            KnowledgeBase                   @relation("WorkspaceServingRevisions", fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  activeForKnowledgeBase   KnowledgeBase?                  @relation("ActiveWorkspaceServingRevision")
+  manifestEntries          WorkspaceServingManifestEntry[]
+  indexBuilds              IndexBuild[]
+  vectorPlacements         WorkspaceVectorPlacement[]
+
+  @@unique([knowledgeBaseId, manifestHash])
+  @@index([knowledgeBaseId, status, createdAt])
+}
+
+model WorkspaceServingManifestEntry {
+  id                         String                   @id @default(uuid())
+  workspaceServingRevisionId String
+  sourceRevisionId           String
+  position                   Int
+  createdAt                  DateTime                 @default(now())
+  workspaceServingRevision   WorkspaceServingRevision @relation(fields: [workspaceServingRevisionId], references: [id], onDelete: Cascade)
+  sourceRevision             SourceRevision           @relation(fields: [sourceRevisionId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceServingRevisionId, sourceRevisionId])
+  @@unique([workspaceServingRevisionId, position])
+  @@index([sourceRevisionId])
+}
+
+model Document {
+  id          String            @id @default(uuid())
+  sourceId    String
+  path        String
+  mimeType    String?
+  contentHash String
+  metadata    Json              @default("{}")
+  status      DocumentStatus    @default(active)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  source      Source            @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  versions    DocumentVersion[]
+  chunks      Chunk[]
+
+  @@index([sourceId, status, path])
+  @@index([status, updatedAt])
+}
+
+model DocumentVersion {
+  id                String         @id @default(uuid())
+  documentId        String
+  sourceSnapshotId  String
+  contentHash       String
+  normalizedText    String?
+  normalizedTextRef String?
+  textLength        Int            @default(0)
+  metadata          Json           @default("{}")
+  createdAt         DateTime       @default(now())
+  document          Document       @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  sourceSnapshot    SourceSnapshot @relation(fields: [sourceSnapshotId], references: [id], onDelete: Cascade)
+  chunkVersions     ChunkVersion[]
+
+  @@index([documentId, createdAt])
+  @@index([sourceSnapshotId, createdAt])
+}
+
+model Chunk {
+  id               String                   @id @default(uuid())
+  documentId       String
+  indexVersionId   String
+  sourceRevisionId String?
+  text             String
+  lexicalSearch    Unsupported("tsvector")?
+  textHash         String                   @default("")
+  tokenCount       Int                      @default(0)
+  chunkIndex       Int
+  startLine        Int?
+  endLine          Int?
+  metadata         Json                     @default("{}")
+  createdAt        DateTime                 @default(now())
+  document         Document                 @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  indexVersion     IndexVersion             @relation(fields: [indexVersionId], references: [id], onDelete: Cascade)
+  chunkVersions    ChunkVersion[]
+
+  @@index([sourceRevisionId, chunkIndex])
+  @@index([sourceRevisionId, indexVersionId, chunkIndex])
+  @@index([documentId, indexVersionId, chunkIndex])
+  @@index([indexVersionId, chunkIndex])
+  @@index([textHash])
+}
+
+model ChunkVersion {
+  id                String          @id @default(uuid())
+  chunkId           String
+  documentVersionId String
+  indexVersionId    String
+  textHash          String
+  tokenCount        Int             @default(0)
+  metadata          Json            @default("{}")
+  createdAt         DateTime        @default(now())
+  chunk             Chunk           @relation(fields: [chunkId], references: [id], onDelete: Cascade)
+  documentVersion   DocumentVersion @relation(fields: [documentVersionId], references: [id], onDelete: Cascade)
+  indexVersion      IndexVersion    @relation(fields: [indexVersionId], references: [id], onDelete: Cascade)
+
+  @@index([chunkId, createdAt])
+  @@index([documentVersionId, indexVersionId])
+}
+
+model DatasetVersion {
+  id                String           @id @default(uuid())
+  knowledgeBaseId   String
+  sourceSnapshotIds String[]
+  documentCount     Int              @default(0)
+  contentHash       String
+  status            String           @default("building")
+  createdAt         DateTime         @default(now())
+  knowledgeBase     KnowledgeBase    @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  sourceSnapshots   SourceSnapshot[]
+  indexVersions     IndexVersion[]
+
+  @@index([knowledgeBaseId, status, createdAt])
+}
+
+model IndexVersion {
+  id                   String             @id @default(uuid())
+  knowledgeBaseId      String
+  datasetVersionId     String
+  embeddingModel       String
+  embeddingDimension   Int
+  chunkingConfig       Json
+  vectorCollectionName String
+  materializationMode  String             @default("mutable_collection")
+  storageProfile       String             @default("balanced")
+  storageConfig        Json               @default("{}")
+  lifecycleStatus      String             @default("loaded")
+  resourceEstimate     Json               @default("{}")
+  resourceRequested    Json               @default("{}")
+  resourceAllocated    Json               @default("{}")
+  resourceObserved     Json               @default("{}")
+  resourceActual       Json               @default("{}")
+  status               IndexVersionStatus @default(building)
+  createdAt            DateTime           @default(now())
+  knowledgeBase        KnowledgeBase      @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  datasetVersion       DatasetVersion     @relation(fields: [datasetVersionId], references: [id], onDelete: Cascade)
+  chunks               Chunk[]
+  chunkVersions        ChunkVersion[]
+  validationReports    ValidationReport[]
+  evalRuns             EvalRun[]
+  indexBuild           IndexBuild?
+
+  @@index([knowledgeBaseId, status, createdAt])
+  @@index([knowledgeBaseId, lifecycleStatus, status])
+  @@index([datasetVersionId, status])
+}
+
+model IndexBuild {
+  id                         String                    @id @default(uuid())
+  knowledgeBaseId            String
+  workspaceServingRevisionId String
+  sourceRevisionId           String?
+  indexVersionId             String?                   @unique
+  buildKind                  String                    @default("incremental_source")
+  physicalCollectionName     String
+  storageProfile             String
+  configSnapshot             Json                      @default("{}")
+  validationSummary          Json                      @default("{}")
+  resourceEstimate           Json                      @default("{}")
+  resourceObserved           Json                      @default("{}")
+  status                     IndexBuildStatus          @default(building)
+  startedAt                  DateTime                  @default(now())
+  finishedAt                 DateTime?
+  createdAt                  DateTime                  @default(now())
+  updatedAt                  DateTime                  @updatedAt
+  knowledgeBase              KnowledgeBase             @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  workspaceServingRevision   WorkspaceServingRevision  @relation(fields: [workspaceServingRevisionId], references: [id], onDelete: Cascade)
+  sourceRevision             SourceRevision?           @relation(fields: [sourceRevisionId], references: [id], onDelete: SetNull)
+  indexVersion               IndexVersion?             @relation(fields: [indexVersionId], references: [id], onDelete: SetNull)
+  activeForPlacement         WorkspaceVectorPlacement? @relation("ActivePlacementIndexBuild")
+
+  @@index([knowledgeBaseId, status, createdAt])
+  @@index([workspaceServingRevisionId, status])
+  @@index([sourceRevisionId])
+}
+
+model IndexingJob {
+  id              String          @id @default(uuid())
+  knowledgeBaseId String
+  sourceId        String?
+  type            IndexingJobType
+  status          JobStatus       @default(queued)
+  stats           Json            @default("{}")
+  logs            Json            @default("[]")
+  startedAt       DateTime?
+  finishedAt      DateTime?
+  createdAt       DateTime        @default(now())
+  knowledgeBase   KnowledgeBase   @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  source          Source?         @relation(fields: [sourceId], references: [id], onDelete: SetNull)
+
+  @@index([knowledgeBaseId, status, createdAt])
+  @@index([sourceId, status, createdAt])
+  @@index([type, status, createdAt])
+}
+
+model ValidationReport {
+  id               String           @id @default(uuid())
+  knowledgeBaseId  String
+  datasetVersionId String?
+  indexVersionId   String?
+  level            ValidationLevel
+  status           ValidationStatus
+  summary          Json             @default("{}")
+  issues           Json             @default("[]")
+  createdAt        DateTime         @default(now())
+  knowledgeBase    KnowledgeBase    @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  indexVersion     IndexVersion?    @relation(fields: [indexVersionId], references: [id], onDelete: Cascade)
+
+  @@index([knowledgeBaseId, level, status, createdAt])
+  @@index([indexVersionId, level, status])
+}
+
+model EvalRun {
+  id              String        @id @default(uuid())
+  knowledgeBaseId String
+  indexVersionId  String
+  name            String
+  status          String        @default("queued")
+  metrics         Json          @default("{}")
+  createdAt       DateTime      @default(now())
+  finishedAt      DateTime?
+  knowledgeBase   KnowledgeBase @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  indexVersion    IndexVersion  @relation(fields: [indexVersionId], references: [id], onDelete: Cascade)
+  results         EvalResult[]
+
+  @@index([knowledgeBaseId, status, createdAt])
+  @@index([indexVersionId, status, createdAt])
+}
+
+model EvalQuestion {
+  id                  String        @id @default(uuid())
+  knowledgeBaseId     String
+  text                String
+  expectedDocumentIds String[]
+  expectedChunkIds    String[]
+  metadata            Json          @default("{}")
+  createdAt           DateTime      @default(now())
+  knowledgeBase       KnowledgeBase @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  @@index([knowledgeBaseId, createdAt])
+}
+
+model EvalResult {
+  id                String   @id @default(uuid())
+  evalRunId         String
+  evalQuestionId    String
+  retrievedChunkIds String[]
+  scores            Json     @default("{}")
+  metadata          Json     @default("{}")
+  createdAt         DateTime @default(now())
+  evalRun           EvalRun  @relation(fields: [evalRunId], references: [id], onDelete: Cascade)
+}
+
+model ProviderConfig {
+  id        String       @id @default(uuid())
+  type      ProviderType
+  name      String
+  baseUrl   String
+  model     String
+  apiKeyRef String?
+  metadata  Json         @default("{}")
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+}
+
+model VectorBackend {
+  id                String                     @id @default(uuid())
+  name              String                     @unique
+  baseUrl           String                     @unique
+  apiKeyRef         String?
+  tlsVerify         Boolean                    @default(true)
+  networkPolicy     Json                       @default("{}")
+  labels            String[]
+  state             VectorBackendState         @default(enabled)
+  capacityHints     Json                       @default("{}")
+  observedResources Json                       @default("{}")
+  healthMetadata    Json                       @default("{}")
+  lastHealthAt      DateTime?
+  lastErrorCode     String?
+  createdAt         DateTime                   @default(now())
+  updatedAt         DateTime                   @updatedAt
+  placements        WorkspaceVectorPlacement[]
+
+  @@index([state, updatedAt])
+}
+
+model WorkspaceVectorPlacement {
+  id                     String                        @id @default(uuid())
+  knowledgeBaseId        String                        @unique
+  vectorBackendId        String
+  servingRevisionId      String?
+  activeIndexBuildId     String?                       @unique
+  collectionAlias        String
+  physicalCollectionName String?
+  mode                   WorkspaceVectorPlacementMode  @default(capacity_assisted)
+  state                  WorkspaceVectorPlacementState @default(unloaded)
+  reasonSnapshot         Json                          @default("{}")
+  capacitySnapshot       Json                          @default("{}")
+  createdAt              DateTime                      @default(now())
+  updatedAt              DateTime                      @updatedAt
+  knowledgeBase          KnowledgeBase                 @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+  vectorBackend          VectorBackend                 @relation(fields: [vectorBackendId], references: [id], onDelete: Restrict)
+  servingRevision        WorkspaceServingRevision?     @relation(fields: [servingRevisionId], references: [id], onDelete: SetNull)
+  activeIndexBuild       IndexBuild?                   @relation("ActivePlacementIndexBuild", fields: [activeIndexBuildId], references: [id], onDelete: SetNull)
+
+  @@index([vectorBackendId, state])
+  @@index([servingRevisionId])
+}

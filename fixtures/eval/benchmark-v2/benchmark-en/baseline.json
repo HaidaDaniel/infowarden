@@ -1,0 +1,39 @@
+{
+  "id": "benchmark-v2-en-contract",
+  "datasetId": "benchmark-v2-en",
+  "datasetVersion": "2026-10-09-mrtydi-v1.1-train-en-120-hash-v1",
+  "environmentClass": "benchmark-v2-contract",
+  "profiles": {
+    "dense": {
+      "minQuestionCount": 120,
+      "minHitAtK": 0,
+      "minHitAt3": 0,
+      "minMrr": 0,
+      "maxEmptyResultRate": 1,
+      "maxDuplicateRate": 1,
+      "maxLatencyMsP95": 120000,
+      "note": "Contract floor only for dense; 0177/0178 must supply observed quality and saturation evidence before release claims."
+    },
+    "hybrid": {
+      "minQuestionCount": 120,
+      "minHitAtK": 0,
+      "minHitAt3": 0,
+      "minMrr": 0,
+      "maxEmptyResultRate": 1,
+      "maxDuplicateRate": 1,
+      "maxLatencyMsP95": 120000,
+      "note": "Contract floor only for hybrid; 0177/0178 must supply observed quality and saturation evidence before release claims."
+    },
+    "hybrid-reranker": {
+      "minQuestionCount": 120,
+      "minHitAtK": 0,
+      "minHitAt3": 0,
+      "minMrr": 0,
+      "maxEmptyResultRate": 1,
+      "maxDuplicateRate": 1,
+      "maxLatencyMsP95": 120000,
+      "note": "Contract floor only for hybrid-reranker; 0177/0178 must supply observed quality and saturation evidence before release claims."
+    }
+  },
+  "note": "These are validation floors, not benchmark results or quality claims."
+}

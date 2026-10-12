@@ -1,0 +1,10 @@
+{
+  "id": "mem_smoke_session",
+  "entryType": "session_summary",
+  "title": "Hermes context planning",
+  "body": "The session decided that ContextForge should expose source refresh, retrieval traces, eval datasets, and reranker comparison before adding answer LLMs.",
+  "summary": "Pre-LLM retrieval observability comes first.",
+  "tags": ["hermes", "planning", "pre-llm"],
+  "authoredBy": "contextforge-smoke",
+  "sessionId": "cf-smoke-mini-session"
+}

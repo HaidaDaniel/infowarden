@@ -1,0 +1,257 @@
+{
+  "results": [
+    {
+      "id": "dense",
+      "baseId": "dense",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-dense",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50
+      },
+      "parameterHash": "399f7f619a99c82dc1ba4f26e1a5ee392d3995d16f6dbb02681230a14990f484",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 0
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6217948717948718,
+        "hit_at_3": 0.8076923076923077,
+        "hit_at_5": 0.9102564102564102,
+        "hit_at_10": 0.967948717948718,
+        "mrr": 0.7380678376042825,
+        "ndcg_at_10": 0.792497151568533,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0017307692307692308,
+        "latency_p50_ms": 178.3629189999774,
+        "latency_p95_ms": 229.8356180000119,
+        "latencyMs": {
+          "p50": 178.3629189999774,
+          "p95": 229.8356180000119
+        },
+        "candidate_recall": 1
+      }
+    },
+    {
+      "id": "dense-reranker",
+      "baseId": "dense-reranker",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-dense-reranker",
+      "metadata": {
+        "candidateStrategy": "dense",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "1218bf3e1c3eec6f0c7ebc71203b0d76b3dfdbc6fb8fbe185552a6685057f3ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 0
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6474358974358975,
+        "hit_at_3": 0.8237179487179487,
+        "hit_at_5": 0.875,
+        "hit_at_10": 0.9006410256410257,
+        "mrr": 0.7443758230436188,
+        "ndcg_at_10": 0.7804268602362057,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0017307692307692308,
+        "latency_p50_ms": 2453.1444999999367,
+        "latency_p95_ms": 3017.681813000003,
+        "latencyMs": {
+          "p50": 2453.1444999999367,
+          "p95": 3017.681813000003
+        },
+        "candidate_recall": 1
+      }
+    },
+    {
+      "id": "lexical-lstar",
+      "baseId": "lexical-lstar",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-lstar",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75
+      },
+      "parameterHash": "5b6b2d7a010b6bcb3fa055a4da1e6af539c005e9e31157d0e8b2e837e384bc2f",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": false,
+        "cost": 1,
+        "complexity": 3
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.22435897435897437,
+        "hit_at_3": 0.3974358974358974,
+        "hit_at_5": 0.5352564102564102,
+        "hit_at_10": 0.7532051282051282,
+        "mrr": 0.3655949837102191,
+        "ndcg_at_10": 0.4530333057268972,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0002669336002669336,
+        "latency_p50_ms": 1374.860716999974,
+        "latency_p95_ms": 2390.645623000106,
+        "latencyMs": {
+          "p50": 1374.860716999974,
+          "p95": 2390.645623000106
+        },
+        "candidate_recall": 0.8365384615384616
+      }
+    },
+    {
+      "id": "lexical-lstar-reranker",
+      "baseId": "lexical-lstar-reranker",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-lstar-reranker",
+      "metadata": {
+        "candidateStrategy": "lexical",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "57cfc3997cccc10c7717eb38c4803e1a9705120b59eae8339cedf7308562e494",
+      "resourceProfile": {
+        "queryEmbeddingRequired": false,
+        "denseIndexRequired": false,
+        "rerankerRequired": true,
+        "cost": 3,
+        "complexity": 3
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.016025641025641024,
+        "hit_at_3": 0.022435897435897436,
+        "hit_at_5": 0.038461538461538464,
+        "hit_at_10": 0.07692307692307693,
+        "mrr": 0.04842183317982629,
+        "ndcg_at_10": 0.03939516053561438,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0002669336002669336,
+        "latency_p50_ms": 2522.02486200002,
+        "latency_p95_ms": 2998.9202710001264,
+        "latencyMs": {
+          "p50": 2522.02486200002,
+          "p95": 2998.9202710001264
+        },
+        "candidate_recall": 0.8365384615384616
+      }
+    },
+    {
+      "id": "fusion-selected",
+      "baseId": "fusion-selected",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-selected-fusion",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50
+      },
+      "parameterHash": "1f9909bbe0bf995005c3b4b9ad157a010e7c0b952c174a7c298c45a9324b85ff",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": false,
+        "cost": 2,
+        "complexity": 4
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.6217948717948718,
+        "hit_at_3": 0.7756410256410257,
+        "hit_at_5": 0.8717948717948718,
+        "hit_at_10": 0.9647435897435898,
+        "mrr": 0.7239913990562632,
+        "ndcg_at_10": 0.7801503974714635,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0016666666666666668,
+        "latency_p50_ms": 1174.5079459999688,
+        "latency_p95_ms": 2366.5196950000245,
+        "latencyMs": {
+          "p50": 1174.5079459999688,
+          "p95": 2366.5196950000245
+        },
+        "candidate_recall": 1
+      }
+    },
+    {
+      "id": "fusion-selected-reranker",
+      "baseId": "fusion-selected-reranker",
+      "stage": "reranker-pair",
+      "profileKey": "v21-dev-selected-fusion-reranker",
+      "metadata": {
+        "candidateStrategy": "hybrid",
+        "lexicalEnabled": true,
+        "lexicalStrategy": "bm25",
+        "lexicalTopK": 50,
+        "bm25K1": 1.5,
+        "bm25B": 0.75,
+        "hybridSearch": true,
+        "fusionStrategy": "legacy-weighted-rank",
+        "denseTopK": 50,
+        "reranker": {
+          "enabled": true
+        }
+      },
+      "parameterHash": "cc1782645a11f35cfe8336ce6f3c7c2ddaafcff7518f22532369f09d88510b45",
+      "resourceProfile": {
+        "queryEmbeddingRequired": true,
+        "denseIndexRequired": true,
+        "rerankerRequired": true,
+        "cost": 4,
+        "complexity": 4
+      },
+      "summary": {
+        "questionCount": 312,
+        "failed_query_count": 0,
+        "hit_at_1": 0.657051282051282,
+        "hit_at_3": 0.8333333333333334,
+        "hit_at_5": 0.8878205128205128,
+        "hit_at_10": 0.9294871794871795,
+        "mrr": 0.7573568144467264,
+        "ndcg_at_10": 0.7973482411312843,
+        "empty_rate": 0,
+        "duplicate_rate": 0.0016666666666666668,
+        "latency_p50_ms": 2495.05806499999,
+        "latency_p95_ms": 3151.9055300001055,
+        "latencyMs": {
+          "p50": 2495.05806499999,
+          "p95": 3151.9055300001055
+        },
+        "candidate_recall": 1
+      }
+    }
+  ]
+}

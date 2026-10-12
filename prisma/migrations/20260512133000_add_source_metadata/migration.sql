@@ -1,0 +1,2 @@
+ALTER TABLE "Source"
+ADD COLUMN "metadata" JSONB NOT NULL DEFAULT '{}';
